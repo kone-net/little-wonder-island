@@ -9,7 +9,10 @@ let store={version:2,courses:{},muted:false},storageOK=true;
 try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved?.version===2&&saved.courses&&typeof saved.courses==='object')store={...store,...saved};}catch(_){storageOK=false;}
 if(![3,4,5,6].includes(store.selectedAge))store.selectedAge=Object.keys(store.courses).some(id=>/^\d{2}$/.test(id))?4:null;
 store.journeyByAge||={};
-let page='home',course=null,state=null,paused=false,modal=null,slow=false,lastClip=null,autoRemaining=null,autoTotal=0,spoken=false,feedback='',feedbackKind='',showDemo=false,demoStep=0,sessionSeconds=0,dragId=null,dragStart=null,resumeVoice=false,voiceToken=0;
+let page='home',course=null,state=null,paused=false,modal=null,slow=false,lastClip=null,autoRemaining=null,autoTotal=0,spoken=false,feedback='',feedbackKind='',showDemo=false,demoStep=0,sessionSeconds=0,resumeVoice=false,voiceToken=0;
+const STORY_GAP_MS=450;
+const nextStoryAudio=new Audio();nextStoryAudio.preload='auto';
+const motion=IslandMotion.create(root,{enabled:()=>page==='class'&&state?.chapter===2&&!state.game.checked&&!modal&&!paused,onDrop:(id,zone,rect)=>moveItem(id,zone,rect)});
 function fresh(l){return {chapter:0,step:0,elapsed:Array(8).fill(0),stages:{},game:E.create(l.mode,0,l.gameConfig),english:{},filmSeen:[],movementSteps:[],homeSteps:[],observations:{},finished:false,updated:Date.now()};}
 function save(){if(state&&course){if(page==='class'){state.started=true;store.journeyCourseId=course.id;store.journeyByAge[course.age]=course.id;}state.updated=Date.now();store.courses[course.id]=state;}try{localStorage.setItem(KEY,JSON.stringify(store));storageOK=true;}catch(_){storageOK=false;}}
 function getCourse(id){return data.lessons.find(l=>l.id===id);}
@@ -103,6 +106,7 @@ function activityPanel(){
 }
 function endingPanel(){const item=currentItem();return `<div class="lesson-layout"><div class="theatre">${scene('ending',state.step)}${caption(item)}</div><aside class="side-panel"><div class="eyebrow">故事的最后，留一点给你</div><h3>谢谢你来做客。</h3><p>把刚才的发现指给家人看，或者摆出来。不想说也没关系。</p><div class="controls">${state.step<course.ending.length-1?btn('storyNext','听听朋友还想说什么 →','primary'):btn('finish','今天先到这里 ✓','primary')}</div>${parentNote(course.observation)}</aside></div>`;}
 function classroom(speak=true){
+ motion.cancel();
  if(speak)stopVoice();
  let panel=state.chapter===2?gamePanel():state.chapter===4?englishPanel():state.chapter===5||state.chapter===6?activityPanel():state.chapter===7?endingPanel():storyPanel();
  shell(nav()+panel);
@@ -126,19 +130,29 @@ function status(message){const el=document.getElementById('audioStatus');if(el)e
 function say(item,auto=false){
  stopVoice();if(!item)return;lastClip=item;const token=voiceToken;
  const meta=window.COURSE_AUDIO?.[item.id];
- if(!meta){status('这段声音尚未加载，可先看字幕或点再听。');if(auto&&state?.auto!==false){autoRemaining=10000;autoTotal=autoRemaining;}return;}
+ if(!meta){status('这段声音尚未加载，可先看字幕或点再听。');return;}
+ if(auto&&page==='class'&&[0,1,3].includes(state.chapter)){
+  const next=currentList()?.[state.step+1],src=next&&window.COURSE_AUDIO?.[next.id]?.src;
+  if(src&&nextStoryAudio.getAttribute('src')!=='assets/'+src)nextStoryAudio.src='assets/'+src;
+ }
  voice.src='assets/'+meta.src;
  // Loading a new source can restore defaultPlaybackRate in the browser.
  voice.defaultPlaybackRate=state?.chapter===4&&slow ? .85:1;
  voice.playbackRate=voice.defaultPlaybackRate;
- const ended=()=>{status(store.muted?'声音已关闭':'这段听完啦，可以再听。');if(page==='class'&&state.chapter===3){if(!state.filmSeen.includes(state.step))state.filmSeen.push(state.step);save();}if(auto&&state?.auto!==false){autoRemaining=state.chapter===3?4500:3000;autoTotal=autoRemaining;}};
+ const ended=()=>{if(token!==voiceToken)return;if(page==='class'&&state.chapter===3){if(!state.filmSeen.includes(state.step))state.filmSeen.push(state.step);save();}const continues=auto&&state?.auto!==false&&state.step+1<(currentList()?.length||0);status(continues?'故事继续……':store.muted?'声音已关闭':'这一段讲完啦，准备好就继续。');if(continues){autoRemaining=STORY_GAP_MS;autoTotal=autoRemaining;}};
  voice.onended=ended;
- voice.onerror=()=>{status('声音暂时没加载成功。点“再听一遍”重试，也可以继续看字幕。');if(auto&&state?.auto!==false){autoRemaining=10000;autoTotal=10000;}};
- if(store.muted){status('声音已关闭。可以打开声音，或看画面和字幕。');if(auto&&state?.auto!==false){autoRemaining=(meta.duration*1000)+(state.chapter===3?4500:3000);autoTotal=autoRemaining;}return;}
+ voice.onerror=()=>{if(token!==voiceToken)return;autoRemaining=null;status('声音暂时没加载成功。点“再听一遍”重试，也可以继续看字幕。');};
+ if(store.muted){status('声音已关闭。可以打开声音，或看画面和字幕。');if(auto&&state?.auto!==false){autoRemaining=(meta.duration*1000)+STORY_GAP_MS;autoTotal=autoRemaining;}return;}
  if(paused)return;
  voice.play().then(()=>{if(token!==voiceToken)return;spoken=true;status('正在讲故事……');}).catch(error=>{if(token!==voiceToken||error.name==='AbortError')return;status(voice.error?'声音暂时没加载成功。点“再听一遍”重试，也可以继续看字幕。':'点“再听一遍”，让故事的声音开始。');});
 }
 function message(text,kind='',id=null){feedback=text;feedbackKind=kind;classroom(false);if(id)say({id,text});}
+function moveItem(id,zone,fromRect){
+ if(!state?.game||state.game.checked)return false;
+ const before=motion.snapshot();if(fromRect)before.set(id,fromRect);
+ if(!E.move(state.game,id,zone))return false;
+ feedback='搬过去啦。可以继续分，也可以选中它再调整。';feedbackKind='';save();classroom(false);motion.settle(before,id,zone);return true;
+}
 function enterChapter(index,mark=true){
  if(mark&&!state.stages[state.chapter])state.stages[state.chapter]='visited';
  state.chapter=index;state.step=0;feedback='';feedbackKind='';showDemo=false;slow=false;save();classroom();window.scrollTo({top:0,behavior:'instant'});
@@ -151,7 +165,7 @@ function renderModal(){
  const copy=modal==='pause'?`<h2>小小休息一下。</h2><p>故事、动画和活动计时都暂停啦。准备好了，我们再一起回去。</p><div class="controls">${btn('unpause','▶ 继续冒险','primary')}${btn('saveHome','保存并回到小岛','small')}</div>`:modal==='restart'?`<h2>重新走一遍？</h2><p>这节课当前的进度和观察会清空，其他课程会保留。</p><div class="controls">${btn('confirmRestart','重新开始这节课','primary')}${btn('cancelModal','保留进度','small')}</div>`:modal==='clear'?`<h2>清除本机足迹？</h2><p>将清除所有年龄段在当前浏览器的进度和观察。可以先导出记录保存。</p><div class="controls">${btn('confirmClear','确认清除','primary')}${btn('cancelModal','保留记录','small')}</div>`:`<h2>再看一遍方法</h2><div id="demoScene" class="scene">${Scenes.render(course,'teach',demoStep)}</div><p id="demoCaption">${esc(course.teaching[demoStep].text)}</p><div class="controls">${btn('demoNext','下一步演示','small')}${btn('closeDemo','回到我刚才的分法','primary')}</div>`;
  overlay.innerHTML=`<section class="dialog" role="dialog" aria-modal="true" aria-label="${modal==='pause'?'休息一下':modal==='demo'?'方法示范':'操作确认'}" tabindex="-1">${copy}</section>`;root.appendChild(overlay);overlay.querySelector('.btn')?.focus();
 }
-function pause(){if(page!=='class')return;resumeVoice=!voice.paused&&!voice.ended;paused=true;voice.pause();modal='pause';document.body.classList.add('is-paused');renderModal();save();}
+function pause(){if(page!=='class')return;motion.cancel();resumeVoice=!voice.paused&&!voice.ended;paused=true;voice.pause();modal='pause';document.body.classList.add('is-paused');renderModal();save();}
 function closeModal(){document.getElementById('overlay')?.remove();modal=null;paused=false;document.body.classList.remove('is-paused');}
 function englishChoose(value){const t=enTask();if(!state.english[state.step])state.english[state.step]={};const s=state.english[state.step];s.choice=value;s.done=false;s.attempts=(s.attempts||0)+1;if(value===t.answer){s.done=true;s.status='responded';save();message('Thank you!','',null);}else{s.status='attempted';save();message('Listen. Try again.','warn');say(enItem());}}
 function exportRecords(){save();const blob=new Blob([JSON.stringify({product:'小小奇遇岛 V2',exported:new Date().toISOString(),...store},null,2)],{type:'application/json'});const a=document.createElement('a'),objectURL=URL.createObjectURL(blob);a.href=objectURL;a.download='小小奇遇岛-学习记录.json';a.click();setTimeout(()=>URL.revokeObjectURL(objectURL),1000);}
@@ -179,7 +193,7 @@ function act(action,el){
  case 'storyNext':storyNext();break;
  case 'pack':if(el.dataset.value==='boots')message('画里是晴天，今天先带盘子和水就够啦。','warn');else{state.packed||=[];if(!state.packed.includes(el.dataset.value))state.packed.push(el.dataset.value);save();message(state.packed.length===2?'盘子和水都带好啦。准备好就继续故事。':'装进去啦。再看看还要带什么。');}break;
  case 'selectItem':if(state.game.checked)return;state.game.selected=state.game.selected===el.dataset.id?null:el.dataset.id;save();classroom(false);break;
- case 'drop':{if(state.game.checked)return;const g=state.game,id=g.selected;if(!id){message('先选一件物品，再点它要去的位置。','warn');return;}E.move(g,id,el.dataset.zone);feedback='搬过去啦。可以继续分，也可以选中它再调整。';feedbackKind='';save();classroom(false);break;}
+ case 'drop':{if(state.game.checked)return;const id=state.game.selected;if(!id){message('先选一件物品，再点它要去的位置。','warn');return;}moveItem(id,el.dataset.zone);break;}
  case 'choose':{const t=E.task(state.game),review=t.kind==='experiment'&&state.game.checked;if(state.game.checked&&!review)return;state.game.choice=el.dataset.value;if(review){feedback=t.outcomes[el.dataset.value].text+' 可以来回比较，再继续故事。';feedbackKind='';}save();classroom(false);if(state.game.config)say({id:review?`L${course.id}-X${state.game.round+1}-${el.dataset.value}`:`L${course.id}-V${state.game.round+1}-${el.dataset.value}`,text:''});break;}
  case 'check':{const result=E.check(state.game);save();const task=E.task(state.game);if(task.kind==='experiment'&&task.outcomes[state.game.choice]){const outcome=task.outcomes[state.game.choice];message(outcome.text+(result.good?' 两种条件都观察过啦，可以继续。':' 再换一种条件试一试。'),'',`L${course.id}-X${state.game.round+1}-${state.game.choice}`);break;}if(result.good)message('这一轮做完啦。看看它们现在的位置，和家人分享你的发现。','','common-done');else{const errors={arrangement:'请按这次的订单或线索核对各处物品，不必把全部清空。',sequence:'想想哪一步要先准备好，后一件事才可能发生。可以点小画取回来再排。',route:'看看是否取到了星星处的信，再到信箱。可以回退，试另一条路。',count:'一件一件点着看。要添一些还是拿走一些，才能符合这次的数量？',remaining:'中间还有物品没有放好。把它们也送过去，再看看。',unequal:'看看两边，哪边多一点？可以选中一个，搬到另一边。',color:'把这件物品挨着小屋的颜色比一比。同色、不同形也能住一起。',shape:'看看边有没有对上。颜色可以不一样，圆和方的轮廓不同。',choice:course.mode==='emotion'?'先听听点点的请求。可以问一问，也可以安静陪一会儿。':course.mode==='shadow'?'灯和纸先不动，只改变中间的物体，再看看纸面。':'看看现在的画面，再试一种办法。'};message(errors[result.reason],'warn','common-try');}break;}
  case 'routeStep':if(E.walk(state.game,el.dataset.value)){feedback='走了一格。看看信件和终点在哪里。';feedbackKind='';}else{feedback='这一格走不通，看看边界和石头，可以换个方向。';feedbackKind='warn';}save();classroom(false);break;
@@ -211,17 +225,15 @@ function act(action,el){
  case 'confirmClear':stopVoice();closeModal();store.courses={};delete store.journeyCourseId;store.journeyByAge={};state=null;course=null;save();page='home';url('');render();break;
  }
 }
-root.addEventListener('click',event=>{const el=event.target.closest('[data-act]');if(!el||el.disabled)return;event.preventDefault();act(el.dataset.act,el);});
+root.addEventListener('click',event=>{if(motion.consumeClick(event))return;const el=event.target.closest('[data-act]');if(!el||el.disabled)return;event.preventDefault();act(el.dataset.act,el);});
 root.addEventListener('change',event=>{const key=event.target.dataset.observation;if(key){state.observations[key]=event.target.value;save();const s=document.getElementById('recordStatus');if(s)s.textContent=storageOK?'已保存在这台设备。':'暂时无法保存，请保持本页打开。';}});
-root.addEventListener('pointerdown',event=>{const el=event.target.closest('[data-act="selectItem"]');if(!el||state?.game.checked||modal)return;dragId=el.dataset.id;dragStart={x:event.clientX,y:event.clientY};});
-root.addEventListener('pointerup',event=>{if(!dragId||!dragStart)return;const moved=Math.hypot(event.clientX-dragStart.x,event.clientY-dragStart.y)>14;if(moved){const zone=document.elementFromPoint(event.clientX,event.clientY)?.closest('[data-zone]');if(zone&&E.move(state.game,dragId,zone.dataset.zone)){feedback='搬过去啦。可以继续分，也可以再调整。';save();classroom(false);}event.preventDefault();}dragId=null;dragStart=null;});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(modal==='pause')act('unpause',{});else if(modal==='demo')act('closeDemo',{});else if(modal)act('cancelModal',{});else if(page==='class')pause();}if(event.key==='Tab'&&modal){const els=[...document.querySelectorAll('#overlay button:not(:disabled),#overlay [tabindex="0"]')];if(els.length){if(event.shiftKey&&document.activeElement===els[0]){els.at(-1).focus();event.preventDefault();}else if(!event.shiftKey&&document.activeElement===els.at(-1)){els[0].focus();event.preventDefault();}}}});
 let tick=performance.now(),elapsedFraction=0;
 setInterval(()=>{const now=performance.now(),delta=Math.min(1500,now-tick);tick=now;if(page!=='class'||paused||modal)return;elapsedFraction+=delta;if(elapsedFraction>=1000){elapsedFraction-=1000;state.elapsed[state.chapter]++;sessionSeconds++;const clock=document.getElementById('segmentClock');if(clock)clock.textContent=`本环节 ${Math.floor(state.elapsed[state.chapter]/60)}:${String(state.elapsed[state.chapter]%60).padStart(2,'0')} / 建议 ${chapterPlan()[state.chapter].seconds/60} 分钟`;if(sessionSeconds%5===0)save();}if(autoRemaining!==null&&[0,1,3].includes(state.chapter)&&state.auto!==false){autoRemaining-=delta;if(autoRemaining<=0){autoRemaining=null;if(store.muted&&state.chapter===3&&!state.filmSeen.includes(state.step)){state.filmSeen.push(state.step);save();}storyNext(true);}}},200);
 document.addEventListener('visibilitychange',()=>{if(document.hidden){save();if(page==='class'&&!modal)pause();}});
 window.addEventListener('pagehide',save);
 window.addEventListener('hashchange',()=>route());
-function route(){stopVoice();closeModal();save();const match=location.hash.match(/^#(course|lesson|done)-(\d{2}|A[356]-\d{2})$/);if(match&&activate(match[2])){page=match[1]==='course'?'intro':match[1]==='done'&&state.finished?'summary':'class';}else page=location.hash==='#records'?'records':location.hash==='#ages'?'ages':'home';render(page!=='class');}
+function route(){motion.cancel();stopVoice();closeModal();save();const match=location.hash.match(/^#(course|lesson|done)-(\d{2}|A[356]-\d{2})$/);if(match&&activate(match[2])){page=match[1]==='course'?'intro':match[1]==='done'&&state.finished?'summary':'class';}else page=location.hash==='#records'?'records':location.hash==='#ages'?'ages':'home';render(page!=='class');}
 window.IslandApp={getState:()=>state,getCourse:()=>course,getStore:()=>store,journeyTarget,ageLessons,englishSteps,englishTasks,storageKey:KEY};
 route();
 })();
