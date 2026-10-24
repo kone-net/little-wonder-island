@@ -8,7 +8,7 @@ V2 · 可部署课堂
 
 ## 视频资源
 
-40 个关卡各配一集不同视频，来源包含 Super Simple、Numberblocks、Sesame Street、Bluey、MiniKoVerse、Finny、Noodle & Pals、Tuk Tuk Draw 等。
+40 个关卡各配一集不同视频，来源包含 Super Simple、Sesame Street、Bluey、MiniKoVerse、Finny、Noodle & Pals、Tuk Tuk Draw 等；补充 Scratch Garden 和 Jack Hartmann。Numberblocks 本次测到的条目嵌入受限，保留原片资料，课堂采用可播替代。
 
 打开 `video-library.html` 搜索 540 条短视频记录：40 条已配课，500 条仅经元数据初筛、需要逐片复核。DG Slow English 长片作为单独拓展，不进入低龄默认课堂。`assets/video-library.js` 保存机器可读元数据和逐关映射；候选不表示已经完整审看或全球可播。
 
