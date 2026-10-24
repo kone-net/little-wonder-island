@@ -54,6 +54,7 @@ function apply(t,state,action,value){const s=clone(state);if(s.done&&action!=='u
  else if(!s.board[y*t.size+x]){if(t.goal==='win2'&&s.moves>s.replies){s.feedback='先看对方回应，再走自己的下一步。';return s;}if(['win','defend','fork'].includes(t.goal)&&s.moves>=1){s.feedback='这是一步观察题，撤销或重置后比较另一种选择。';return s;}s.history.push({...clone(s),history:[]});s.board[y*t.size+x]=t.goal==='align'?1:s.turn;s.moves++;if(['family','turn'].includes(t.goal))s.turn=s.turn===1?2:1;s.feedback='已落子。';}else s.feedback='这里已有棋子，换一个空位置。';
  }
  if(action==='reply'&&t.kind==='board'&&t.game!=='xiangqi'&&!B.winLine(s.board,t.size,1,t.k||5)){const i=B.reply(s.board,t.size,2,t.k||5);if(i>=0&&s.replies<s.moves){s.board[i]=2;s.replies++;s.feedback='对方已按直接获胜、阻挡威胁的次序回应，现在再看自己的机会。';}}
+ if(t.kind==='board'&&t.goal==='family'&&(B.winLine(s.board,t.size,1,t.k)||B.winLine(s.board,t.size,2,t.k)||s.board.every(Boolean))){s.done=true;s.feedback='本局出现连线或满盘和棋，已经结束；可以重置再玩。';}
  if(s.history.length>20)s.history=s.history.slice(-20);
  if(action==='check'){s.attempts++;const result=assess(t,s);s.done=result.ok;s.reportedResult=result.reported||false;s.feedback=result.text||(result.ok?t.success:t.hint);}
  return s;
