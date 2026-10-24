@@ -2,17 +2,21 @@
 
 每天一个小冒险，玩出一个新发现。
 
-[打开线上课堂](https://kone-net.github.io/little-wonder-island/)
-
 V2 · 可部署课堂
 
 本目录是完整的静态网站，入口为 `index.html`。包含 3、4、5、6 岁四档各十节、共四十节课程，八环节课堂、多种主题互动、原创 SVG 故事动画、本地中英文配音、离屏任务和家长观察记录。
+
+## 视频资源
+
+40 个关卡各配一集不同视频，来源包含 Super Simple、Numberblocks、Sesame Street、Bluey、MiniKoVerse、Finny、Noodle & Pals、Tuk Tuk Draw 等。
+
+打开 `video-library.html` 搜索 540 条短视频记录：40 条已配课，500 条仅经元数据初筛、需要逐片复核。DG Slow English 长片作为单独拓展，不进入低龄默认课堂。`assets/video-library.js` 保存机器可读元数据和逐关映射；候选不表示已经完整审看或全球可播。
 
 ## 发布
 
 将 **code 目录内的全部内容** 上传到任意支持静态文件的网站空间，保持 `assets` 目录结构。可以部署在域名根目录或子目录，不需要修改基础路径。
 
-无需 Node、Python、模型、数据库、API 密钥或账号服务。默认原创课堂和配音不依赖外部视频；“可选儿歌动画”只在点击播放后加载官方 YouTube 嵌入，需要联网，可能受到广告、地区、登录验证或嵌入限制影响，始终提供官方来源与原片入口。所有自产配音随网站提供。正式环境使用 HTTPS，服务器正确提供 HTML、JavaScript、CSS、SVG、JSON、MP3 的 MIME 类型；MP3 建议支持字节范围请求。
+无需 Node、Python、模型、数据库、API 密钥或账号服务。原创课堂和配音可独立使用；每关预选一集官方视频，点击播放后才加载 YouTube 嵌入。视频需联网，可能受广告、地区、登录验证或嵌入限制影响，可随时切回原创故事。所有自产配音随网站提供。正式环境使用 HTTPS，服务器正确提供 HTML、JavaScript、CSS、SVG、JSON、MP3 的 MIME 类型；MP3 建议支持字节范围请求。
 
 资源文件使用内容哈希命名。更新时同步上传页面、脚本、音频清单和所有新音频，避免只替换清单。HTML 和清单建议及时重新验证缓存。
 
@@ -21,10 +25,10 @@ V2 · 可部署课堂
 在项目根目录执行：
 
 ```powershell
-python -m http.server 8080
+node release/v2/test/serve.js
 ```
 
-默认入口：`http://localhost:8080/`。Python 仅用于本地预览，线上无需 Python。
+默认入口：`http://127.0.0.1:52378/`。可用环境变量 `PORT` 修改端口。
 
 直接打开 `index.html` 也能读取课程；日常体验和验证建议使用 HTTP，浏览器对本地文件的声音和存储权限可能不同。
 
@@ -63,10 +67,4 @@ python -m http.server 8080
 
 外部儿歌观看由陪伴者确认，和本地六幕观看记录分别保存，不将打开播放器当作看完。
 
-## GitHub Pages
-
-使用 `main` 分支根目录 `/` 发布，保留 `.nojekyll`；提交更新后 GitHub 自动重新发布。
-
-## 本地文件观看儿歌
-
-双击本地 HTML 时使用线上 watch.html 播放，避免 file 页面缺少 HTTP Referer 导致 YouTube 错误 153。HTTP(S) 内嵌使用实际 origin 和 strict-origin-when-cross-origin；新窗口播放保留 Referer。
+通过 `file://` 双击本地课堂时，儿歌按钮会打开线上 `watch.html` 播放页；本地文件无法提供 YouTube 要求的 HTTP Referer，直接嵌入会报 153。HTTP/HTTPS 课堂使用实际网站 origin 与 `strict-origin-when-cross-origin` 来源策略；播放器新窗口链接保留来源信息。在线播放页不会读取或迁移本地课堂的学习记录，原课堂保留在原标签页。
