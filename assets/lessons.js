@@ -1,5 +1,6 @@
 window.COURSES = {
   "version": 2,
+  "contentVersion": 3,
   "chapters": [
     {
       "name": "故事开场／准备",
@@ -7,7 +8,7 @@ window.COURSES = {
     },
     {
       "name": "动画教学／观察",
-      "seconds": 180
+      "seconds": 120
     },
     {
       "name": "主题互动",
@@ -15,11 +16,11 @@ window.COURSES = {
     },
     {
       "name": "完整短片小剧场",
-      "seconds": 180
+      "seconds": 120
     },
     {
       "name": "纯英语互动",
-      "seconds": 180
+      "seconds": 300
     },
     {
       "name": "身体活动",
@@ -43,9 +44,9 @@ window.COURSES = {
         60,
         120,
         120,
-        180,
         120,
-        180,
+        240,
+        120,
         300,
         120
       ]
@@ -56,10 +57,10 @@ window.COURSES = {
       "description": "故事里比较、归类、轮流分，接触两种元素的规律。",
       "seconds": [
         60,
+        120,
         180,
-        180,
-        180,
-        180,
+        120,
+        300,
         120,
         180,
         120
@@ -71,10 +72,10 @@ window.COURSES = {
       "description": "两条线索、简单路线、故事先后和先猜再试的小实验。",
       "seconds": [
         60,
+        120,
         180,
-        180,
-        180,
-        180,
+        120,
+        300,
         120,
         180,
         120
@@ -86,10 +87,10 @@ window.COURSES = {
       "description": "多条件筛选、经过取件点的路线、控制变量与十以内应用。",
       "seconds": [
         60,
+        120,
         180,
-        180,
-        180,
-        180,
+        120,
+        300,
         120,
         180,
         120
@@ -111,8 +112,8 @@ window.COURSES = {
         "两个盘子"
       ],
       "englishCoreWords": [
-        "One",
-        "Two"
+        "one",
+        "two"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -125,14 +126,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-01-K01",
+          "text": "今天的方法叫一一对应，二等分。一位朋友对应一份点心，叫一一对应。把两份点心平均分成一样多的两份，也叫二等分。比如，两位朋友，各得到一份点心。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-01-T01",
           "text": "先送一份到米米的盘子里。看看，点点的盘子还是空的。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-01-T02",
           "text": "再送一份给点点。两个盘子都有点心啦。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -208,14 +217,43 @@ window.COURSES = {
           "id": "LA3-01-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-01-EW1",
+          "text": "One.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-01-EW2",
+          "text": "Two.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-01-ES1",
+          "text": "One apple.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-01-ES2",
+          "text": "Two apples.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "one",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "two",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "one",
@@ -228,10 +266,12 @@ window.COURSES = {
               "quantity:2:apple"
             ]
           ],
-          "answer": "one"
+          "answer": "one",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "one",
@@ -244,25 +284,89 @@ window.COURSES = {
               "quantity:2:apple"
             ]
           ],
-          "answer": "two"
+          "answer": "two",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "one",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "two",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "one",
+              "One",
+              "quantity:1:apple"
+            ],
+            [
+              "two",
+              "Two",
+              "quantity:2:apple"
+            ]
+          ],
+          "answer": "one",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "one",
+              "One",
+              "quantity:1:apple"
+            ],
+            [
+              "two",
+              "Two",
+              "quantity:2:apple"
+            ]
+          ],
+          "answer": "two",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "one",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "two",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "one",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "two",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -370,7 +474,40 @@ window.COURSES = {
             "hint": "先一位一个地送，再把各盘的点心配成一组，看看有没有剩下的。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "一一对应 · 二等分",
+        "meaning": "一位朋友对应一份点心，叫一一对应。把两份点心平均分成一样多的两份，也叫二等分。",
+        "example": "两位朋友，各得到一份点心。",
+        "clipId": "LA3-01-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "平均分 · 二等分",
+          "example": "2 件物品分成一样多的 2 份，每份 1 件。"
+        },
+        {
+          "name": "平均分 · 二等分",
+          "example": "2 件物品分成一样多的 2 份，每份 1 件。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "one",
+          "word": "One",
+          "picture": "quantity:1:apple",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "two",
+          "word": "Two",
+          "picture": "quantity:2:apple",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A3-02",
@@ -385,8 +522,8 @@ window.COURSES = {
         "同一类的一大一小两个球或纸圆"
       ],
       "englishCoreWords": [
-        "Big",
-        "Small"
+        "big",
+        "small"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -399,14 +536,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-02-K01",
+          "text": "今天的方法叫大小比较。把同一类的两个物品放在一起，比较哪个大、哪个小，这叫大小比较。比如，大球和小球并排，比一比，再各自找家。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-02-T01",
           "text": "把两个球放在一起。一个大一些，一个小一些。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-02-T02",
           "text": "大球找大一点的门，小球找小一点的门。我们挨在一起比一比。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -482,14 +627,43 @@ window.COURSES = {
           "id": "LA3-02-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-02-EW1",
+          "text": "Big.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-02-EW2",
+          "text": "Small.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-02-ES1",
+          "text": "A big ball.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-02-ES2",
+          "text": "A small ball.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "big",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "small",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "big",
@@ -502,10 +676,12 @@ window.COURSES = {
               "size:small"
             ]
           ],
-          "answer": "big"
+          "answer": "big",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "big",
@@ -518,25 +694,89 @@ window.COURSES = {
               "size:small"
             ]
           ],
-          "answer": "small"
+          "answer": "small",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "big",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "small",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "big",
+              "Big",
+              "size:big"
+            ],
+            [
+              "small",
+              "Small",
+              "size:small"
+            ]
+          ],
+          "answer": "big",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "big",
+              "Big",
+              "size:big"
+            ],
+            [
+              "small",
+              "Small",
+              "size:small"
+            ]
+          ],
+          "answer": "small",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "big",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "small",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "big",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "small",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -620,7 +860,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "大小比较",
+        "meaning": "把同一类的两个物品放在一起，比较哪个大、哪个小，这叫大小比较。",
+        "example": "大球和小球并排，比一比，再各自找家。",
+        "clipId": "LA3-02-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "大小比较",
+          "example": "看看两个球。哪一个大一些？"
+        },
+        {
+          "name": "大小比较",
+          "example": "再找小一些的球。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "big",
+          "word": "Big",
+          "picture": "size:big",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "small",
+          "word": "Small",
+          "picture": "size:small",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A3-03",
@@ -636,8 +909,8 @@ window.COURSES = {
         "红蓝两色的大纸片"
       ],
       "englishCoreWords": [
-        "Red",
-        "Blue"
+        "red",
+        "blue"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -650,14 +923,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-03-K01",
+          "text": "今天的方法叫按颜色分类。把颜色相同的物品放在一起，这叫按颜色分类。比如，红气球进红色小屋，蓝气球进蓝色小屋。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-03-T01",
           "text": "拿一只气球，挨着门口的颜色卡看一看。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-03-T02",
           "text": "颜色一样就放在一起。换一个位置，颜色还是刚才的颜色。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -733,14 +1014,43 @@ window.COURSES = {
           "id": "LA3-03-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-03-EW1",
+          "text": "Red.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-03-EW2",
+          "text": "Blue.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-03-ES1",
+          "text": "It is red.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-03-ES2",
+          "text": "It is blue.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "red",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "blue",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "red",
@@ -753,10 +1063,12 @@ window.COURSES = {
               "🔵"
             ]
           ],
-          "answer": "red"
+          "answer": "red",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "red",
@@ -769,25 +1081,89 @@ window.COURSES = {
               "🔵"
             ]
           ],
-          "answer": "blue"
+          "answer": "blue",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "blue",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "red",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "blue",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "red",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "blue",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "blue",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -877,7 +1253,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "按颜色分类",
+        "meaning": "把颜色相同的物品放在一起，这叫按颜色分类。",
+        "example": "红气球进红色小屋，蓝气球进蓝色小屋。",
+        "clipId": "LA3-03-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "按颜色分类",
+          "example": "挨着颜色卡看一看，把气球纸片送到同色小屋。"
+        },
+        {
+          "name": "按颜色分类",
+          "example": "换成方方的纸片，还是看颜色。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "red",
+          "word": "Red",
+          "picture": "🔴",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "blue",
+          "word": "Blue",
+          "picture": "🔵",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A3-04",
@@ -907,14 +1316,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-04-K01",
+          "text": "今天的方法叫形状辨认与匹配。先看轮廓认出圆形或正方形，再找相同的形状，这叫形状匹配。比如，圆片找圆洞，方片找方洞。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-04-T01",
           "text": "手指沿着圆片绕一圈，圆圆的，没有尖尖角。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-04-T02",
           "text": "沿着方片慢慢走，走到角落要转弯。找找一样的边。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -990,14 +1407,43 @@ window.COURSES = {
           "id": "LA3-04-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-04-EW1",
+          "text": "circle.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-04-EW2",
+          "text": "square.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-04-ES1",
+          "text": "This is a circle.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-04-ES2",
+          "text": "This is a square.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "circle",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "square",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "circle",
@@ -1010,10 +1456,12 @@ window.COURSES = {
               "token:green:square"
             ]
           ],
-          "answer": "circle"
+          "answer": "circle",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "circle",
@@ -1026,25 +1474,89 @@ window.COURSES = {
               "token:green:square"
             ]
           ],
-          "answer": "square"
+          "answer": "square",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "circle",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "square",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "circle",
+              "A circle",
+              "token:gold:circle"
+            ],
+            [
+              "square",
+              "A square",
+              "token:green:square"
+            ]
+          ],
+          "answer": "circle",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "circle",
+              "A circle",
+              "token:gold:circle"
+            ],
+            [
+              "square",
+              "A square",
+              "token:green:square"
+            ]
+          ],
+          "answer": "square",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "circle",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "square",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "circle",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "square",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -1128,7 +1640,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "形状辨认与匹配",
+        "meaning": "先看轮廓认出圆形或正方形，再找相同的形状，这叫形状匹配。",
+        "example": "圆片找圆洞，方片找方洞。",
+        "clipId": "LA3-04-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "形状辨认与匹配",
+          "example": "哪一片是圆圆的？"
+        },
+        {
+          "name": "形状辨认与匹配",
+          "example": "现在找方方的窗片。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "circle",
+          "word": "circle",
+          "picture": "token:gold:circle",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "square",
+          "word": "square",
+          "picture": "token:green:square",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A3-05",
@@ -1144,8 +1689,8 @@ window.COURSES = {
         "一张低桌"
       ],
       "englishCoreWords": [
-        "On",
-        "Under"
+        "on",
+        "under"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -1158,14 +1703,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-05-K01",
+          "text": "今天的方法叫空间方位，上面与下面。先选桌面作参照，再说物体在上面还是下面，这叫辨认空间方位。比如，小猫在桌面上，或者在桌面下面。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-05-T01",
           "text": "这条平平的地方是桌面。猫来到桌面上。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-05-T02",
           "text": "桌子不动，小猫换到下面。我们还是看同一张桌子。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -1241,14 +1794,43 @@ window.COURSES = {
           "id": "LA3-05-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-05-EW1",
+          "text": "On.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-05-EW2",
+          "text": "Under.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-05-ES1",
+          "text": "The cat is on the table.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-05-ES2",
+          "text": "The cat is under the table.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "on",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "under",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "on",
@@ -1261,10 +1843,12 @@ window.COURSES = {
               "position:under"
             ]
           ],
-          "answer": "on"
+          "answer": "on",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "on",
@@ -1277,25 +1861,89 @@ window.COURSES = {
               "position:under"
             ]
           ],
-          "answer": "under"
+          "answer": "under",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "on",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "under",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "on",
+              "On",
+              "position:on"
+            ],
+            [
+              "under",
+              "Under",
+              "position:under"
+            ]
+          ],
+          "answer": "on",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "on",
+              "On",
+              "position:on"
+            ],
+            [
+              "under",
+              "Under",
+              "position:under"
+            ]
+          ],
+          "answer": "under",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "on",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "under",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "on",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "under",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -1355,7 +2003,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "空间方位 · 上面与下面",
+        "meaning": "先选桌面作参照，再说物体在上面还是下面，这叫辨认空间方位。",
+        "example": "小猫在桌面上，或者在桌面下面。",
+        "clipId": "LA3-05-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "空间方位 · 上面与下面",
+          "example": "桌子不动，请小猫来到桌子下面。"
+        },
+        {
+          "name": "空间方位 · 上面与下面",
+          "example": "现在把小猫放到桌子上面。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "on",
+          "word": "On",
+          "picture": "position:on",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "under",
+          "word": "Under",
+          "picture": "position:under",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A3-06",
@@ -1384,14 +2065,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-06-K01",
+          "text": "今天的方法叫声音与动物对应。把听到的动物叫声和动物图片配在一起，这叫声音与动物对应。比如，喵喵对应小猫，汪汪对应小狗。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-06-T01",
           "text": "喵喵，是小猫在打招呼。看见小猫的尖耳朵了吗？",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-06-T02",
           "text": "汪汪，是小狗来啦。我们把听见的声音和小客人放在一起。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -1467,14 +2156,43 @@ window.COURSES = {
           "id": "LA3-06-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-06-EW1",
+          "text": "cat.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-06-EW2",
+          "text": "dog.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-06-ES1",
+          "text": "This is a cat.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-06-ES2",
+          "text": "This is a dog.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "cat",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "dog",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "cat",
@@ -1487,10 +2205,12 @@ window.COURSES = {
               "🐕"
             ]
           ],
-          "answer": "cat"
+          "answer": "cat",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "cat",
@@ -1503,25 +2223,89 @@ window.COURSES = {
               "🐕"
             ]
           ],
-          "answer": "dog"
+          "answer": "dog",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "cat",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "dog",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "cat",
+              "A cat",
+              "🐈"
+            ],
+            [
+              "dog",
+              "A dog",
+              "🐕"
+            ]
+          ],
+          "answer": "cat",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "cat",
+              "A cat",
+              "🐈"
+            ],
+            [
+              "dog",
+              "A dog",
+              "🐕"
+            ]
+          ],
+          "answer": "dog",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "cat",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "dog",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "cat",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "dog",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -1605,7 +2389,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "声音与动物对应",
+        "meaning": "把听到的动物叫声和动物图片配在一起，这叫声音与动物对应。",
+        "example": "喵喵对应小猫，汪汪对应小狗。",
+        "clipId": "LA3-06-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "声音与动物对应",
+          "example": "听：喵喵。是谁在门口？"
+        },
+        {
+          "name": "声音与动物对应",
+          "example": "听：汪汪。请这位客人进门。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "cat",
+          "word": "cat",
+          "picture": "🐈",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "dog",
+          "word": "dog",
+          "picture": "🐕",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A3-07",
@@ -1621,8 +2438,8 @@ window.COURSES = {
         "一只玩偶"
       ],
       "englishCoreWords": [
-        "Walk",
-        "Stop"
+        "walk",
+        "stop"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -1635,14 +2452,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-07-K01",
+          "text": "今天的方法叫听指令做动作。听懂一个指令，再做对应动作，这叫听指令做动作。比如，听到走就慢慢走，听到停就停下来。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-07-T01",
           "text": "小脚轻轻走，玩偶也往前走一点。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-07-T02",
           "text": "听到停，脚步慢慢站稳。停好以后，还可以再出发。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -1718,14 +2543,43 @@ window.COURSES = {
           "id": "LA3-07-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-07-EW1",
+          "text": "Walk.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-07-EW2",
+          "text": "Stop.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-07-ES1",
+          "text": "Let us walk.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-07-ES2",
+          "text": "Let us stop.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "walk",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "stop",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "walk",
@@ -1738,10 +2592,12 @@ window.COURSES = {
               "✋"
             ]
           ],
-          "answer": "walk"
+          "answer": "walk",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "walk",
@@ -1754,25 +2610,89 @@ window.COURSES = {
               "✋"
             ]
           ],
-          "answer": "stop"
+          "answer": "stop",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "walk",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "stop",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "walk",
+              "Walk",
+              "🚶"
+            ],
+            [
+              "stop",
+              "Stop",
+              "✋"
+            ]
+          ],
+          "answer": "walk",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "walk",
+              "Walk",
+              "🚶"
+            ],
+            [
+              "stop",
+              "Stop",
+              "✋"
+            ]
+          ],
+          "answer": "stop",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "walk",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "stop",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "walk",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "stop",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -1856,7 +2776,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "听指令做动作",
+        "meaning": "听懂一个指令，再做对应动作，这叫听指令做动作。",
+        "example": "听到走就慢慢走，听到停就停下来。",
+        "clipId": "LA3-07-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "听指令做动作",
+          "example": "先听 Walk，让玩偶走起来。"
+        },
+        {
+          "name": "听指令做动作",
+          "example": "现在听 Stop，让玩偶停下来。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "walk",
+          "word": "Walk",
+          "picture": "🚶",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "stop",
+          "word": "Stop",
+          "picture": "✋",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A3-08",
@@ -1873,7 +2826,7 @@ window.COURSES = {
       ],
       "englishCoreWords": [
         "sun",
-        "Rain"
+        "rain"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -1886,14 +2839,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-08-K01",
+          "text": "今天的方法叫天气与用品匹配。先辨认天气，再选适合的用品，这叫天气与用品匹配。比如，雨天选能挡雨的用品。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-08-T01",
           "text": "画里有雨滴，给玩偶撑一把伞，头顶就有地方躲雨。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-08-T02",
           "text": "太阳出来了，可以戴上帽子。天气变了，准备也能换一换。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -1969,14 +2930,43 @@ window.COURSES = {
           "id": "LA3-08-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-08-EW1",
+          "text": "sun.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-08-EW2",
+          "text": "Rain.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-08-ES1",
+          "text": "It is sunny.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-08-ES2",
+          "text": "It is rainy.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "sun",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "rain",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "sun",
@@ -1989,10 +2979,12 @@ window.COURSES = {
               "🌧️"
             ]
           ],
-          "answer": "sun"
+          "answer": "sun",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "sun",
@@ -2005,25 +2997,89 @@ window.COURSES = {
               "🌧️"
             ]
           ],
-          "answer": "rain"
+          "answer": "rain",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "sun",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "rain",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "sun",
+              "The sun",
+              "☀️"
+            ],
+            [
+              "rain",
+              "Rain",
+              "🌧️"
+            ]
+          ],
+          "answer": "sun",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "sun",
+              "The sun",
+              "☀️"
+            ],
+            [
+              "rain",
+              "Rain",
+              "🌧️"
+            ]
+          ],
+          "answer": "rain",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "sun",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "rain",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "sun",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "rain",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -2107,7 +3163,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "天气与用品匹配",
+        "meaning": "先辨认天气，再选适合的用品，这叫天气与用品匹配。",
+        "example": "雨天选能挡雨的用品。",
+        "clipId": "LA3-08-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "天气与用品匹配",
+          "example": "画里在下雨。哪一样能帮忙挡雨？"
+        },
+        {
+          "name": "天气与用品匹配",
+          "example": "太阳出来了，找一顶帽子。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "sun",
+          "word": "sun",
+          "picture": "☀️",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "rain",
+          "word": "Rain",
+          "picture": "🌧️",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A3-09",
@@ -2123,8 +3212,8 @@ window.COURSES = {
         "两三块大积木"
       ],
       "englishCoreWords": [
-        "Happy",
-        "Sad"
+        "happy",
+        "sad"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -2137,14 +3226,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-09-K01",
+          "text": "今天的方法叫情绪辨认与陪伴。从发生的事情和表情辨认感受，这叫情绪辨认。听听朋友的需要，再陪伴他。比如，塔倒了可能难过，朋友想安静时可以坐在旁边。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-09-T01",
           "text": "小塔倒了，点点说难过。我们听他说，不急着叫他笑。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-09-T02",
           "text": "后来塔又搭好了，点点说开心。两种感觉，都可以告诉朋友。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -2220,14 +3317,43 @@ window.COURSES = {
           "id": "LA3-09-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-09-EW1",
+          "text": "Happy.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-09-EW2",
+          "text": "Sad.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-09-ES1",
+          "text": "I feel happy.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-09-ES2",
+          "text": "I feel sad.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "happy",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "sad",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "happy",
@@ -2240,10 +3366,12 @@ window.COURSES = {
               "feeling:sad"
             ]
           ],
-          "answer": "happy"
+          "answer": "happy",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "happy",
@@ -2256,25 +3384,89 @@ window.COURSES = {
               "feeling:sad"
             ]
           ],
-          "answer": "sad"
+          "answer": "sad",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "happy",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "sad",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "happy",
+              "Happy",
+              "feeling:happy"
+            ],
+            [
+              "sad",
+              "Sad",
+              "feeling:sad"
+            ]
+          ],
+          "answer": "happy",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "happy",
+              "Happy",
+              "feeling:happy"
+            ],
+            [
+              "sad",
+              "Sad",
+              "feeling:sad"
+            ]
+          ],
+          "answer": "sad",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "happy",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "sad",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "happy",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "sad",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -2358,7 +3550,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "情绪辨认与陪伴",
+        "meaning": "从发生的事情和表情辨认感受，这叫情绪辨认。听听朋友的需要，再陪伴他。",
+        "example": "塔倒了可能难过，朋友想安静时可以坐在旁边。",
+        "clipId": "LA3-09-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "情绪辨认与陪伴",
+          "example": "塔倒了，点点说难过。找到这一张小故事。"
+        },
+        {
+          "name": "情绪辨认与陪伴",
+          "example": "点点想坐一会儿。你想怎样陪他？"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "happy",
+          "word": "Happy",
+          "picture": "feeling:happy",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "sad",
+          "word": "Sad",
+          "picture": "feeling:sad",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A3-10",
@@ -2374,8 +3599,8 @@ window.COURSES = {
         "一张花园底纸"
       ],
       "englishCoreWords": [
-        "One",
-        "Three"
+        "one",
+        "three"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -2388,14 +3613,22 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA3-10-K01",
+          "text": "今天的方法叫点数，逐个增加。一件一件指着数，叫点数。每添上一件，数量就增加一。比如，从一朵花开始，逐个添到三朵花。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA3-10-T01",
           "text": "先种一朵，手指点着看一看。再添一朵，花园里多了一朵。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA3-10-T02",
           "text": "最后一朵也种进去。三朵花都来了，我们慢慢点着看。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         }
       ],
       "film": [
@@ -2471,14 +3704,43 @@ window.COURSES = {
           "id": "LA3-10-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA3-10-EW1",
+          "text": "One.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-10-EW2",
+          "text": "Three.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA3-10-ES1",
+          "text": "One flower.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA3-10-ES2",
+          "text": "Three flowers.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "one",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "three",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "one",
@@ -2491,10 +3753,12 @@ window.COURSES = {
               "quantity:3:flower"
             ]
           ],
-          "answer": "one"
+          "answer": "one",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "one",
@@ -2507,25 +3771,89 @@ window.COURSES = {
               "quantity:3:flower"
             ]
           ],
-          "answer": "three"
+          "answer": "three",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "one",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "three",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "one",
+              "One",
+              "quantity:1:flower"
+            ],
+            [
+              "three",
+              "Three",
+              "quantity:3:flower"
+            ]
+          ],
+          "answer": "one",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "one",
+              "One",
+              "quantity:1:flower"
+            ],
+            [
+              "three",
+              "Three",
+              "quantity:3:flower"
+            ]
+          ],
+          "answer": "three",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "one",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "three",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "one",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "three",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -2589,7 +3917,40 @@ window.COURSES = {
             "hint": "每次只加上或拿走一个，手指点着物品逐个看一看。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "点数 · 逐个增加",
+        "meaning": "一件一件指着数，叫点数。每添上一件，数量就增加一。",
+        "example": "从一朵花开始，逐个添到三朵花。",
+        "clipId": "LA3-10-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "数量增减",
+          "example": "从 0 件开始，添上或拿走，得到 1 件。"
+        },
+        {
+          "name": "数量增减",
+          "example": "从 1 件开始，添上或拿走，得到 3 件。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "one",
+          "word": "One",
+          "picture": "quantity:1:flower",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "three",
+          "word": "Three",
+          "picture": "quantity:3:flower",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "01",
@@ -2597,7 +3958,7 @@ window.COURSES = {
       "primaryObjective": "轮流分四件物品，发现一样多",
       "englishCoreWords": [
         "apple",
-        "red"
+        "water"
       ],
       "materials": [
         "四件物品",
@@ -2622,24 +3983,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L01-K01",
+          "text": "今天的方法叫平均分，二等分。把一组物品分成一样多的两份，叫二等分，也是平均分。这里分的是整组苹果，不是切开每个苹果。比如，四个苹果分成两份，每份两个。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L01-T01",
           "text": "苹果找到了。可是，米米的盘子里，怎么只有一个呀？我们去看看发生了什么。",
-          "action": "四个苹果全在中间；点点移动三个到右盘，一个到左盘"
+          "action": "四个苹果全在中间；点点移动三个到右盘，一个到左盘",
+          "visualStep": 0
         },
         {
           "id": "L01-T02",
           "text": "米米这边一个，点点那边三个。我们让两边的苹果找朋友。咦，点点这边还有两个没有配上呢。",
-          "action": "左侧一个与右侧一个连成一对；另外两个突出显示"
+          "action": "左侧一个与右侧一个连成一对；另外两个突出显示",
+          "visualStep": 1
         },
         {
           "id": "L01-T03",
           "text": "换个办法吧。先给米米一个，再给点点一个。再给米米一个，点点也来一个。",
-          "action": "收回四个，按左、右、左、右逐次移动，每次到盘才更新数目"
+          "action": "收回四个，按左、右、左、右逐次移动，每次到盘才更新数目",
+          "visualStep": 2
         },
         {
           "id": "L01-T04",
           "text": "米米两个，点点也两个。都分完啦，两边一样多。刚才，我们是怎样轮流给的？",
-          "action": "两边各两个连成两对，角色轻轻点头"
+          "action": "两边各两个连成两对，角色轻轻点头",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -2714,6 +4085,26 @@ window.COURSES = {
           "id": "L01-E08",
           "text": "Touch the apple first. Then touch the plate.",
           "action": "没拿苹果就点盘子时的分步提示"
+        },
+        {
+          "id": "L01-EW1",
+          "text": "Apple.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L01-EW2",
+          "text": "Water.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L01-ES1",
+          "text": "An apple, please.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L01-ES2",
+          "text": "Water, please.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -2776,7 +4167,170 @@ window.COURSES = {
       "help": "“中间还有一个呢。把它也送到朋友的盘子里吧。”指向实际剩余物品；多个剩余时按实际数量改说“还有点心”",
       "observation": "观察记录：独立轮流分／提示后能分／继续尝试；换积木后是否复用方法；表达为主动演示／需要开头／今天未表达。不能直接显示“已掌握平均分”。",
       "age": 4,
-      "sequence": 1
+      "sequence": 1,
+      "concept": {
+        "name": "平均分 · 二等分",
+        "meaning": "把一组物品分成一样多的两份，叫二等分，也是平均分。这里分的是整组苹果，不是切开每个苹果。",
+        "example": "四个苹果分成两份，每份两个。",
+        "clipId": "L01-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "平均分 · 二等分",
+          "example": "把四个苹果分给两位朋友，让两边一样多。"
+        },
+        {
+          "name": "平均分 · 二等分",
+          "example": "换成四块饼干。刚才的办法还能用吗？"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "apple",
+          "word": "Apple",
+          "picture": "🍎",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "water",
+          "word": "Water",
+          "picture": "💧",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "apple",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "water",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "apple",
+              "Apple",
+              "🍎"
+            ],
+            [
+              "water",
+              "Water",
+              "💧"
+            ]
+          ],
+          "answer": "apple",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "apple",
+              "Apple",
+              "🍎"
+            ],
+            [
+              "water",
+              "Water",
+              "💧"
+            ]
+          ],
+          "answer": "water",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "apple",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "water",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "apple",
+              "Apple",
+              "🍎"
+            ],
+            [
+              "water",
+              "Water",
+              "💧"
+            ]
+          ],
+          "answer": "apple",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "apple",
+              "Apple",
+              "🍎"
+            ],
+            [
+              "water",
+              "Water",
+              "💧"
+            ]
+          ],
+          "answer": "water",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "apple",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "water",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "apple",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "water",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "02",
@@ -2804,24 +4358,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L02-K01",
+          "text": "今天的方法叫按颜色分类。以颜色作为分类标准，把相同颜色的物品放在一起，叫按颜色分类。比如，红圆片和红方片都可以进红色小屋。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L02-T01",
           "text": "先不看它圆不圆，看看颜色。圆片靠近这张卡，像不像？再换到另一张旁边看看。",
-          "action": "一块红圆片靠近红卡，再靠近蓝卡，停留比较"
+          "action": "一块红圆片靠近红卡，再靠近蓝卡，停留比较",
+          "visualStep": 0
         },
         {
           "id": "L02-T02",
           "text": "一个圆圆的，一个方方的，可它们的颜色一样。它们可以住同一个颜色小屋。",
-          "action": "红圆片和红方片并排，两者轮廓轻描；红色底卡保持"
+          "action": "红圆片和红方片并排，两者轮廓轻描；红色底卡保持",
+          "visualStep": 1
         },
         {
           "id": "L02-T03",
           "text": "这块布和哪张卡颜色相同？找到啦，就把它放在相同颜色的旁边。颜色相同，样子不同，也可以做邻居。",
-          "action": "蓝布片贴近蓝卡，进入蓝篮；红篮已放两件"
+          "action": "蓝布片贴近蓝卡，进入蓝篮；红篮已放两件",
+          "visualStep": 2
         },
         {
           "id": "L02-T04",
           "text": "点点好像放错了一位客人。别急着全倒出来。我们请它靠近门口的颜色卡，看一看，再帮它换个位置。",
-          "action": "蓝篮误放一件红物；通过与蓝卡并排显出差异，再移出"
+          "action": "蓝篮误放一件红物；通过与蓝卡并排显出差异，再移出",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -2896,6 +4460,26 @@ window.COURSES = {
           "id": "L02-E08",
           "text": "Listen. Blue. Touch blue.",
           "action": "错选时保留状态，重播单一目标"
+        },
+        {
+          "id": "L02-EW1",
+          "text": "Red.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L02-EW2",
+          "text": "Blue.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L02-ES1",
+          "text": "It is red.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L02-ES2",
+          "text": "It is blue.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -2958,7 +4542,174 @@ window.COURSES = {
       "help": "“这两个形状像，可颜色一样吗？请它们挨着颜色卡站一站。”同时显示同色异形例子",
       "observation": "记录：独立按颜色归类／对照色卡后调整／共同完成；是否能处理同色异形；英语为听后操作／需要手势／仅观看。",
       "age": 4,
-      "sequence": 2
+      "sequence": 2,
+      "concept": {
+        "name": "按颜色分类",
+        "meaning": "以颜色作为分类标准，把相同颜色的物品放在一起，叫按颜色分类。",
+        "example": "红圆片和红方片都可以进红色小屋。",
+        "clipId": "L02-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "按颜色分类",
+          "example": "先看颜色，再选相同颜色的小屋。形状可以不一样。"
+        },
+        {
+          "name": "按颜色分类",
+          "example": "先看颜色，再选相同颜色的小屋。形状可以不一样。"
+        },
+        {
+          "name": "按颜色分类",
+          "example": "只有一件放错了，找一找，给它换个颜色小屋。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "red",
+          "word": "Red",
+          "picture": "🔴",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "blue",
+          "word": "Blue",
+          "picture": "🔵",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "red",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "blue",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "red",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "blue",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "blue",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "red",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "blue",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "red",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "blue",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "blue",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "03",
@@ -2985,24 +4736,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L03-K01",
+          "text": "今天的方法叫形状辨认与匹配。根据轮廓认出圆形和正方形，再把相同轮廓配在一起，叫形状匹配。比如，不管颜色怎样，圆片找圆洞，方片找方洞。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L03-T01",
           "text": "这扇窗洞，沿着边绕一圈，找不到尖尖角。请圆圆的窗片靠近它，看看边能不能合上。",
-          "action": "沿圆洞描一圈，圆窗片也沿边发光"
+          "action": "沿圆洞描一圈，圆窗片也沿边发光",
+          "visualStep": 0
         },
         {
           "id": "L03-T02",
           "text": "刚刚好，边都对上啦。不是把窗片挤进去，是找到本来就相同的轮廓。",
-          "action": "圆片平移入圆洞，不改变形状"
+          "action": "圆片平移入圆洞，不改变形状",
+          "visualStep": 1
         },
         {
           "id": "L03-T03",
           "text": "再看看这扇，四条边一样长，还有四个角。桌上哪块窗片，也有这样的边和角？",
-          "action": "方洞四条边逐条描亮；方片旁并排展示"
+          "action": "方洞四条边逐条描亮；方片旁并排展示",
+          "visualStep": 2
         },
         {
           "id": "L03-T04",
           "text": "点点把它拿歪了。先别急着换一块，转一转，再对着边看看。转过来，它还是刚才那块正方形。",
-          "action": "方片转一点暂未对齐，再转正装入；图形本身不变"
+          "action": "方片转一点暂未对齐，再转正装入；图形本身不变",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -3077,6 +4838,26 @@ window.COURSES = {
           "id": "L03-E08",
           "text": "Your turn. Show me a circle.",
           "action": "可以举纸片或做动作，不要求说词"
+        },
+        {
+          "id": "L03-EW1",
+          "text": "Circle.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L03-EW2",
+          "text": "Square.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L03-ES1",
+          "text": "This is a circle.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L03-ES2",
+          "text": "This is a square.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -3139,7 +4920,174 @@ window.COURSES = {
       "help": "“看看边旁边剩下的空隙。圆片的边和这个洞一样吗？”显示差异，不说“你又错了”",
       "observation": "记录：依据轮廓匹配／描边提示后匹配／仍需共同尝试；旋转后的理解只记录观察，不设置必过；纸片迁移与英语响应分别记录。",
       "age": 4,
-      "sequence": 3
+      "sequence": 3,
+      "concept": {
+        "name": "形状辨认与匹配",
+        "meaning": "根据轮廓认出圆形和正方形，再把相同轮廓配在一起，叫形状匹配。",
+        "example": "不管颜色怎样，圆片找圆洞，方片找方洞。",
+        "clipId": "L03-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "形状辨认与匹配",
+          "example": "沿着窗洞的边看一看。拿歪的方片也能转过来。"
+        },
+        {
+          "name": "形状辨认与匹配",
+          "example": "沿着窗洞的边看一看。拿歪的方片也能转过来。"
+        },
+        {
+          "name": "形状辨认与匹配",
+          "example": "两扇窗片放反了。看着边，把它们换回来。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "circle",
+          "word": "Circle",
+          "picture": "token:gold:circle",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "square",
+          "word": "Square",
+          "picture": "token:green:square",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "circle",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "square",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "circle",
+              "Circle",
+              "token:gold:circle"
+            ],
+            [
+              "square",
+              "Square",
+              "token:green:square"
+            ]
+          ],
+          "answer": "circle",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "circle",
+              "Circle",
+              "token:gold:circle"
+            ],
+            [
+              "square",
+              "Square",
+              "token:green:square"
+            ]
+          ],
+          "answer": "square",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "circle",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "square",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "circle",
+              "Circle",
+              "token:gold:circle"
+            ],
+            [
+              "square",
+              "Square",
+              "token:green:square"
+            ]
+          ],
+          "answer": "circle",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "circle",
+              "Circle",
+              "token:gold:circle"
+            ],
+            [
+              "square",
+              "Square",
+              "token:green:square"
+            ]
+          ],
+          "answer": "square",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "circle",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "square",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "circle",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "square",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "04",
@@ -3168,24 +5116,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L04-K01",
+          "text": "今天的方法叫依据天气作选择。看清晴天或雨天，再选相应用品，这叫依据条件作选择。比如，雨伞和雨衣都能在雨天帮助挡雨。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L04-T01",
           "text": "我们要准备什么，先看看眼前的天气。这张画里，有亮亮的太阳；换一张，雨滴正落下来。",
-          "action": "同一窗户分别呈现清楚的晴天、下雨画面"
+          "action": "同一窗户分别呈现清楚的晴天、下雨画面",
+          "visualStep": 0
         },
         {
           "id": "L04-T02",
           "text": "小玩偶想走到屋檐边。雨滴落在头顶了。给它撑开雨伞，看看雨滴到哪里去了。",
-          "action": "玩偶上方的雨滴落下；撑伞后伞下区域保持干燥"
+          "action": "玩偶上方的雨滴落下；撑伞后伞下区域保持干燥",
+          "visualStep": 1
         },
         {
           "id": "L04-T03",
           "text": "米米还找来一件雨衣。它也能帮忙挡住雨。原来，同一个问题，可以有不同的办法。",
-          "action": "换成雨衣，同样遮住身体；两种办法并排"
+          "action": "换成雨衣，同样遮住身体；两种办法并排",
+          "visualStep": 2
         },
         {
           "id": "L04-T04",
           "text": "如果今天先留在屋里，也能玩。画画、搭积木，或者听小雨点唱歌。我们可以给计划换个位置。",
-          "action": "角色把球放回门边，在屋里铺画纸"
+          "action": "角色把球放回门边，在屋里铺画纸",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -3260,6 +5218,26 @@ window.COURSES = {
           "id": "L04-E08",
           "text": "Listen. Rain.",
           "action": "错选后重听并让雨滴轻动，不自动选中"
+        },
+        {
+          "id": "L04-EW1",
+          "text": "Sun.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L04-EW2",
+          "text": "Rain.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L04-ES1",
+          "text": "It is sunny.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L04-ES2",
+          "text": "It is rainy.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -3322,7 +5300,174 @@ window.COURSES = {
       "help": "“球可以玩。可是这次我们还想挡住头上的雨，哪件东西能帮这个忙？”保留球，允许再补选",
       "observation": "记录：先观察再选择／试用后调整／需要共同观察；能否用动作说明用途；开放选择不记对错分。",
       "age": 4,
-      "sequence": 4
+      "sequence": 4,
+      "concept": {
+        "name": "依据天气作选择",
+        "meaning": "看清晴天或雨天，再选相应用品，这叫依据条件作选择。",
+        "example": "雨伞和雨衣都能在雨天帮助挡雨。",
+        "clipId": "L04-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "依据天气作选择",
+          "example": "画里在下雨。什么能帮玩偶挡住雨？"
+        },
+        {
+          "name": "依据天气作选择",
+          "example": "太阳出来啦。选一样适合晴天出门的东西。"
+        },
+        {
+          "name": "依据天气作选择",
+          "example": "今天先在屋里玩。你想和朋友做什么？"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "sun",
+          "word": "Sun",
+          "picture": "☀️",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "rain",
+          "word": "Rain",
+          "picture": "🌧️",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "sun",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "rain",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "sun",
+              "Sun",
+              "☀️"
+            ],
+            [
+              "rain",
+              "Rain",
+              "🌧️"
+            ]
+          ],
+          "answer": "sun",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "sun",
+              "Sun",
+              "☀️"
+            ],
+            [
+              "rain",
+              "Rain",
+              "🌧️"
+            ]
+          ],
+          "answer": "rain",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "sun",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "rain",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "sun",
+              "Sun",
+              "☀️"
+            ],
+            [
+              "rain",
+              "Rain",
+              "🌧️"
+            ]
+          ],
+          "answer": "sun",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "sun",
+              "Sun",
+              "☀️"
+            ],
+            [
+              "rain",
+              "Rain",
+              "🌧️"
+            ]
+          ],
+          "answer": "rain",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "sun",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "rain",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "sun",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "rain",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "05",
@@ -3350,24 +5495,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L05-K01",
+          "text": "今天的方法叫空间方位，上面与下面。桌面是参照物。相对桌面辨认上面和下面，叫辨认空间方位。比如，同一只小猫移到桌面上，再移到桌面下面。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L05-T01",
           "text": "小玩偶坐在桌面上。桌子在这里，玩偶在它的上面。我们的眼睛先看桌面，再找玩偶。",
-          "action": "桌面轮廓描亮，玩偶落在桌面上"
+          "action": "桌面轮廓描亮，玩偶落在桌面上",
+          "visualStep": 0
         },
         {
           "id": "L05-T02",
           "text": "玩偶换了位置，来到桌面下面。桌子没有动，玩偶从上面走到下面了。",
-          "action": "同一玩偶从桌面移到桌面下，桌子不动"
+          "action": "同一玩偶从桌面移到桌面下，桌子不动",
+          "visualStep": 1
         },
         {
           "id": "L05-T03",
           "text": "这张图整体挪高一点，小玩偶还是在桌子下面。不是看画面高不高，是看它和桌面怎样站在一起。",
-          "action": "桌子和玩偶整体移到画面高处，玩偶仍在桌下"
+          "action": "桌子和玩偶整体移到画面高处，玩偶仍在桌下",
+          "visualStep": 2
         },
         {
           "id": "L05-T04",
           "text": "小猫躲在哪里？先找到桌面，再往下面看。哦，耳朵露出来啦。",
-          "action": "猫的耳朵从桌下露出，角色先指桌面再指下方"
+          "action": "猫的耳朵从桌下露出，角色先指桌面再指下方",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -3442,6 +5597,26 @@ window.COURSES = {
           "id": "L05-E08",
           "text": "Your turn.",
           "action": "与家人摆玩偶，不强求说完整句"
+        },
+        {
+          "id": "L05-EW1",
+          "text": "On.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L05-EW2",
+          "text": "Under.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L05-ES1",
+          "text": "The cat is on the table.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L05-ES2",
+          "text": "The cat is under the table.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -3504,7 +5679,174 @@ window.COURSES = {
       "help": "“先用手指找到桌面。小猫在它哪一边？”桌面描亮，避免只亮答案",
       "observation": "记录：依据参照物放置／描桌面提示后放置／共同操作；换参照物后的表现；口头表达与动作分开记。",
       "age": 4,
-      "sequence": 5
+      "sequence": 5,
+      "concept": {
+        "name": "空间方位 · 上面与下面",
+        "meaning": "桌面是参照物。相对桌面辨认上面和下面，叫辨认空间方位。",
+        "example": "同一只小猫移到桌面上，再移到桌面下面。",
+        "clipId": "L05-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "空间方位 · 上面与下面",
+          "example": "把小猫放到桌子下面。先找到桌面。"
+        },
+        {
+          "name": "空间方位 · 上面与下面",
+          "example": "现在，请小猫来到桌子上面。"
+        },
+        {
+          "name": "空间方位 · 上面与下面",
+          "example": "换成小凳子。把小猫放到凳面下面。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "on",
+          "word": "On",
+          "picture": "position:on",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "under",
+          "word": "Under",
+          "picture": "position:under",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "on",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "under",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "on",
+              "On",
+              "position:on"
+            ],
+            [
+              "under",
+              "Under",
+              "position:under"
+            ]
+          ],
+          "answer": "on",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "on",
+              "On",
+              "position:on"
+            ],
+            [
+              "under",
+              "Under",
+              "position:under"
+            ]
+          ],
+          "answer": "under",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "on",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "under",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "on",
+              "On",
+              "position:on"
+            ],
+            [
+              "under",
+              "Under",
+              "position:under"
+            ]
+          ],
+          "answer": "on",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "on",
+              "On",
+              "position:on"
+            ],
+            [
+              "under",
+              "Under",
+              "position:under"
+            ]
+          ],
+          "answer": "under",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "on",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "under",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "on",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "under",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "06",
@@ -3532,24 +5874,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L06-K01",
+          "text": "今天的方法叫听指令，动作切换。听懂指令，再从一个动作换成另一个，叫动作切换。比如，听到走就走，听到停就停。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L06-T01",
           "text": "听到这句，点点迈开小步子。先看一遍，他的脚在做什么？等会儿，你也可以试试。",
-          "action": "播 walk，点点慢走两步，脚印跟着亮"
+          "action": "播 walk，点点慢走两步，脚印跟着亮",
+          "visualStep": 0
         },
         {
           "id": "L06-T02",
           "text": "换一句啦。点点慢慢站稳，小脚先休息，耳朵准备听下一句。帽子还晃一下，也慢慢停了。",
-          "action": "播 stop，角色逐渐停稳，帽子轻晃后停"
+          "action": "播 stop，角色逐渐停稳，帽子轻晃后停",
+          "visualStep": 1
         },
         {
           "id": "L06-T03",
           "text": "先看图也可以。熟悉以后，把图轻轻藏起来，听一听，再决定走还是停。",
-          "action": "先有图标和声音，再只保留声音，角色动作不抢跑"
+          "action": "先有图标和声音，再只保留声音，角色动作不抢跑",
+          "visualStep": 2
         },
         {
           "id": "L06-T04",
           "text": "一位朋友说，一位朋友做。换过来，点点也能当小指挥。听的人慢一点没关系，我们可以再说一次。",
-          "action": "米米发令，点点回应；然后交换"
+          "action": "米米发令，点点回应；然后交换",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -3624,6 +5976,26 @@ window.COURSES = {
           "id": "L06-E08",
           "text": "Thank you. Bye-bye!",
           "action": "以感谢和告别结束，不再加新动作词"
+        },
+        {
+          "id": "L06-EW1",
+          "text": "Walk.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L06-EW2",
+          "text": "Stop.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L06-ES1",
+          "text": "Let us walk.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L06-ES2",
+          "text": "Let us stop.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -3682,7 +6054,178 @@ window.COURSES = {
       "help": "“再听一次，看看朋友的小脚。”重播并演两步，随后让孩子再选",
       "observation": "记录：有图时能关联／只听时能尝试／仍需示范；孩子是否自愿发令；身体参与由家长确认，不自动打分。",
       "age": 4,
-      "sequence": 6
+      "sequence": 6,
+      "concept": {
+        "name": "听指令 · 动作切换",
+        "meaning": "听懂指令，再从一个动作换成另一个，叫动作切换。",
+        "example": "听到走就走，听到停就停。",
+        "clipId": "L06-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "听指令 · 动作切换",
+          "example": "让玩偶听见 Walk 后走起来。"
+        },
+        {
+          "name": "听指令 · 动作切换",
+          "example": "听见 Stop，让玩偶慢慢停下来。"
+        },
+        {
+          "name": "听指令 · 动作切换",
+          "example": "再听一次 Walk，选一个动作。"
+        },
+        {
+          "name": "听指令 · 动作切换",
+          "example": "再听一次 Stop，玩偶会怎么做？"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "walk",
+          "word": "Walk",
+          "picture": "🚶",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "stop",
+          "word": "Stop",
+          "picture": "✋",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "walk",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "stop",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "walk",
+              "Walk",
+              "🚶"
+            ],
+            [
+              "stop",
+              "Stop",
+              "✋"
+            ]
+          ],
+          "answer": "walk",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "walk",
+              "Walk",
+              "🚶"
+            ],
+            [
+              "stop",
+              "Stop",
+              "✋"
+            ]
+          ],
+          "answer": "stop",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "walk",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "stop",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "walk",
+              "Walk",
+              "🚶"
+            ],
+            [
+              "stop",
+              "Stop",
+              "✋"
+            ]
+          ],
+          "answer": "walk",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "walk",
+              "Walk",
+              "🚶"
+            ],
+            [
+              "stop",
+              "Stop",
+              "✋"
+            ]
+          ],
+          "answer": "stop",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "walk",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "stop",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "walk",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "stop",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "07",
@@ -3709,24 +6252,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L07-K01",
+          "text": "今天的方法叫AB 交替规律。两种东西按一种、另一种的顺序重复，叫AB交替规律。AB表示重复的一小组。比如，红、蓝是一组，红蓝、红蓝接着排。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L07-T01",
           "text": "红色一节，蓝色一节。先请这两节做一个小队。后面有没有又来一个一样的小队？",
-          "action": "前两节用一个轻框围住，框标记只辅助不显示字母术语"
+          "action": "前两节用一个轻框围住，框标记只辅助不显示字母术语",
+          "visualStep": 0
         },
         {
           "id": "L07-T02",
           "text": "又是红色、蓝色。两个小队排着来：红蓝，红蓝。小队一样，顺序也一样。",
-          "action": "第二对红蓝也框住；两个框轻移对照"
+          "action": "第二对红蓝也框住；两个框轻移对照",
+          "visualStep": 1
         },
         {
           "id": "L07-T03",
           "text": "顺着队伍慢慢读。红、蓝，红、蓝。下一队要开始啦，先来谁呢？",
-          "action": "逐节指读到末尾蓝色，下一节红色平移接上"
+          "action": "逐节指读到末尾蓝色，下一节红色平移接上",
+          "visualStep": 2
         },
         {
           "id": "L07-T04",
           "text": "车厢换了衣服，变成圆和方。圆方，圆方。颜色可以换，两个朋友交替来的办法还在。",
-          "action": "圆方圆方替换同一位置的车厢，重复框保留"
+          "action": "圆方圆方替换同一位置的车厢，重复框保留",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -3801,6 +6354,26 @@ window.COURSES = {
           "id": "L07-E08",
           "text": "Here we go!",
           "action": "接好后火车实际出发，作为情境表达"
+        },
+        {
+          "id": "L07-EW1",
+          "text": "Red.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L07-EW2",
+          "text": "Blue.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L07-ES1",
+          "text": "It is red.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L07-ES2",
+          "text": "It is blue.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -3863,7 +6436,178 @@ window.COURSES = {
       "help": "“先跟着前面读一读。这里的小队是红色后面跟谁？”把一小组框起来",
       "observation": "记录：能续接／分组提示后续接／仍需示范；换材料能否迁移；不把仅选中一次正确颜色记作理解规律。",
       "age": 4,
-      "sequence": 7
+      "sequence": 7,
+      "concept": {
+        "name": "AB 交替规律",
+        "meaning": "两种东西按一种、另一种的顺序重复，叫AB交替规律。AB表示重复的一小组。",
+        "example": "红、蓝是一组，红蓝、红蓝接着排。",
+        "clipId": "L07-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "AB 交替规律",
+          "example": "看看重复的小队。接下来是哪一节？"
+        },
+        {
+          "name": "AB 交替规律",
+          "example": "看看重复的小队。接下来是哪一节？"
+        },
+        {
+          "name": "AB 交替规律",
+          "example": "看看重复的小队。接下来是哪一节？"
+        },
+        {
+          "name": "AB 交替规律",
+          "example": "最后一节车厢站错了，保留前面三节，修好最后一节。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "red",
+          "word": "Red",
+          "picture": "🔴",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "blue",
+          "word": "Blue",
+          "picture": "🔵",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "red",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "blue",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "red",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "blue",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "blue",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "red",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "blue",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "red",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "blue",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "blue",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "08",
@@ -3891,24 +6635,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L08-K01",
+          "text": "今天的方法叫情绪辨认与友好回应。结合发生的事情理解感受，叫情绪辨认。听取需要再作回应，叫友好回应。比如，朋友难过时，可以询问，也可以安静陪伴。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L08-T01",
           "text": "点点轻轻说，我有点难过，我很想把它搭好。米米听见了，没有急着叫他笑起来。",
-          "action": "点点明确说感受，画面不使用夸张哭闹取笑"
+          "action": "点点明确说感受，画面不使用夸张哭闹取笑",
+          "visualStep": 0
         },
         {
           "id": "L08-T02",
           "text": "米米问，要我坐在旁边，还是一起把积木收好？点点想了一会儿，说，你先陪我坐一下吧。",
-          "action": "米米蹲到相近高度，询问后等待"
+          "action": "米米蹲到相近高度，询问后等待",
+          "visualStep": 1
         },
         {
           "id": "L08-T03",
           "text": "过了一会儿，点点抬起头。我想再试试了。米米这才拿起一块积木，等点点告诉她放哪里。",
-          "action": "两人坐一会儿，点点主动拿起一块积木"
+          "action": "两人坐一会儿，点点主动拿起一块积木",
+          "visualStep": 2
         },
         {
           "id": "L08-T04",
           "text": "小塔重新站起来，点点说，我现在开心多啦。开心和难过都能告诉朋友，别人也可以先问一问，再帮忙。",
-          "action": "新塔不必一样高，点点自己说开心"
+          "action": "新塔不必一样高，点点自己说开心",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -3983,6 +6737,26 @@ window.COURSES = {
           "id": "L08-E08",
           "text": "Your turn.",
           "action": "家人扮演回应，今天只听也可结束"
+        },
+        {
+          "id": "L08-EW1",
+          "text": "Happy.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L08-EW2",
+          "text": "Sad.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L08-ES1",
+          "text": "I feel happy.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L08-ES2",
+          "text": "I feel sad.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -4045,7 +6819,174 @@ window.COURSES = {
       "help": "“先听听点点自己说了什么，再看看刚才发生的事情。”重播情境",
       "observation": "记录：能结合情境辨认／重听自述后辨认／共同观看；是否尝试询问或尊重对方请求；不根据一次选择推断人格或心理状态。",
       "age": 4,
-      "sequence": 8
+      "sequence": 8,
+      "concept": {
+        "name": "情绪辨认与友好回应",
+        "meaning": "结合发生的事情理解感受，叫情绪辨认。听取需要再作回应，叫友好回应。",
+        "example": "朋友难过时，可以询问，也可以安静陪伴。",
+        "clipId": "L08-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "情绪辨认与友好回应",
+          "example": "小塔倒了。点点说：“我有点难过。”哪张图和他说的感受相同？"
+        },
+        {
+          "name": "情绪辨认与友好回应",
+          "example": "朋友难过的时候，你想怎样回应？可以有不同办法。"
+        },
+        {
+          "name": "情绪辨认与友好回应",
+          "example": "点点说：“我想安静坐一会儿。”现在怎样陪他？"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "happy",
+          "word": "Happy",
+          "picture": "feeling:happy",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "sad",
+          "word": "Sad",
+          "picture": "feeling:sad",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "happy",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "sad",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "happy",
+              "Happy",
+              "feeling:happy"
+            ],
+            [
+              "sad",
+              "Sad",
+              "feeling:sad"
+            ]
+          ],
+          "answer": "happy",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "happy",
+              "Happy",
+              "feeling:happy"
+            ],
+            [
+              "sad",
+              "Sad",
+              "feeling:sad"
+            ]
+          ],
+          "answer": "sad",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "happy",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "sad",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "happy",
+              "Happy",
+              "feeling:happy"
+            ],
+            [
+              "sad",
+              "Sad",
+              "feeling:sad"
+            ]
+          ],
+          "answer": "happy",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "happy",
+              "Happy",
+              "feeling:happy"
+            ],
+            [
+              "sad",
+              "Sad",
+              "feeling:sad"
+            ]
+          ],
+          "answer": "sad",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "happy",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "sad",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "happy",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "sad",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "09",
@@ -4074,24 +7015,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L09-K01",
+          "text": "今天的方法叫光与影子，遮挡。物体挡住光时，后面的承接面上可能出现影子，这叫光被遮挡。比如，灯和纸不动，把物体放进光路，再移开比较。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L09-T01",
           "text": "先把光照到白纸上，纸面亮起来。灯和纸先不动，让这块积木走到中间。",
-          "action": "灯、积木、白纸位置同时可见，光路用淡色辅助线"
+          "action": "灯、积木、白纸位置同时可见，光路用淡色辅助线",
+          "visualStep": 0
         },
         {
           "id": "L09-T02",
           "text": "积木挡住了一部分光。看，纸上这一块比旁边暗，我们找到它的影子啦。",
-          "action": "积木遮挡部分光，纸面出现形状对应的暗区"
+          "action": "积木遮挡部分光，纸面出现形状对应的暗区",
+          "visualStep": 1
         },
         {
           "id": "L09-T03",
           "text": "再把积木移开，看看纸面。刚才那块暗暗的地方不见了。我们只换了积木的位置，再试一次确认。",
-          "action": "只有积木移出光路，灯和纸保持原位"
+          "action": "只有积木移出光路，灯和纸保持原位",
+          "visualStep": 2
         },
         {
           "id": "L09-T04",
           "text": "换一位客人挡住光，影子也换了样子。先找物体，再找纸上的影子，它们之间藏着联系。",
-          "action": "换玩偶，影子轮廓随之变化；不换灯距"
+          "action": "换玩偶，影子轮廓随之变化；不换灯距",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -4166,6 +7117,26 @@ window.COURSES = {
           "id": "L09-E08",
           "text": "Bye-bye, shadow.",
           "action": "物体移开光路，作为告别情境"
+        },
+        {
+          "id": "L09-EW1",
+          "text": "Light.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L09-EW2",
+          "text": "Shadow.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L09-ES1",
+          "text": "Here is a light.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L09-ES2",
+          "text": "Here is a shadow.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -4228,7 +7199,174 @@ window.COURSES = {
       "help": "“先看看光照向哪里。让积木走到灯和纸中间，再观察纸面。”用光路提示，不直接生成假影子",
       "observation": "记录：注意到遮挡变化／重做后发现／还需共同观察；是否能把物体与影子联系起来；不依据预测一次正确判断理解。",
       "age": 4,
-      "sequence": 9
+      "sequence": 9,
+      "concept": {
+        "name": "光与影子 · 遮挡",
+        "meaning": "物体挡住光时，后面的承接面上可能出现影子，这叫光被遮挡。",
+        "example": "灯和纸不动，把物体放进光路，再移开比较。",
+        "clipId": "L09-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "光与影子 · 遮挡",
+          "example": "灯和纸不动，把积木放进光路，看纸面有什么变化。"
+        },
+        {
+          "name": "光与影子 · 遮挡",
+          "example": "只移开积木，再看看纸上的暗区。"
+        },
+        {
+          "name": "光与影子 · 遮挡",
+          "example": "换一个圆形物体挡住光，看看影子有没有变化。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "light",
+          "word": "Light",
+          "picture": "🔦",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "shadow",
+          "word": "Shadow",
+          "picture": "◼",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "light",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "shadow",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "light",
+              "Light",
+              "🔦"
+            ],
+            [
+              "shadow",
+              "Shadow",
+              "◼"
+            ]
+          ],
+          "answer": "light",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "light",
+              "Light",
+              "🔦"
+            ],
+            [
+              "shadow",
+              "Shadow",
+              "◼"
+            ]
+          ],
+          "answer": "shadow",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "light",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "shadow",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "light",
+              "Light",
+              "🔦"
+            ],
+            [
+              "shadow",
+              "Shadow",
+              "◼"
+            ]
+          ],
+          "answer": "light",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "light",
+              "Light",
+              "🔦"
+            ],
+            [
+              "shadow",
+              "Shadow",
+              "◼"
+            ]
+          ],
+          "answer": "shadow",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "light",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "shadow",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "light",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "shadow",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "10",
@@ -4236,7 +7374,7 @@ window.COURSES = {
       "primaryObjective": "在新情境中独立运用轮流分的方法",
       "englishCoreWords": [
         "apple",
-        "please"
+        "cookie"
       ],
       "materials": [
         "四件玩具点心",
@@ -4257,24 +7395,34 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "L10-K01",
+          "text": "今天的方法叫方法迁移，二等分。把学过的方法用到新的材料和情境，叫方法迁移。这次把四份点心二等分，每份两个。比如，苹果换成点心，仍然让两位朋友得到一样多。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "L10-T01",
           "text": "这次点心换了样子，盘子也换了位置。你想先试一试怎样分，还是再看看以前的小办法？两种都可以。",
-          "action": "展示四件点心和两个空盘，先不自动分"
+          "action": "展示四件点心和两个空盘，先不自动分",
+          "visualStep": 0
         },
         {
           "id": "L10-T02",
           "text": "可以先给一位朋友一个，再给另一位一个。接下来谁还要一个？我们把剩下的机会留给你。",
-          "action": "仅在求助后演示左、右各一个，再交回孩子"
+          "action": "仅在求助后演示左、右各一个，再交回孩子",
+          "visualStep": 1
         },
         {
           "id": "L10-T03",
           "text": "分完后，我们请两边的点心找朋友。有没有多出来的？你可以用配对看看，不一定只靠数数。",
-          "action": "孩子分完后可点检查；两边一对一配起来"
+          "action": "孩子分完后可点检查；两边一对一配起来",
+          "visualStep": 2
         },
         {
           "id": "L10-T04",
           "text": "点心准备好啦。现在装饰怎么摆，你来决定。喜欢圆窗、方旗，或者红蓝两种颜色，都可以设计出自己的派对。",
-          "action": "保留成功分法，切到装饰区，不追加必答题"
+          "action": "保留成功分法，切到装饰区，不追加必答题",
+          "visualStep": 3
         }
       ],
       "film": [
@@ -4349,6 +7497,26 @@ window.COURSES = {
           "id": "L10-E08",
           "text": "Bye-bye!",
           "action": "挥手告别，不追加新词测试"
+        },
+        {
+          "id": "L10-EW1",
+          "text": "Apple.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L10-EW2",
+          "text": "Cookie.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "L10-ES1",
+          "text": "An apple, please.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "L10-ES2",
+          "text": "A cookie, please.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "ending": [
@@ -4411,7 +7579,166 @@ window.COURSES = {
       "help": "“要不要先轮流给一轮？我们一起开始，后面交给你。”记录使用支持",
       "observation": "记录：新情境独立轮流分／配对后修正／提示后完成；自由设计与口语参与分开记；与第 01 节比较具体做法，不给综合能力排名。",
       "age": 4,
-      "sequence": 10
+      "sequence": 10,
+      "concept": {
+        "name": "方法迁移 · 二等分",
+        "meaning": "把学过的方法用到新的材料和情境，叫方法迁移。这次把四份点心二等分，每份两个。",
+        "example": "苹果换成点心，仍然让两位朋友得到一样多。",
+        "clipId": "L10-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "方法迁移 · 二等分",
+          "example": "四份点心，两位朋友。你想怎样分？先自己试一试。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "apple",
+          "word": "Apple",
+          "picture": "🍎",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "cookie",
+          "word": "Cookie",
+          "picture": "🍪",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "englishPlan": [
+        {
+          "idx": 8,
+          "focus": "apple",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 9,
+          "focus": "cookie",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
+          "options": [
+            [
+              "apple",
+              "Apple",
+              "🍎"
+            ],
+            [
+              "cookie",
+              "Cookie",
+              "🍪"
+            ]
+          ],
+          "answer": "apple",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "options": [
+            [
+              "apple",
+              "Apple",
+              "🍎"
+            ],
+            [
+              "cookie",
+              "Cookie",
+              "🍪"
+            ]
+          ],
+          "answer": "cookie",
+          "practice": "listen",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "apple",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "cookie",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
+        },
+        {
+          "idx": 10,
+          "options": [
+            [
+              "apple",
+              "Apple",
+              "🍎"
+            ],
+            [
+              "cookie",
+              "Cookie",
+              "🍪"
+            ]
+          ],
+          "answer": "apple",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 11,
+          "options": [
+            [
+              "apple",
+              "Apple",
+              "🍎"
+            ],
+            [
+              "cookie",
+              "Cookie",
+              "🍪"
+            ]
+          ],
+          "answer": "cookie",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
+        },
+        {
+          "idx": 8,
+          "focus": "apple",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "cookie",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "apple",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "cookie",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-01",
@@ -4427,8 +7754,8 @@ window.COURSES = {
         "三个盘子"
       ],
       "englishCoreWords": [
-        "One",
-        "Two"
+        "one",
+        "two"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -4441,19 +7768,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-01-K01",
+          "text": "今天的方法叫平均分，三等分。把一组物品分成一样多的三份，叫三等分，也是平均分。比如，六份点心分成三份，每份两个。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-01-T01",
           "text": "先每位送一份，再从第一位开始送下一轮。朋友变多，轮流的方法还在。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-01-T02",
           "text": "分完不急着说答案。每盘拿一件放成一组，再拿一件，看看各盘有没有剩下。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-01-T03",
           "text": "三位朋友都得到两份。换成别的点心，我们仍然可以用轮流和配对来检查。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -4529,14 +7865,43 @@ window.COURSES = {
           "id": "LA5-01-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-01-EW1",
+          "text": "One.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-01-EW2",
+          "text": "Two.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-01-ES1",
+          "text": "One apple.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-01-ES2",
+          "text": "Two apples.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "one",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "two",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "one",
@@ -4549,10 +7914,12 @@ window.COURSES = {
               "quantity:2:apple"
             ]
           ],
-          "answer": "one"
+          "answer": "one",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "one",
@@ -4565,25 +7932,89 @@ window.COURSES = {
               "quantity:2:apple"
             ]
           ],
-          "answer": "two"
+          "answer": "two",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "one",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "two",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "one",
+              "One",
+              "quantity:1:apple"
+            ],
+            [
+              "two",
+              "Two",
+              "quantity:2:apple"
+            ]
+          ],
+          "answer": "one",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "one",
+              "One",
+              "quantity:1:apple"
+            ],
+            [
+              "two",
+              "Two",
+              "quantity:2:apple"
+            ]
+          ],
+          "answer": "two",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "one",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "two",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "one",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "two",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -4745,7 +8176,40 @@ window.COURSES = {
             "hint": "先一位一个地送，再把各盘的点心配成一组，看看有没有剩下的。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "平均分 · 三等分",
+        "meaning": "把一组物品分成一样多的三份，叫三等分，也是平均分。",
+        "example": "六份点心分成三份，每份两个。",
+        "clipId": "LA5-01-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "平均分 · 三等分",
+          "example": "6 件物品分成一样多的 3 份，每份 2 件。"
+        },
+        {
+          "name": "平均分 · 三等分",
+          "example": "6 件物品分成一样多的 3 份，每份 2 件。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "one",
+          "word": "One",
+          "picture": "quantity:1:apple",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "two",
+          "word": "Two",
+          "picture": "quantity:2:apple",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-02",
@@ -4774,19 +8238,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-02-K01",
+          "text": "今天的方法叫双条件分类。同时满足两条线索才放在一组，叫双条件分类。比如，既要是红色，又要是圆形，两个条件都要看。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-02-T01",
           "text": "先找出红色的候选，不用马上收进盒子。红圆片和红方片都留下来看看。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-02-T02",
           "text": "第二条线索是圆圆的。红方片符合颜色，却不符合形状，所以先回到旁边。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-02-T03",
           "text": "红圆片同时符合两条线索。下一张订单换颜色和形状，方法还是先找一条，再看另一条。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -4862,14 +8335,43 @@ window.COURSES = {
           "id": "LA5-02-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-02-EW1",
+          "text": "red circle.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-02-EW2",
+          "text": "blue square.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-02-ES1",
+          "text": "This is a red circle.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-02-ES2",
+          "text": "This is a blue square.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "redcircle",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "bluesquare",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "redcircle",
@@ -4882,10 +8384,12 @@ window.COURSES = {
               "token:blue:square"
             ]
           ],
-          "answer": "redcircle"
+          "answer": "redcircle",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "redcircle",
@@ -4898,25 +8402,89 @@ window.COURSES = {
               "token:blue:square"
             ]
           ],
-          "answer": "bluesquare"
+          "answer": "bluesquare",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "redcircle",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "bluesquare",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "redcircle",
+              "A red circle",
+              "token:red:circle"
+            ],
+            [
+              "bluesquare",
+              "A blue square",
+              "token:blue:square"
+            ]
+          ],
+          "answer": "redcircle",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "redcircle",
+              "A red circle",
+              "token:red:circle"
+            ],
+            [
+              "bluesquare",
+              "A blue square",
+              "token:blue:square"
+            ]
+          ],
+          "answer": "bluesquare",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "redcircle",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "bluesquare",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "redcircle",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "bluesquare",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -5038,7 +8606,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "双条件分类",
+        "meaning": "同时满足两条线索才放在一组，叫双条件分类。",
+        "example": "既要是红色，又要是圆形，两个条件都要看。",
+        "clipId": "LA5-02-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "双条件分类",
+          "example": "红色而且圆的放进礼物盒，其他放到旁边。"
+        },
+        {
+          "name": "双条件分类",
+          "example": "新订单：蓝色而且方的。重新检查两条线索。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "redcircle",
+          "word": "red circle",
+          "picture": "token:red:circle",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "bluesquare",
+          "word": "blue square",
+          "picture": "token:blue:square",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-03",
@@ -5068,19 +8669,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-03-K01",
+          "text": "今天的方法叫图形拼合，部分与整体。把小图形拼成大图形，叫图形拼合。小图形是部分，拼成的大图形是整体。比如，两片相同的直角三角形沿合适的边拼成正方形。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-03-T01",
           "text": "先把一片三角形的一条长边靠近另一片。移动纸片，不改变它本来的形状。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-03-T02",
           "text": "沿长边合在一起，两片刚好盖住正方形底图。中间有一条接缝，外面的边变成了一个方框。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-03-T03",
           "text": "分开看是两片三角形，合起来看是一扇方窗。换颜色以后，拼法仍然可以相同。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -5156,14 +8766,43 @@ window.COURSES = {
           "id": "LA5-03-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-03-EW1",
+          "text": "triangle.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-03-EW2",
+          "text": "square.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-03-ES1",
+          "text": "This is a triangle.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-03-ES2",
+          "text": "This is a square.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "triangle",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "square",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "triangle",
@@ -5176,10 +8815,12 @@ window.COURSES = {
               "token:green:square"
             ]
           ],
-          "answer": "triangle"
+          "answer": "triangle",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "triangle",
@@ -5192,25 +8833,89 @@ window.COURSES = {
               "token:green:square"
             ]
           ],
-          "answer": "square"
+          "answer": "square",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "triangle",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "square",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "triangle",
+              "A triangle",
+              "token:gold:triangle"
+            ],
+            [
+              "square",
+              "A square",
+              "token:green:square"
+            ]
+          ],
+          "answer": "triangle",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "triangle",
+              "A triangle",
+              "token:gold:triangle"
+            ],
+            [
+              "square",
+              "A square",
+              "token:green:square"
+            ]
+          ],
+          "answer": "square",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "triangle",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "square",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "triangle",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "square",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -5322,7 +9027,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "图形拼合 · 部分与整体",
+        "meaning": "把小图形拼成大图形，叫图形拼合。小图形是部分，拼成的大图形是整体。",
+        "example": "两片相同的直角三角形沿合适的边拼成正方形。",
+        "clipId": "LA5-03-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "图形拼合 · 部分与整体",
+          "example": "把两片三角形放进方框的两半，拼成一扇窗。"
+        },
+        {
+          "name": "图形拼合 · 部分与整体",
+          "example": "换成相同颜色的三角形，再沿长边拼一次。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "triangle",
+          "word": "triangle",
+          "picture": "token:gold:triangle",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "square",
+          "word": "square",
+          "picture": "token:green:square",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-04",
@@ -5340,8 +9078,8 @@ window.COURSES = {
         "毛巾"
       ],
       "englishCoreWords": [
-        "Float",
-        "Sink"
+        "float",
+        "sink"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -5354,19 +9092,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-04-K01",
+          "text": "今天的方法叫沉与浮，预测和观察。在水面附近没有沉到底叫浮，落到水底叫沉。先想可能怎样叫预测，实际看结果叫观察。比如，把木块和金属勺分别放进水里，观察各自的表现。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-04-T01",
           "text": "先说一个猜想，再轻轻放进去。猜想和观察是两件事，猜得不同也能继续发现。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-04-T02",
           "text": "普通木块留在水面附近，金属小勺沉到下面。我们看实际发生的事，不只看谁大谁小。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-04-T03",
           "text": "换一个物品时要重新试。今天观察的两样物品，不能替所有材料做决定。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -5442,14 +9189,43 @@ window.COURSES = {
           "id": "LA5-04-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-04-EW1",
+          "text": "Float.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-04-EW2",
+          "text": "Sink.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-04-ES1",
+          "text": "The wood can float.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-04-ES2",
+          "text": "The spoon sinks.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "float",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "sink",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "float",
@@ -5462,10 +9238,12 @@ window.COURSES = {
               "float:spoon"
             ]
           ],
-          "answer": "float"
+          "answer": "float",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "float",
@@ -5478,25 +9256,89 @@ window.COURSES = {
               "float:spoon"
             ]
           ],
-          "answer": "sink"
+          "answer": "sink",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "float",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "sink",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "float",
+              "Float",
+              "float:wood"
+            ],
+            [
+              "sink",
+              "Sink",
+              "float:spoon"
+            ]
+          ],
+          "answer": "float",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "float",
+              "Float",
+              "float:wood"
+            ],
+            [
+              "sink",
+              "Sink",
+              "float:spoon"
+            ]
+          ],
+          "answer": "sink",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "float",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "sink",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "float",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "sink",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -5570,7 +9412,36 @@ window.COURSES = {
             "hint": "每种材料都实际试一次，再比较发生了什么。改变的条件之外，其他地方保持相同。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "沉与浮 · 预测和观察",
+        "meaning": "在水面附近没有沉到底叫浮，落到水底叫沉。先想可能怎样叫预测，实际看结果叫观察。",
+        "example": "把木块和金属勺分别放进水里，观察各自的表现。",
+        "clipId": "LA5-04-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "沉与浮 · 预测和观察",
+          "example": "两样材料都试一次，再比较它们在水里的位置。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "float",
+          "word": "Float",
+          "picture": "float:wood",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "sink",
+          "word": "Sink",
+          "picture": "float:spoon",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-05",
@@ -5587,8 +9458,8 @@ window.COURSES = {
         "一张石头卡"
       ],
       "englishCoreWords": [
-        "Up",
-        "Right"
+        "up",
+        "right"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -5601,19 +9472,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-05-K01",
+          "text": "今天的方法叫路线规划，方向。先看起点和终点，安排怎样走，叫路线规划。上、下、左、右表示方向。比如，从起点逐格走到信箱，遇到障碍换一条路。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-05-T01",
           "text": "把玩偶放在起点，先看哪条边能走。一次只走一格，碰到石头就换方向。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-05-T02",
           "text": "路可以转弯，也可以先试一段再调整。走过的地方留个小脚印，帮助自己记住。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-05-T03",
           "text": "到终点后回头看看。别人的路线可能和你不同，只要能绕开障碍送到信，就有自己的办法。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -5689,14 +9569,43 @@ window.COURSES = {
           "id": "LA5-05-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-05-EW1",
+          "text": "Up.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-05-EW2",
+          "text": "Right.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-05-ES1",
+          "text": "Go up.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-05-ES2",
+          "text": "Go right.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "up",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "right",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "up",
@@ -5709,10 +9618,12 @@ window.COURSES = {
               "➡️"
             ]
           ],
-          "answer": "up"
+          "answer": "up",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "up",
@@ -5725,25 +9636,89 @@ window.COURSES = {
               "➡️"
             ]
           ],
-          "answer": "right"
+          "answer": "right",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "up",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "right",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "up",
+              "Up",
+              "⬆️"
+            ],
+            [
+              "right",
+              "Right",
+              "➡️"
+            ]
+          ],
+          "answer": "up",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "up",
+              "Up",
+              "⬆️"
+            ],
+            [
+              "right",
+              "Right",
+              "➡️"
+            ]
+          ],
+          "answer": "right",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "up",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "right",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "up",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "right",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -5833,7 +9808,40 @@ window.COURSES = {
             "hint": "先找起点和终点。用箭头走一格，避开石头，路可以不止一条。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "路线规划 · 方向",
+        "meaning": "先看起点和终点，安排怎样走，叫路线规划。上、下、左、右表示方向。",
+        "example": "从起点逐格走到信箱，遇到障碍换一条路。",
+        "clipId": "LA5-05-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "路线规划 · 方向",
+          "example": "从小猫走到信箱，绕开石头。每次走一格。"
+        },
+        {
+          "name": "路线规划 · 方向",
+          "example": "换一个起点，再试一条送信的路。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "up",
+          "word": "Up",
+          "picture": "⬆️",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "right",
+          "word": "Right",
+          "picture": "➡️",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-06",
@@ -5849,8 +9857,8 @@ window.COURSES = {
         "一张节奏底纸"
       ],
       "englishCoreWords": [
-        "Red",
-        "Blue"
+        "red",
+        "blue"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -5863,19 +9871,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-06-K01",
+          "text": "今天的方法叫AAB 重复规律。同一种出现两次，再接另一种，这一小组反复出现，叫AAB重复规律。比如，红、红、蓝是一组，再接红、红、蓝。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-06-T01",
           "text": "先不要只看最后一个。把两个红和一个蓝框在一起，这就是一个完整小队。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-06-T02",
           "text": "小队再来一次，还是两个红、一个蓝。续接时从小队开头往下看。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-06-T03",
           "text": "换成两个圆、一个方，重复单位的关系没有变，材料却可以换新样子。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -5951,14 +9968,43 @@ window.COURSES = {
           "id": "LA5-06-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-06-EW1",
+          "text": "Red.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-06-EW2",
+          "text": "Blue.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-06-ES1",
+          "text": "It is red.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-06-ES2",
+          "text": "It is blue.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "red",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "blue",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "red",
@@ -5971,10 +10017,12 @@ window.COURSES = {
               "🔵"
             ]
           ],
-          "answer": "red"
+          "answer": "red",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "red",
@@ -5987,25 +10035,89 @@ window.COURSES = {
               "🔵"
             ]
           ],
-          "answer": "blue"
+          "answer": "blue",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "blue",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "red",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "blue",
+              "Blue",
+              "🔵"
+            ]
+          ],
+          "answer": "blue",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "red",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "blue",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "blue",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -6134,7 +10246,44 @@ window.COURSES = {
             "hint": "先框出重复的小队，再按同样的小队继续。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "AAB 重复规律",
+        "meaning": "同一种出现两次，再接另一种，这一小组反复出现，叫AAB重复规律。",
+        "example": "红、红、蓝是一组，再接红、红、蓝。",
+        "clipId": "LA5-06-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "AAB 重复规律",
+          "example": "两红一蓝，两红一蓝。接下来是哪一节？"
+        },
+        {
+          "name": "AAB 重复规律",
+          "example": "已经有红、红，下一位是谁？"
+        },
+        {
+          "name": "AAB 重复规律",
+          "example": "换成两圆一方，继续同样的小队。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "red",
+          "word": "Red",
+          "picture": "🔴",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "blue",
+          "word": "Blue",
+          "picture": "🔵",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-07",
@@ -6149,8 +10298,8 @@ window.COURSES = {
         "种子、浇水、发芽三张图卡"
       ],
       "englishCoreWords": [
-        "First",
-        "Last"
+        "first",
+        "last"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -6163,19 +10312,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-07-K01",
+          "text": "今天的方法叫先后顺序，因果。先准备，后发生结果，把事情这样排好叫先后顺序。前一件事使后面的事能够发生，叫因果关系。比如，先种下种子，再浇水，之后观察发芽。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-07-T01",
           "text": "先看看每张图实际发生什么。种子还没有种下时，不会先在这盆土里冒出芽。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-07-T02",
           "text": "种下种子，再浇水照顾，过一些日子才看见发芽。我们不是浇完马上看见它长大。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-07-T03",
           "text": "把图片排好，再指着图讲一次。只说几个词、用手演，或者请家人接着说都可以。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -6251,14 +10409,43 @@ window.COURSES = {
           "id": "LA5-07-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-07-EW1",
+          "text": "First.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-07-EW2",
+          "text": "Last.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-07-ES1",
+          "text": "First, plant the seed.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-07-ES2",
+          "text": "At last, a little plant.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "first",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "last",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "first",
@@ -6271,10 +10458,12 @@ window.COURSES = {
               "sequence:sprout"
             ]
           ],
-          "answer": "first"
+          "answer": "first",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "first",
@@ -6287,25 +10476,89 @@ window.COURSES = {
               "sequence:sprout"
             ]
           ],
-          "answer": "last"
+          "answer": "last",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "first",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "last",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "first",
+              "First",
+              "sequence:seed"
+            ],
+            [
+              "last",
+              "Last",
+              "sequence:sprout"
+            ]
+          ],
+          "answer": "first",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "first",
+              "First",
+              "sequence:seed"
+            ],
+            [
+              "last",
+              "Last",
+              "sequence:sprout"
+            ]
+          ],
+          "answer": "last",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "first",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "last",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "first",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "last",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -6405,7 +10658,40 @@ window.COURSES = {
             "hint": "想想这件事发生之前，要先准备或完成什么。点选小画排队，点已选画可以取回。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "先后顺序 · 因果",
+        "meaning": "先准备，后发生结果，把事情这样排好叫先后顺序。前一件事使后面的事能够发生，叫因果关系。",
+        "example": "先种下种子，再浇水，之后观察发芽。",
+        "clipId": "LA5-07-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "先后顺序 · 因果",
+          "example": "点选图片排队：种下种子、浇水照顾、过些日子发芽。"
+        },
+        {
+          "name": "先后顺序 · 因果",
+          "example": "再排一个故事：先洗手，再分点心，最后一起吃。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "first",
+          "word": "First",
+          "picture": "sequence:seed",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "last",
+          "word": "Last",
+          "picture": "sequence:sprout",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-08",
@@ -6421,8 +10707,8 @@ window.COURSES = {
         "画画和积木图卡"
       ],
       "englishCoreWords": [
-        "Together",
-        "Wait"
+        "together",
+        "wait"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -6435,19 +10721,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-08-K01",
+          "text": "今天的方法叫合作协商。说出自己的需要，也听取朋友的需要，再一起商量办法，叫合作协商。比如，一个朋友想画画，另一个想搭房子，可以一起商量计划。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-08-T01",
           "text": "先把两位的想法都听见。不同想法不等于有一位做错了。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-08-T02",
           "text": "可以商量先玩一样、再玩另一样，也可以给积木小屋画一张门牌。只要双方愿意，办法不止一种。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-08-T03",
           "text": "计划说好后，还要看看朋友愿不愿意。有人想先休息，就留一点空间再一起约时间。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -6523,14 +10818,43 @@ window.COURSES = {
           "id": "LA5-08-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-08-EW1",
+          "text": "Together.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-08-EW2",
+          "text": "Wait.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-08-ES1",
+          "text": "Let us play together.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-08-ES2",
+          "text": "Please wait.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "together",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "wait",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "together",
@@ -6543,10 +10867,12 @@ window.COURSES = {
               "⏳"
             ]
           ],
-          "answer": "together"
+          "answer": "together",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "together",
@@ -6559,25 +10885,89 @@ window.COURSES = {
               "⏳"
             ]
           ],
-          "answer": "wait"
+          "answer": "wait",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "together",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "wait",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "together",
+              "Together",
+              "🤝"
+            ],
+            [
+              "wait",
+              "Wait",
+              "⏳"
+            ]
+          ],
+          "answer": "together",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "together",
+              "Together",
+              "🤝"
+            ],
+            [
+              "wait",
+              "Wait",
+              "⏳"
+            ]
+          ],
+          "answer": "wait",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "together",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "wait",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "together",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "wait",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -6667,7 +11057,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "合作协商",
+        "meaning": "说出自己的需要，也听取朋友的需要，再一起商量办法，叫合作协商。",
+        "example": "一个朋友想画画，另一个想搭房子，可以一起商量计划。",
+        "clipId": "LA5-08-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "合作协商",
+          "example": "两位都想一起玩。哪些办法可以拿来商量？"
+        },
+        {
+          "name": "合作协商",
+          "example": "点点说想先安静休息。怎样回应？"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "together",
+          "word": "Together",
+          "picture": "🤝",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "wait",
+          "word": "Wait",
+          "picture": "⏳",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-09",
@@ -6684,8 +11107,8 @@ window.COURSES = {
         "白纸"
       ],
       "englishCoreWords": [
-        "Near",
-        "Far"
+        "near",
+        "far"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -6698,19 +11121,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-09-K01",
+          "text": "今天的方法叫影子大小，改变距离。固定光源和纸，只改变物体的位置，比较影子大小，这是改变一个条件作比较。比如，同一个物体离灯近一点或远一点，再观察影子。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-09-T01",
           "text": "先把灯和白纸固定好。只移动同一块积木，才容易比较变化来自哪里。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-09-T02",
           "text": "积木靠近灯时，纸上被挡住的区域更大；离灯远一些、靠近纸时，影子小一些。这里保持物体朝向不变。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-09-T03",
           "text": "再移回原处看看。观察能重复出现，才更有把握描述这次的发现。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -6786,14 +11218,43 @@ window.COURSES = {
           "id": "LA5-09-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-09-EW1",
+          "text": "Near.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-09-EW2",
+          "text": "Far.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-09-ES1",
+          "text": "Move it near.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-09-ES2",
+          "text": "Move it far away.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "near",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "far",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "near",
@@ -6806,10 +11267,12 @@ window.COURSES = {
               "distance:far"
             ]
           ],
-          "answer": "near"
+          "answer": "near",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "near",
@@ -6822,25 +11285,89 @@ window.COURSES = {
               "distance:far"
             ]
           ],
-          "answer": "far"
+          "answer": "far",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "near",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "far",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "near",
+              "Near",
+              "distance:near"
+            ],
+            [
+              "far",
+              "Far",
+              "distance:far"
+            ]
+          ],
+          "answer": "near",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "near",
+              "Near",
+              "distance:near"
+            ],
+            [
+              "far",
+              "Far",
+              "distance:far"
+            ]
+          ],
+          "answer": "far",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "near",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "far",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "near",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "far",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -6914,7 +11441,36 @@ window.COURSES = {
             "hint": "每种材料都实际试一次，再比较发生了什么。改变的条件之外，其他地方保持相同。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "影子大小 · 改变距离",
+        "meaning": "固定光源和纸，只改变物体的位置，比较影子大小，这是改变一个条件作比较。",
+        "example": "同一个物体离灯近一点或远一点，再观察影子。",
+        "clipId": "LA5-09-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "影子大小 · 改变距离",
+          "example": "灯和纸固定，两种位置都试一次，比较同一积木的影子。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "near",
+          "word": "Near",
+          "picture": "distance:near",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "far",
+          "word": "Far",
+          "picture": "distance:far",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A5-10",
@@ -6930,8 +11486,8 @@ window.COURSES = {
         "五张大纸币卡"
       ],
       "englishCoreWords": [
-        "Three",
-        "Five"
+        "three",
+        "five"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -6944,19 +11500,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA5-10-K01",
+          "text": "今天的方法叫数量增减，添上与拿走。添上一些使数量增加，拿走一些使数量减少，这叫数量增减。比如，先数已有几个，再添或拿到订单要求的数量。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA5-10-T01",
           "text": "先看篮子里已有的两个，不需要每次把它们倒出来。再添一个，数量就多一个。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA5-10-T02",
           "text": "添到五个就停下，点着核对。加入的是实际苹果，不只是在数字上按一下。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA5-10-T03",
           "text": "换成付纸币卡的情境，一张一张拿走，也能观察还剩多少。不要求背算式。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -7032,14 +11597,43 @@ window.COURSES = {
           "id": "LA5-10-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA5-10-EW1",
+          "text": "Three.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-10-EW2",
+          "text": "Five.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA5-10-ES1",
+          "text": "Three apples.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA5-10-ES2",
+          "text": "Five apples.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "three",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "five",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "three",
@@ -7052,10 +11646,12 @@ window.COURSES = {
               "quantity:5:apple"
             ]
           ],
-          "answer": "three"
+          "answer": "three",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "three",
@@ -7068,25 +11664,89 @@ window.COURSES = {
               "quantity:5:apple"
             ]
           ],
-          "answer": "five"
+          "answer": "five",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "three",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "five",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "three",
+              "Three",
+              "quantity:3:apple"
+            ],
+            [
+              "five",
+              "Five",
+              "quantity:5:apple"
+            ]
+          ],
+          "answer": "three",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "three",
+              "Three",
+              "quantity:3:apple"
+            ],
+            [
+              "five",
+              "Five",
+              "quantity:5:apple"
+            ]
+          ],
+          "answer": "five",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "three",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "five",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "three",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "five",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -7150,7 +11810,40 @@ window.COURSES = {
             "hint": "每次只加上或拿走一个，手指点着物品逐个看一看。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "数量增减 · 添上与拿走",
+        "meaning": "添上一些使数量增加，拿走一些使数量减少，这叫数量增减。",
+        "example": "先数已有几个，再添或拿到订单要求的数量。",
+        "clipId": "LA5-10-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "数量增减",
+          "example": "从 2 件开始，添上或拿走，得到 5 件。"
+        },
+        {
+          "name": "数量增减",
+          "example": "从 5 件开始，添上或拿走，得到 2 件。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "three",
+          "word": "Three",
+          "picture": "quantity:3:apple",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "five",
+          "word": "Five",
+          "picture": "quantity:5:apple",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-01",
@@ -7166,8 +11859,8 @@ window.COURSES = {
         "四个盘子"
       ],
       "englishCoreWords": [
-        "Two",
-        "Four"
+        "two",
+        "four"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -7180,19 +11873,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-01-K01",
+          "text": "今天的方法叫平均分，四等分。把一组物品分成一样多的四份，叫四等分，也是平均分。比如，八份点心分成四份，每份两个。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-01-T01",
           "text": "先按今天的人数摆好四个盘子。每盘一份是一轮，送完一轮再开始下一轮。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-01-T02",
           "text": "分完后，把每个盘子的第一份放成一组，再检查第二份。每组要包括四位朋友，才没有漏掉谁。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-01-T03",
           "text": "如果一盘多一份，先移动那一份到少的地方，不必把全部倒回去。检查能帮助我们调整自己的方案。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -7268,14 +11970,43 @@ window.COURSES = {
           "id": "LA6-01-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-01-EW1",
+          "text": "Two.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-01-EW2",
+          "text": "Four.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-01-ES1",
+          "text": "Two apples.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-01-ES2",
+          "text": "Four apples.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "two",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "four",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "two",
@@ -7288,10 +12019,12 @@ window.COURSES = {
               "quantity:4:apple"
             ]
           ],
-          "answer": "two"
+          "answer": "two",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "two",
@@ -7304,25 +12037,89 @@ window.COURSES = {
               "quantity:4:apple"
             ]
           ],
-          "answer": "four"
+          "answer": "four",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "two",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "four",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "two",
+              "Two",
+              "quantity:2:apple"
+            ],
+            [
+              "four",
+              "Four",
+              "quantity:4:apple"
+            ]
+          ],
+          "answer": "two",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "two",
+              "Two",
+              "quantity:2:apple"
+            ],
+            [
+              "four",
+              "Four",
+              "quantity:4:apple"
+            ]
+          ],
+          "answer": "four",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "two",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "four",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "two",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "four",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -7514,7 +12311,40 @@ window.COURSES = {
             "hint": "先一位一个地送，再把各盘的点心配成一组，看看有没有剩下的。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "平均分 · 四等分",
+        "meaning": "把一组物品分成一样多的四份，叫四等分，也是平均分。",
+        "example": "八份点心分成四份，每份两个。",
+        "clipId": "LA6-01-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "平均分 · 四等分",
+          "example": "8 件物品分成一样多的 4 份，每份 2 件。"
+        },
+        {
+          "name": "平均分 · 四等分",
+          "example": "8 件物品分成一样多的 4 份，每份 2 件。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "two",
+          "word": "Two",
+          "picture": "quantity:2:apple",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "four",
+          "word": "Four",
+          "picture": "quantity:4:apple",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-02",
@@ -7544,19 +12374,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-02-K01",
+          "text": "今天的方法叫多条件筛选，包含与排除。根据所有线索找齐符合条件的物品，叫多条件筛选。既看要包含什么，也看要排除什么。比如，要方形但不要绿色，红方片和蓝方片都符合条件。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-02-T01",
           "text": "红色或蓝色都可以先留下来。这个线索给了两种可能，不是要求一件东西同时有两种颜色。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-02-T02",
           "text": "再看不能是圆形。把圆片排除，红方片和蓝方片都可以符合条件。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-02-T03",
           "text": "检查每件候选，不能找到第一件就停。换一条排除条件后，还要重新检查刚才留下的物品。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -7632,14 +12471,43 @@ window.COURSES = {
           "id": "LA6-02-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-02-EW1",
+          "text": "square.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-02-EW2",
+          "text": "triangle.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-02-ES1",
+          "text": "This is a square.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-02-ES2",
+          "text": "This is a triangle.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "square",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "triangle",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "square",
@@ -7652,10 +12520,12 @@ window.COURSES = {
               "token:green:triangle"
             ]
           ],
-          "answer": "square"
+          "answer": "square",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "square",
@@ -7668,25 +12538,89 @@ window.COURSES = {
               "token:green:triangle"
             ]
           ],
-          "answer": "triangle"
+          "answer": "triangle",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "square",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "triangle",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "square",
+              "A square",
+              "token:blue:square"
+            ],
+            [
+              "triangle",
+              "A triangle",
+              "token:green:triangle"
+            ]
+          ],
+          "answer": "square",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "square",
+              "A square",
+              "token:blue:square"
+            ],
+            [
+              "triangle",
+              "A triangle",
+              "token:green:triangle"
+            ]
+          ],
+          "answer": "triangle",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "square",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "triangle",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "square",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "triangle",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -7808,7 +12742,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "多条件筛选 · 包含与排除",
+        "meaning": "根据所有线索找齐符合条件的物品，叫多条件筛选。既看要包含什么，也看要排除什么。",
+        "example": "要方形但不要绿色，红方片和蓝方片都符合条件。",
+        "clipId": "LA6-02-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "多条件筛选 · 包含与排除",
+          "example": "红或蓝，而且不是圆形。符合的都放进线索盒。"
+        },
+        {
+          "name": "多条件筛选 · 包含与排除",
+          "example": "再找：不是红色，而且是三角形。可能不止一片。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "square",
+          "word": "square",
+          "picture": "token:blue:square",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "triangle",
+          "word": "triangle",
+          "picture": "token:green:triangle",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-03",
@@ -7838,19 +12805,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-03-K01",
+          "text": "今天的方法叫图形组合，部分与整体。用几块小图形组成大图形，叫图形组合。比较各部分怎样组成同一个整体。比如，四片三角形可以组成正方形，两片正方形可以组成长方形。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-03-T01",
           "text": "四片相同的直角三角形，把直角朝向中心，旁边的边互相贴好，外面可以形成一个大正方形。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-03-T02",
           "text": "两片同样大的正方形并排靠齐，外面变成一个长方形。我们看的是整个外轮廓，不把中间接缝当成外边。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-03-T03",
           "text": "同一片可以转方向，形状本身不拉长。拼完拆开，再换一种组合，发现来自实际移动。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -7926,14 +12902,43 @@ window.COURSES = {
           "id": "LA6-03-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-03-EW1",
+          "text": "square.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-03-EW2",
+          "text": "rectangle.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-03-ES1",
+          "text": "This is a square.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-03-ES2",
+          "text": "This is a rectangle.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "square",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "rectangle",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "square",
@@ -7946,10 +12951,12 @@ window.COURSES = {
               "rectangle:blue"
             ]
           ],
-          "answer": "square"
+          "answer": "square",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "square",
@@ -7962,25 +12969,89 @@ window.COURSES = {
               "rectangle:blue"
             ]
           ],
-          "answer": "rectangle"
+          "answer": "rectangle",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "square",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "rectangle",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "square",
+              "A square",
+              "token:green:square"
+            ],
+            [
+              "rectangle",
+              "A rectangle",
+              "rectangle:blue"
+            ]
+          ],
+          "answer": "square",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "square",
+              "A square",
+              "token:green:square"
+            ],
+            [
+              "rectangle",
+              "A rectangle",
+              "rectangle:blue"
+            ]
+          ],
+          "answer": "rectangle",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "square",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "rectangle",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "square",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "rectangle",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -8112,7 +13183,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "图形组合 · 部分与整体",
+        "meaning": "用几块小图形组成大图形，叫图形组合。比较各部分怎样组成同一个整体。",
+        "example": "四片三角形可以组成正方形，两片正方形可以组成长方形。",
+        "clipId": "LA6-03-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "图形组合 · 部分与整体",
+          "example": "把四片三角形放进方框四个位置，观察外面的轮廓。"
+        },
+        {
+          "name": "图形组合 · 部分与整体",
+          "example": "两片正方形并排放好，拼一扇长方形窗。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "square",
+          "word": "square",
+          "picture": "token:green:square",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "rectangle",
+          "word": "rectangle",
+          "picture": "rectangle:blue",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-04",
@@ -8130,8 +13234,8 @@ window.COURSES = {
         "托盘"
       ],
       "englishCoreWords": [
-        "Wet",
-        "Dry"
+        "wet",
+        "dry"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -8144,19 +13248,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-04-K01",
+          "text": "今天的方法叫吸水性，公平比较。材料把水吸进去的表现叫吸水性。两种材料用相同滴数试一试，才能更公平地比较。比如，给海绵和塑料片滴相同数量的水，观察水留在哪里。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-04-T01",
           "text": "先比较同样大小的海绵和塑料片，每次滴相同的水量，放在同一个托盘里。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-04-T02",
           "text": "海绵吸进一些水，颜色变深；塑料表面仍能看见水珠。我们描述实际看到的，不把消失在表面叫作没有水了。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-04-T03",
           "text": "再用干海绵试一次。比较材料时尽量保持滴数相同，才能把这次不同和材料联系起来。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -8232,14 +13345,43 @@ window.COURSES = {
           "id": "LA6-04-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-04-EW1",
+          "text": "Wet.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-04-EW2",
+          "text": "Dry.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-04-ES1",
+          "text": "The sponge is wet.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-04-ES2",
+          "text": "This piece is dry.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "wet",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "dry",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "wet",
@@ -8252,10 +13394,12 @@ window.COURSES = {
               "material:dry"
             ]
           ],
-          "answer": "wet"
+          "answer": "wet",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "wet",
@@ -8268,25 +13412,89 @@ window.COURSES = {
               "material:dry"
             ]
           ],
-          "answer": "dry"
+          "answer": "dry",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "wet",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "dry",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "wet",
+              "Wet",
+              "material:wet"
+            ],
+            [
+              "dry",
+              "Dry",
+              "material:dry"
+            ]
+          ],
+          "answer": "wet",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "wet",
+              "Wet",
+              "material:wet"
+            ],
+            [
+              "dry",
+              "Dry",
+              "material:dry"
+            ]
+          ],
+          "answer": "dry",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "wet",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "dry",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "wet",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "dry",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -8360,7 +13568,36 @@ window.COURSES = {
             "hint": "每种材料都实际试一次，再比较发生了什么。改变的条件之外，其他地方保持相同。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "吸水性 · 公平比较",
+        "meaning": "材料把水吸进去的表现叫吸水性。两种材料用相同滴数试一试，才能更公平地比较。",
+        "example": "给海绵和塑料片滴相同数量的水，观察水留在哪里。",
+        "clipId": "LA6-04-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "吸水性 · 公平比较",
+          "example": "每种材料都滴同样的三滴水，比较水珠和材料的变化。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "wet",
+          "word": "Wet",
+          "picture": "material:wet",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "dry",
+          "word": "Dry",
+          "picture": "material:dry",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-05",
@@ -8377,8 +13614,8 @@ window.COURSES = {
         "信件和障碍卡"
       ],
       "englishCoreWords": [
-        "Left",
-        "Right"
+        "left",
+        "right"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -8391,19 +13628,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-05-K01",
+          "text": "今天的方法叫路线规划，途经点。安排一条满足任务的路线，叫路线规划。必须先经过的地方，叫途经点。比如，先经过星星取信，再到终点信箱。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-05-T01",
           "text": "先找到自己、取件点和信箱，把要经过的地方按先后放在心里。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-05-T02",
           "text": "每次走一格，绕开障碍。可以先走近取件点，也可以退回来换路，路线不必和别人完全一样。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-05-T03",
           "text": "送到后检查两件事：信取到了没有，终点到了没有。完成条件都满足，自己的路线就有用。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -8479,14 +13725,43 @@ window.COURSES = {
           "id": "LA6-05-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-05-EW1",
+          "text": "Left.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-05-EW2",
+          "text": "Right.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-05-ES1",
+          "text": "Go left.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-05-ES2",
+          "text": "Go right.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "left",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "right",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "left",
@@ -8499,10 +13774,12 @@ window.COURSES = {
               "➡️"
             ]
           ],
-          "answer": "left"
+          "answer": "left",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "left",
@@ -8515,25 +13792,89 @@ window.COURSES = {
               "➡️"
             ]
           ],
-          "answer": "right"
+          "answer": "right",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "left",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "right",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "left",
+              "Left",
+              "⬅️"
+            ],
+            [
+              "right",
+              "Right",
+              "➡️"
+            ]
+          ],
+          "answer": "left",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "left",
+              "Left",
+              "⬅️"
+            ],
+            [
+              "right",
+              "Right",
+              "➡️"
+            ]
+          ],
+          "answer": "right",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "left",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "right",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "left",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "right",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -8641,7 +13982,40 @@ window.COURSES = {
             "hint": "先找起点和终点。用箭头走一格，避开石头，路可以不止一条。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "路线规划 · 途经点",
+        "meaning": "安排一条满足任务的路线，叫路线规划。必须先经过的地方，叫途经点。",
+        "example": "先经过星星取信，再到终点信箱。",
+        "clipId": "LA6-05-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "路线规划 · 途经点",
+          "example": "先经过星星取信，再走到信箱。石头不能穿过去。"
+        },
+        {
+          "name": "路线规划 · 途经点",
+          "example": "换一张地图，仍要先取信再到终点。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "left",
+          "word": "Left",
+          "picture": "⬅️",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "right",
+          "word": "Right",
+          "picture": "➡️",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-06",
@@ -8656,8 +14030,8 @@ window.COURSES = {
         "三种图形或颜色积木"
       ],
       "englishCoreWords": [
-        "Red",
-        "Yellow"
+        "red",
+        "yellow"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -8670,19 +14044,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-06-K01",
+          "text": "今天的方法叫重复单位，缺项推理。规律里反复出现的一小组叫重复单位。根据前后的小组补齐缺少的一项，叫缺项推理。比如，先找ABC或AABB的小组，再补桥中间缺的那块。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-06-T01",
           "text": "红、蓝、黄组成一个小队，完整重复一次，再从红开始。不能只跟最后一块相反就当作所有规律。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-06-T02",
           "text": "有时小队是两红两蓝。先确定重复单位，再决定缺的那一个属于小队里的第几个。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-06-T03",
           "text": "缺口在中间时，两边都能提供线索。补好后把整条桥读一遍，看看前后的小队是否一致。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -8758,14 +14141,43 @@ window.COURSES = {
           "id": "LA6-06-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-06-EW1",
+          "text": "Red.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-06-EW2",
+          "text": "Yellow.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-06-ES1",
+          "text": "It is red.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-06-ES2",
+          "text": "It is yellow.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "red",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "yellow",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "red",
@@ -8778,10 +14190,12 @@ window.COURSES = {
               "🟡"
             ]
           ],
-          "answer": "red"
+          "answer": "red",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "red",
@@ -8794,25 +14208,89 @@ window.COURSES = {
               "🟡"
             ]
           ],
-          "answer": "yellow"
+          "answer": "yellow",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "yellow",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "yellow",
+              "Yellow",
+              "🟡"
+            ]
+          ],
+          "answer": "red",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "red",
+              "Red",
+              "🔴"
+            ],
+            [
+              "yellow",
+              "Yellow",
+              "🟡"
+            ]
+          ],
+          "answer": "yellow",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "red",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "yellow",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "red",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "yellow",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -8953,7 +14431,44 @@ window.COURSES = {
             "gapIndex": 2
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "重复单位 · 缺项推理",
+        "meaning": "规律里反复出现的一小组叫重复单位。根据前后的小组补齐缺少的一项，叫缺项推理。",
+        "example": "先找ABC或AABB的小组，再补桥中间缺的那块。",
+        "clipId": "LA6-06-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "重复单位 · 缺项推理",
+          "example": "红、蓝、黄重复。接下来是哪一块？"
+        },
+        {
+          "name": "重复单位 · 缺项推理",
+          "example": "两红两蓝重复。接下来是哪一块？"
+        },
+        {
+          "name": "重复单位 · 缺项推理",
+          "example": "缺口在中间，看看两边的小队，补上缺的一块。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "red",
+          "word": "Red",
+          "picture": "🔴",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "yellow",
+          "word": "Yellow",
+          "picture": "🟡",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-07",
@@ -8969,8 +14484,8 @@ window.COURSES = {
         "玩偶"
       ],
       "englishCoreWords": [
-        "First",
-        "Last"
+        "first",
+        "last"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -8983,19 +14498,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-07-K01",
+          "text": "今天的方法叫因果顺序，合理续编。根据事情之间的联系排列先后，叫因果顺序。沿着已有结果接着讲，叫合理续编。比如，先搅拌，再烘烤，再冷却，最后才能吃。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-07-T01",
           "text": "先看每张图的变化：原料要先混合，准备好的饼干才能由大人放进烤箱。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-07-T02",
           "text": "烤好后先晾凉，再吃。前一步给后一步准备条件，不能只按图片颜色或大小排。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-07-T03",
           "text": "排好主线后，结尾还可以接不同的合理故事。朋友分享或装盒送人，都能和已经晾凉的点心连接。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -9071,14 +14595,43 @@ window.COURSES = {
           "id": "LA6-07-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-07-EW1",
+          "text": "First.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-07-EW2",
+          "text": "Last.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-07-ES1",
+          "text": "First, mix.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-07-ES2",
+          "text": "Finally, we can eat.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "first",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "last",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "first",
@@ -9091,10 +14644,12 @@ window.COURSES = {
               "sequence:eat"
             ]
           ],
-          "answer": "first"
+          "answer": "first",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "first",
@@ -9107,25 +14662,89 @@ window.COURSES = {
               "sequence:eat"
             ]
           ],
-          "answer": "last"
+          "answer": "last",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "first",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "last",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "first",
+              "First",
+              "sequence:mix"
+            ],
+            [
+              "last",
+              "Last",
+              "sequence:eat"
+            ]
+          ],
+          "answer": "first",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "first",
+              "First",
+              "sequence:mix"
+            ],
+            [
+              "last",
+              "Last",
+              "sequence:eat"
+            ]
+          ],
+          "answer": "last",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "first",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "last",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "first",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "last",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -9229,7 +14848,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "因果顺序 · 合理续编",
+        "meaning": "根据事情之间的联系排列先后，叫因果顺序。沿着已有结果接着讲，叫合理续编。",
+        "example": "先搅拌，再烘烤，再冷却，最后才能吃。",
+        "clipId": "LA6-07-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "因果顺序 · 合理续编",
+          "example": "按发生顺序排：混合、由大人烘烤、晾凉、吃点心。"
+        },
+        {
+          "name": "因果顺序 · 合理续编",
+          "example": "饼干已经晾凉，哪个结尾能接在后面？"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "first",
+          "word": "First",
+          "picture": "sequence:mix",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "last",
+          "word": "Last",
+          "picture": "sequence:eat",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-08",
@@ -9246,8 +14898,8 @@ window.COURSES = {
         "一张轮流卡"
       ],
       "englishCoreWords": [
-        "My turn",
-        "Your turn"
+        "my turn",
+        "your turn"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -9260,19 +14912,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-08-K01",
+          "text": "今天的方法叫轮流与协商。大家按约定先后使用同一件物品，叫轮流。一起商量先后和等待办法，叫协商。比如，先由一位朋友玩，之后交换，等待时也听听对方的想法。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-08-T01",
           "text": "先问对方想怎样玩，再说明自己的请求。抢过来很快，却没有照顾另一位的需要。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-08-T02",
           "text": "可以商量一人完成一段小路后交换，也可以用轮流卡约定谁先谁后。规则要让双方都知道并愿意。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-08-T03",
           "text": "约定以后还要兑现。轮到朋友时交出去，今天不想参加也可以另选活动，不强迫一直等待。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -9348,14 +15009,43 @@ window.COURSES = {
           "id": "LA6-08-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-08-EW1",
+          "text": "My turn.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-08-EW2",
+          "text": "Your turn.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-08-ES1",
+          "text": "It is my turn.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-08-ES2",
+          "text": "It is your turn.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "myturn",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "yourturn",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "myturn",
@@ -9368,10 +15058,12 @@ window.COURSES = {
               "turn:your"
             ]
           ],
-          "answer": "myturn"
+          "answer": "myturn",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "myturn",
@@ -9384,25 +15076,89 @@ window.COURSES = {
               "turn:your"
             ]
           ],
-          "answer": "yourturn"
+          "answer": "yourturn",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "myturn",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "yourturn",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "myturn",
+              "My turn",
+              "turn:my"
+            ],
+            [
+              "yourturn",
+              "Your turn",
+              "turn:your"
+            ]
+          ],
+          "answer": "myturn",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "myturn",
+              "My turn",
+              "turn:my"
+            ],
+            [
+              "yourturn",
+              "Your turn",
+              "turn:your"
+            ]
+          ],
+          "answer": "yourturn",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "myturn",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "yourturn",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "myturn",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "yourturn",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -9492,7 +15248,40 @@ window.COURSES = {
             ]
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "轮流与协商",
+        "meaning": "大家按约定先后使用同一件物品，叫轮流。一起商量先后和等待办法，叫协商。",
+        "example": "先由一位朋友玩，之后交换，等待时也听听对方的想法。",
+        "clipId": "LA6-08-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "轮流与协商",
+          "example": "只有一只车，哪些办法能拿来和朋友商量？"
+        },
+        {
+          "name": "轮流与协商",
+          "example": "已经完成约定的一段小路，接下来怎样做？"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "myturn",
+          "word": "My turn",
+          "picture": "turn:my",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "yourturn",
+          "word": "Your turn",
+          "picture": "turn:your",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-09",
@@ -9510,8 +15299,8 @@ window.COURSES = {
         "长一点的平整路面"
       ],
       "englishCoreWords": [
-        "High",
-        "Low"
+        "high",
+        "low"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -9524,19 +15313,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-09-K01",
+          "text": "今天的方法叫控制变量，比较距离。每次只改变一个条件，其他条件保持一样，叫控制变量。这样才容易比较这个条件的影响。比如，用同一辆车和同一路面，只改变坡高，比较滑行距离。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-09-T01",
           "text": "固定同一只车和同一条平路，每次从坡顶同一位置松手，不额外推一把。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-09-T02",
           "text": "先试低坡，再试高坡，在这次画面模型里，高坡的小车走得更远。比较的是停下的位置，不是只看跑得热闹。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-09-T03",
           "text": "回到低坡再试一次。如果真实实验不同，就记录实际结果，检查路面、起点和有没有用力推，不直接套画面的答案。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -9612,14 +15410,43 @@ window.COURSES = {
           "id": "LA6-09-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-09-EW1",
+          "text": "High.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-09-EW2",
+          "text": "Low.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-09-ES1",
+          "text": "The ramp is high.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-09-ES2",
+          "text": "The ramp is low.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "high",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "low",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "high",
@@ -9632,10 +15459,12 @@ window.COURSES = {
               "ramp:low"
             ]
           ],
-          "answer": "high"
+          "answer": "high",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "high",
@@ -9648,25 +15477,89 @@ window.COURSES = {
               "ramp:low"
             ]
           ],
-          "answer": "low"
+          "answer": "low",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "high",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "low",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "high",
+              "High",
+              "ramp:high"
+            ],
+            [
+              "low",
+              "Low",
+              "ramp:low"
+            ]
+          ],
+          "answer": "high",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "high",
+              "High",
+              "ramp:high"
+            ],
+            [
+              "low",
+              "Low",
+              "ramp:low"
+            ]
+          ],
+          "answer": "low",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "high",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "low",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "high",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "low",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -9740,7 +15633,36 @@ window.COURSES = {
             "hint": "每种材料都实际试一次，再比较发生了什么。改变的条件之外，其他地方保持相同。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "控制变量 · 比较距离",
+        "meaning": "每次只改变一个条件，其他条件保持一样，叫控制变量。这样才容易比较这个条件的影响。",
+        "example": "用同一辆车和同一路面，只改变坡高，比较滑行距离。",
+        "clipId": "LA6-09-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "控制变量 · 比较距离",
+          "example": "使用同一辆车，不额外推。两种坡高都试一次，比较停下的位置。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "high",
+          "word": "High",
+          "picture": "ramp:high",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "low",
+          "word": "Low",
+          "picture": "ramp:low",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     },
     {
       "id": "A6-10",
@@ -9757,8 +15679,8 @@ window.COURSES = {
         "两个订单盘"
       ],
       "englishCoreWords": [
-        "Seven",
-        "Ten"
+        "seven",
+        "ten"
       ],
       "plannedSeconds": 1200,
       "status": "ready",
@@ -9771,19 +15693,28 @@ window.COURSES = {
       ],
       "teaching": [
         {
+          "id": "LA6-10-K01",
+          "text": "今天的方法叫按数量分装，数量增减。每份按照订单数量装好，叫按数量分装。添上与拿走叫数量增减。订单可以不同，不要求平均分。比如，一份五个，一份三个，要分别数清；花去代币后，再数剩余。我们一起看一看，再试一试。",
+          "action": "先说出概念名称，再把名称和图中具体对象对应。",
+          "visualStep": 0
+        },
+        {
           "id": "LA6-10-T01",
           "text": "先看已有三个，再加四个。把加进来的四个一一放下，最后点看一共有多少。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 0
         },
         {
           "id": "LA6-10-T02",
           "text": "十枚纸代币付出七枚，剩下的仍在台面上。用一枚一枚拿走的方法，也能核对剩余，不必强记算式。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 1
         },
         {
           "id": "LA6-10-T03",
           "text": "分装订单时要听清各需要多少。一个要五份、一个要三份，不是在做一样多的分享，检查要跟着任务来。",
-          "action": "关键对象移动、比较或改变条件，观察前后结果。"
+          "action": "关键对象移动、比较或改变条件，观察前后结果。",
+          "visualStep": 2
         }
       ],
       "film": [
@@ -9859,14 +15790,43 @@ window.COURSES = {
           "id": "LA6-10-E08",
           "text": "Bye-bye!",
           "action": "结合图片、手势和实际操作，不要求认字或录音。"
+        },
+        {
+          "id": "LA6-10-EW1",
+          "text": "Seven.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-10-EW2",
+          "text": "Ten.",
+          "action": "词语读三遍，读到哪个就突出对应的物体。"
+        },
+        {
+          "id": "LA6-10-ES1",
+          "text": "Seven coins.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
+        },
+        {
+          "id": "LA6-10-ES2",
+          "text": "Ten coins.",
+          "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
       "englishPlan": [
         {
-          "idx": 0
+          "idx": 8,
+          "focus": "seven",
+          "practice": "word",
+          "repeats": 3
         },
         {
-          "idx": 1,
+          "idx": 9,
+          "focus": "ten",
+          "practice": "word",
+          "repeats": 3
+        },
+        {
+          "idx": 8,
           "options": [
             [
               "seven",
@@ -9879,10 +15839,12 @@ window.COURSES = {
               "quantity:10:coin"
             ]
           ],
-          "answer": "seven"
+          "answer": "seven",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 2,
+          "idx": 9,
           "options": [
             [
               "seven",
@@ -9895,25 +15857,89 @@ window.COURSES = {
               "quantity:10:coin"
             ]
           ],
-          "answer": "ten"
+          "answer": "ten",
+          "practice": "listen",
+          "repeats": 2
         },
         {
-          "idx": 3,
-          "body": true
+          "idx": 10,
+          "focus": "seven",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 4
+          "idx": 11,
+          "focus": "ten",
+          "body": true,
+          "practice": "sentence",
+          "repeats": 3
         },
         {
-          "idx": 5,
-          "body": true
+          "idx": 10,
+          "options": [
+            [
+              "seven",
+              "Seven",
+              "quantity:7:coin"
+            ],
+            [
+              "ten",
+              "Ten",
+              "quantity:10:coin"
+            ]
+          ],
+          "answer": "seven",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 6,
-          "body": true
+          "idx": 11,
+          "options": [
+            [
+              "seven",
+              "Seven",
+              "quantity:7:coin"
+            ],
+            [
+              "ten",
+              "Ten",
+              "quantity:10:coin"
+            ]
+          ],
+          "answer": "ten",
+          "practice": "transfer",
+          "repeats": 2,
+          "swap": true
         },
         {
-          "idx": 7
+          "idx": 8,
+          "focus": "seven",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 9,
+          "focus": "ten",
+          "body": true,
+          "practice": "find",
+          "repeats": 2
+        },
+        {
+          "idx": 10,
+          "focus": "seven",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
+        },
+        {
+          "idx": 11,
+          "focus": "ten",
+          "body": true,
+          "practice": "dialogue",
+          "repeats": 3
         }
       ],
       "movement": [
@@ -10044,7 +16070,44 @@ window.COURSES = {
             "hint": "先一位一个地送，再把各盘的点心配成一组，看看有没有剩下的。"
           }
         ]
-      }
+      },
+      "concept": {
+        "name": "按数量分装 · 数量增减",
+        "meaning": "每份按照订单数量装好，叫按数量分装。添上与拿走叫数量增减。订单可以不同，不要求平均分。",
+        "example": "一份五个，一份三个，要分别数清；花去代币后，再数剩余。",
+        "clipId": "LA6-10-K01"
+      },
+      "gameConcepts": [
+        {
+          "name": "数量增减",
+          "example": "从 3 件开始，添上或拿走，得到 7 件。"
+        },
+        {
+          "name": "数量增减",
+          "example": "从 10 件开始，添上或拿走，得到 3 件。"
+        },
+        {
+          "name": "按数量分装",
+          "example": "各份按订单装成 5、3 件，数量可以不同。"
+        }
+      ],
+      "englishVocabulary": [
+        {
+          "key": "seven",
+          "word": "Seven",
+          "picture": "quantity:7:coin",
+          "wordIndex": 8,
+          "sentenceIndex": 10
+        },
+        {
+          "key": "ten",
+          "word": "Ten",
+          "picture": "quantity:10:coin",
+          "wordIndex": 9,
+          "sentenceIndex": 11
+        }
+      ],
+      "contentVersion": 3
     }
   ]
 };
