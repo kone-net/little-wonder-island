@@ -40,9 +40,9 @@ function apply(t,state,action,value){const s=clone(state);if(s.done&&action!=='u
  if(action==='switch')s.switchClosed=!s.switchClosed;
  if(t.kind==='circuit'&&['wire','switch'].includes(action)){const on=s.wires.every(Boolean)&&s.switchClosed;if(!s.powerStates.includes(on))s.powerStates.push(on);}
  if(action==='text')s.text=String(value).slice(0,3000);
- if(action==='stroke'){s.strokes.push(value.slice(0,90));s.strokes=s.strokes.slice(-60);}
+ if(action==='stroke'){if(s.strokes.length>=60)s.feedback='画板已达60笔，先下载作品或撤销一笔再继续。';else s.strokes.push(value.slice(0,90));}
  if(action==='undo'){s.done=false;if(t.kind==='studio')s.strokes.pop();else if(t.kind==='board'&&s.history.length){const past=s.history.slice(0,-1),snapshot=s.history.at(-1);Object.assign(s,snapshot);s.history=past;}else if(t.kind==='rhythm')s.order.pop();}
- if(action==='move'){const [dx,dy]=value,x=s.position[0]+dx,y=s.position[1]+dy;if(B.inside(x,y,t.width,t.height)&&!(t.walls||[]).some(p=>p[0]===x&&p[1]===y)){s.position=[x,y];s.path.push([x,y]);s.feedback='到了第 '+(y+1)+' 行、第 '+(x+1)+' 列。';}else s.feedback='这里不能通过，当前位置保留。';}
+ if(action==='move'){const [dx,dy]=value,x=s.position[0]+dx,y=s.position[1]+dy;if(B.inside(x,y,t.width,t.height)&&!(t.walls||[]).some(p=>p[0]===x&&p[1]===y)){s.position=[x,y];if(!s.path.some(p=>p[0]===x&&p[1]===y))s.path.push([x,y]);s.feedback='到了第 '+(y+1)+' 行、第 '+(x+1)+' 列。';}else s.feedback='这里不能通过，当前位置保留。';}
  if(action==='command'){s.commands.push(value);s.commands=s.commands.slice(0,6);}
  if(action==='repeat')s.repeat=Math.max(1,Math.min(5,s.repeat+Number(value)));
  if(action==='run'){s.position=t.start.slice();s.path=[t.start.slice()];s.ran=true;for(let n=0;n<s.repeat;n++)for(const c of s.commands){const [dx,dy]=({R:[1,0],D:[0,1],L:[-1,0],U:[0,-1]})[c];const x=s.position[0]+dx,y=s.position[1]+dy;if(B.inside(x,y,t.width,t.height)){s.position=[x,y];s.path.push([x,y]);}else{s.feedback='指令走出了边界，修改后可重新运行。';s.ran=false;break;}}}
@@ -54,6 +54,7 @@ function apply(t,state,action,value){const s=clone(state);if(s.done&&action!=='u
  else if(!s.board[y*t.size+x]){if(t.goal==='win2'&&s.moves>s.replies){s.feedback='先看对方回应，再走自己的下一步。';return s;}if(['win','defend','fork'].includes(t.goal)&&s.moves>=1){s.feedback='这是一步观察题，撤销或重置后比较另一种选择。';return s;}s.history.push({...clone(s),history:[]});s.board[y*t.size+x]=t.goal==='align'?1:s.turn;s.moves++;if(['family','turn'].includes(t.goal))s.turn=s.turn===1?2:1;s.feedback='已落子。';}else s.feedback='这里已有棋子，换一个空位置。';
  }
  if(action==='reply'&&t.kind==='board'&&t.game!=='xiangqi'&&!B.winLine(s.board,t.size,1,t.k||5)){const i=B.reply(s.board,t.size,2,t.k||5);if(i>=0&&s.replies<s.moves){s.board[i]=2;s.replies++;s.feedback='对方已按直接获胜、阻挡威胁的次序回应，现在再看自己的机会。';}}
+ if(s.history.length>20)s.history=s.history.slice(-20);
  if(action==='check'){s.attempts++;const result=assess(t,s);s.done=result.ok;s.reportedResult=result.reported||false;s.feedback=result.text||(result.ok?t.success:t.hint);}
  return s;
 }

@@ -27,6 +27,7 @@ V2.3：3—12岁，每龄20关，共200关。每天一个小冒险，玩出一�
 - [PRD](docs/PRD.md)
 - [技术设计](docs/TECHNICAL.md)
 - [200关目录与实现](docs/COURSES.md)
+- [逐关实施教案](docs/LESSONS.md)
 - [验证范围与边界](docs/VALIDATION.md)
 
 第三方工具和视频来源见 `NOTICE.md`，模型与素材权利归其权利人。
