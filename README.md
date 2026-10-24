@@ -66,3 +66,7 @@ python -m http.server 8080
 ## GitHub Pages
 
 使用 `main` 分支根目录 `/` 发布，保留 `.nojekyll`；提交更新后 GitHub 自动重新发布。
+
+## 本地文件观看儿歌
+
+双击本地 HTML 时使用线上 watch.html 播放，避免 file 页面缺少 HTTP Referer 导致 YouTube 错误 153。HTTP(S) 内嵌使用实际 origin 和 strict-origin-when-cross-origin；新窗口播放保留 Referer。
