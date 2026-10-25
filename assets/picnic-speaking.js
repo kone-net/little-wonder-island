@@ -1,0 +1,26 @@
+/* Optional local-only speaking turns. No recognition, scoring, upload or storage. */
+(()=>{'use strict';
+let generation=0,stream=null,recorder=null,playback=null,url=null,limit=null,ticker=null,mount=null,finish=null,phase='idle',context=null;
+const supported=()=>!!(navigator.mediaDevices?.getUserMedia&&window.MediaRecorder);
+function tracksOff(){stream?.getTracks().forEach(t=>t.stop());stream=null;}
+function release(){clearTimeout(limit);clearInterval(ticker);limit=ticker=null;tracksOff();if(recorder){recorder.ondataavailable=recorder.onstop=recorder.onerror=null;if(recorder.state!=='inactive')recorder.stop();recorder=null;}if(playback){playback.pause();playback.onended=null;playback=null;}if(url){URL.revokeObjectURL(url);url=null;}}
+function cue(){try{context||=new AudioContext();context.resume().then(()=>{for(let i=0;i<2;i++){const oscillator=context.createOscillator(),gain=context.createGain(),at=context.currentTime+i*.16;oscillator.type='sine';oscillator.frequency.value=i?740:554;gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(.055,at+.02);gain.gain.exponentialRampToValueAtTime(.001,at+.14);oscillator.connect(gain);gain.connect(context.destination);oscillator.start(at);oscillator.stop(at+.15);}}).catch(()=>{});}catch(_){}}
+function markup(title,body,controls){if(!mount?.isConnected)return;mount.innerHTML=`<div class="p-speaking-head"><span class="p-mic-symbol" aria-hidden="true">${phase==='recording'?'●':'♫'}</span><div><strong>${title}</strong><p>${body}</p></div></div><div class="p-speaking-controls">${controls}</div>`;}
+const btn=(action,text,primary=false)=>`<button type="button" class="p-button ${primary?'primary':'secondary'}" data-speaking="${action}">${text}</button>`;
+function ready(message){phase='ready';markup('轮到你说啦',message||'听到提示音，说一个词或一句话。想先听也可以。',btn('record','🎙 说一说',true)+btn('skip','今天先听，继续'));}
+function done(kind='recorded'){const callback=finish;generation++;release();phase='done';markup(kind==='recorded'?'谢谢你愿意试一试！':'谢谢你一起来听！','每一次参与都值得鼓励，不需要读得一模一样。','');finish=null;callback?.(kind);}
+function playOwn(token){if(token!==generation||!url)return;phase='playback';markup('听听自己的声音','这就是你刚才的声音。',btn('play','▶ 再听自己的声音')+btn('skip','继续'));playback=new Audio(url);playback.onended=()=>{if(token===generation)done();};playback.onerror=()=>{if(token===generation){phase='ready';markup('录下来了，想听一听吗？','也可以直接继续。',btn('play','▶ 播放我的声音',true)+btn('skip','继续'));}};playback.play().catch(()=>{if(token===generation)markup('录下来了，点一下回放','浏览器需要你点一下才能播放。',btn('play','▶ 播放我的声音',true)+btn('skip','继续'));});}
+async function record(){if(phase==='pending'||phase==='recording')return;const token=++generation;release();phase='pending';markup('准备麦克风…','第一次使用时，由家长允许浏览器使用麦克风。',btn('skip','先不录，继续'));
+ if(!supported()){ready('这个浏览器暂不支持录音。可以说给家人听，再点继续。');return;}
+ try{const incoming=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:false});if(token!==generation){incoming.getTracks().forEach(t=>t.stop());return;}stream=incoming;cue();
+ const mime=['audio/webm;codecs=opus','audio/webm','audio/mp4'].find(type=>MediaRecorder.isTypeSupported(type));recorder=new MediaRecorder(stream,mime?{mimeType:mime}:undefined);const chunks=[];recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};recorder.onerror=()=>{if(token!==generation)return;generation++;release();ready('麦克风暂时没准备好，可以稍后重试，或直接继续。');};
+ recorder.onstop=()=>{if(token!==generation)return;clearTimeout(limit);clearInterval(ticker);limit=ticker=null;tracksOff();const blob=new Blob(chunks,{type:recorder.mimeType||chunks[0]?.type||'audio/webm'});recorder=null;if(!blob.size){ready('这次没有录到声音，想试试就再来一次，也可以直接继续。');return;}url=URL.createObjectURL(blob);playOwn(token);};
+ limit=setTimeout(()=>{if(token!==generation)return;phase='recording';recorder.start();let remaining=6;markup('正在听你说…',`<span id="pRecordingTime">最多 ${remaining} 秒</span> · 说完就点“说好了”。`,btn('stop','■ 说好了，听回放',true));ticker=setInterval(()=>{remaining--;const el=document.getElementById('pRecordingTime');if(el)el.textContent=`还可以说 ${Math.max(0,remaining)} 秒`;},1000);limit=setTimeout(stopRecord,6000);},420);
+ }catch(_){if(token!==generation)return;release();ready('没有打开麦克风也没关系，可以直接说给家人听，或点继续。');}}
+function stopRecord(){if(phase!=='recording'||recorder?.state!=='recording')return;clearTimeout(limit);clearInterval(ticker);limit=ticker=null;phase='processing';markup('录好啦，马上听回放','麦克风已经关闭。',btn('skip','继续'));recorder.stop();tracksOff();}
+document.addEventListener('click',e=>{const el=e.target.closest('[data-speaking]');if(!el||el.disabled||!mount?.contains(el))return;const a=el.dataset.speaking;if(a==='record')record();else if(a==='stop')stopRecord();else if(a==='skip')done(url?'recorded':'listened');else if(a==='play'){playback?.pause();playOwn(generation);}});
+function clear(){generation++;release();phase='idle';mount=null;finish=null;}
+function pause(){if(['pending','recording','processing','playback'].includes(phase)){generation++;release();ready('刚才已暂停录音，想说的时候再点一次。');}}
+window.PicnicSpeaking={show(el,onDone){clear();mount=el;finish=onDone;ready();cue();},clear,pause,cue,getState:()=>({phase,microphoneActive:!!stream?.getTracks().some(t=>t.readyState==='live'),hasRecording:!!url})};
+window.addEventListener('pagehide',clear);
+})();
