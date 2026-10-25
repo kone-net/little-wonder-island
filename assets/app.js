@@ -1,7 +1,8 @@
 (()=>{
 'use strict';
 const data=window.COURSES,E=window.GameEngine,root=document.getElementById('app'),voice=document.getElementById('narrator');
-const KEY='little-story-island-v2-20261024';
+const VOICE_TRIAL=new URLSearchParams(location.search).get('voiceTrial')==='cherry-picnic-v1';
+const KEY='little-story-island-v2-20261024'+(VOICE_TRIAL?'-voice-trial-cherry-picnic-v1':'');
 const stageNames=['故事出发','看看方法','我来试试','故事影院','英语小岛','动一动','生活里试试','故事结局'];
 const labels=['开场','教学','游戏','短片','英语','运动','实物','结局'];
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -129,19 +130,20 @@ function summary(){
 }
 function records(){shell(`<section class="completion"><div class="eyebrow">只记录实际参与</div><h1>${store.selectedAge||4} 岁 · 小岛上的足迹</h1><p class="muted">保存在当前浏览器，不上传孩子的录音、照片或个人信息。</p><div class="record-list">${ageLessons().map(l=>{const s=store.courses[l.id];return `<div class="record-row"><div><strong>第 ${l.sequence} 关 · ${esc(l.title)}</strong><br><small>${s?Object.keys(s.stages||{}).length+' 个环节有浏览或活动记录；'+(s.finished?'故事已走到结局':'可以继续'):'还没出发'}</small></div>${btn('course','去看看','small',`data-id="${l.id}"`)}</div>`;}).join('')}</div><div class="controls">${btn('home','回到小岛','primary')}${btn('export','导出记录','small')}${btn('clear','清除本机记录','quiet danger')}</div></section>`);}
 function render(speak=true){if(page==='home')home();else if(page==='ages')agePicker();else if(page==='intro')intro();else if(page==='class')classroom(speak);else if(page==='summary')summary();else records();}
+function audioMeta(id){const override=window.COURSE_VOICE_OVERRIDES?.[course?.id];if(override){const original=window.COURSE_AUDIO?.[id];return original?.locale?.startsWith('en')?original:override.clips?.[id];}return window.COURSE_AUDIO?.[id];}
 function stopVoice(){pausedSongSrc=null;voiceToken++;voice.pause();voice.onended=null;voice.onerror=null;autoRemaining=null;lastClip=null;englishLoop=null;document.querySelectorAll('.vocab-card.is-speaking').forEach(el=>el.classList.remove('is-speaking'));}
 function status(message){const el=document.getElementById('audioStatus');if(el)el.textContent=message;}
 function say(item,auto=false){
  stopVoice();if(!item)return;lastClip=item;const token=voiceToken;
- const meta=window.COURSE_AUDIO?.[item.id];
+ const meta=audioMeta(item.id);
  if(!meta){status('这段声音尚未加载，可先看字幕或点再听。');return;}
  if(auto&&page==='class'&&[0,1,3].includes(state.chapter)){
-  const next=currentList()?.[state.step+1],src=next&&window.COURSE_AUDIO?.[next.id]?.src;
+  const next=currentList()?.[state.step+1],src=next&&audioMeta(next.id)?.src;
   if(src&&nextStoryAudio.getAttribute('src')!=='assets/'+src)nextStoryAudio.src='assets/'+src;
  }
  voice.src='assets/'+meta.src;
  // Loading a new source can restore defaultPlaybackRate in the browser.
- voice.defaultPlaybackRate=state?.chapter===4&&slow ? .85:1;
+ voice.defaultPlaybackRate=meta.locale?.startsWith('en')&&slow ? .85:1;
  voice.playbackRate=voice.defaultPlaybackRate;
  const ended=()=>{if(token!==voiceToken)return;if(englishLoop?.token===token){if(englishLoop.round<englishLoop.total){englishLoop.wait=englishLoop.sentence?1400:900;status('轮到你说一说，也可以指一指。稍后再听一遍。');}else status('这一组听完啦。可以再听，也可以继续试一试。');updateEnglishCue();return;}if(page==='class'&&state.chapter===3){if(!state.filmSeen.includes(state.step))state.filmSeen.push(state.step);save();}const continues=auto&&state?.auto!==false&&state.step+1<(currentList()?.length||0);status(continues?'故事继续……':store.muted?'声音已关闭':'这一段讲完啦，准备好就继续。');if(continues){autoRemaining=STORY_GAP_MS;autoTotal=autoRemaining;}};
  voice.onended=ended;
@@ -159,7 +161,7 @@ function songPanel(){
  const alternatives=songs.filter(s=>!s.id.startsWith('yt-')&&s.id!==song.id);
  return `${cinemaTabs()}<section class="song-cinema"><div class="eyebrow">${esc(song.publisher||'Super Simple Songs')} · ${isAssigned?'本关预选':'自由回看'}${song.duration?' · '+esc(song.duration):''}</div><h2>${esc(song.title)}</h2><p>${esc(isAssigned?assignment.cue:song.cue)}</p>${isAssigned?`<p class="video-match"><span class="pill">${esc(assignment.match)}</span> ${esc(assignment.note)}</p>`:''}<div class="song-player">${state.songEmbed&&canEmbed?`<iframe data-song-player title="${esc(song.title)} 官方视频" src="${esc(IslandVideo.embedURL(song.videoId,{muted:store.muted})||'')}" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`:`<div class="song-cover"><span aria-hidden="true">🎬</span><h3>${esc(song.topic)}</h3>${canEmbed?btn('playSong','▶ 播放本集','primary'):`<a class="btn primary" data-song-online href="${esc(watch)}" target="_blank" rel="noopener">▶ 在线播放本集 ↗</a>`}</div>`}</div><div class="controls"><a class="btn small" data-song-online href="${esc(watch)}" target="_blank" rel="noopener">新窗口播放 ↗</a><a class="btn small" href="https://www.youtube.com/watch?v=${song.videoId}" target="_blank" rel="noopener">在 YouTube 打开原片 ↗</a><a href="${song.source}" target="_blank" rel="noopener">官方来源 ↗</a></div><p class="muted song-help">${canEmbed?'原版视频需联网，由家长陪看。':'本地课堂的视频会在在线播放器中打开，看完关闭新页面即可回到这里。'}${song.durationSeconds>180?' 本集较长，可以把看后活动留到课后。':''}</p>${isAssigned?`<details class="parent-details"><summary>看后一起试试</summary><p>${esc(assignment.after)}</p></details>`:''}<details class="song-help"><summary>无法播放，或想暂停？</summary><p>外部视频可能有广告、登录验证或地区限制。无法播放可打开原片，或切回原创故事。课堂“休息一下”会停止视频，继续时重新播放；视频内暂停可保留位置。</p></details><details class="video-alternatives"><summary>家长选片 · 换回本关视频或回看儿歌</summary><div class="song-list">${[songs.find(s=>s.id===recommendedSong()),...alternatives].map(s=>`<button class="song-option ${song.id===s.id?'active':''}" data-act="chooseSong" data-id="${s.id}" aria-pressed="${song.id===s.id}"><strong>${esc(s.title)}</strong><small>${s.id===recommendedSong()?'本关预选':esc(s.topic)}</small></button>`).join('')}</div><p><a href="video-library.html" target="_blank" rel="noopener">打开完整视频素材库 ↗</a></p></details><div class="controls">${btn('songDone','看过了，去英语小岛 →','primary')}${btn('cinemaLocal','看原创故事','small')}</div><p class="muted">看一集即可，也可以只欣赏；观看由陪伴者确认。</p></section>`;
 }
-function startEnglish(item,total=3){say(item);if(!store.muted&&window.COURSE_AUDIO?.[item?.id])englishLoop={token:voiceToken,round:1,total,wait:null,sentence:item.id.includes('-ES')};updateEnglishCue();}
+function startEnglish(item,total=3){say(item);if(!store.muted&&audioMeta(item?.id))englishLoop={token:voiceToken,round:1,total,wait:null,sentence:item.id.includes('-ES')};updateEnglishCue();}
 function updateEnglishCue(){if(page!=='class'||state?.chapter!==4)return;const t=enTask(),answer=state.english[state.step],key=t.options?(answer?.done?answer.choice:null):(englishFocusOverride||t.focus);for(const el of document.querySelectorAll('.vocab-card')){el.classList.toggle('focus-target',el.dataset.vocab===key);el.classList.toggle('is-speaking',el.dataset.vocab===key&&!voice.paused&&!voice.ended);}const counter=document.getElementById('repeatCue');if(counter)counter.textContent=store.muted?'声音已关闭，可看图或打开声音':englishLoop?`第 ${englishLoop.round} / ${englishLoop.total} 遍 · 听一听，轮到你说一说`:`重点词句重复 ${t.repeats||3} 遍，可随时再听`;}
 voice.addEventListener('playing',()=>{updateEnglishCue();if(englishLoop)status('听一听，看对应的物品。');});
 voice.addEventListener('pause',updateEnglishCue);
@@ -257,6 +259,6 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){save();if(
 window.addEventListener('pagehide',save);
 window.addEventListener('hashchange',()=>route());
 function route(){motion.cancel();stopVoice();closeModal();save();const match=location.hash.match(/^#(course|lesson|done)-(\d{2}|A[356]-\d{2})$/);if(match&&activate(match[2])){page=match[1]==='course'?'intro':match[1]==='done'&&state.finished?'summary':'class';}else page=location.hash==='#records'?'records':location.hash==='#ages'?'ages':'home';render(page!=='class');}
-window.IslandApp={getState:()=>state,getCourse:()=>course,getStore:()=>store,journeyTarget,ageLessons,englishSteps,englishTasks,storageKey:KEY};
+window.IslandApp={getAudioMeta:audioMeta,getState:()=>state,getCourse:()=>course,getStore:()=>store,journeyTarget,ageLessons,englishSteps,englishTasks,storageKey:KEY};
 route();
 })();

@@ -1,0 +1,24 @@
+{
+  "version": "20261025-cherry-heart-v1",
+  "status": "active",
+  "chinese": {
+    "engine": "IndexTTS-2.5",
+    "voice": "Cherry-reference-clone",
+    "referenceSha256": "51661dd8646d4f94544bc2713a1f8c9fa8bbee4bf06326d0971af7c38b2467a6",
+    "sourceCommit": "d9e41aac89fd00b3d71497fddb287b7f24613712",
+    "seed": 2026,
+    "precision": "bf16",
+    "durationFactor": 1.0,
+    "clips": 1014
+  },
+  "english": {
+    "engine": "kokoro",
+    "voice": "af_heart",
+    "speed": 0.78,
+    "clips": 787,
+    "existingFilesPreserved": true,
+    "extraSlowPlaybackRate": 0.85
+  },
+  "total": 1801,
+  "apiKeyRequired": false
+}

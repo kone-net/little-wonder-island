@@ -1,0 +1,35 @@
+# 小小奇遇岛：中文Cherry复刻 / 英语Heart
+
+版本：20261025-cherry-heart-v1。适用于3—12岁、每龄20关，共200关。
+
+## 已确认的统一声音
+
+| 语言与用途 | 引擎与音色 | 数量 | 速度 |
+|---|---|---:|---|
+| 全部中文：故事、知识、游戏、古诗、提示、结局 | 本地IndexTTS-2.5 / Cherry参考复刻 | 1014 | 模型时长系数1.0 |
+| 全部英语：单词、句子、对话、听辨 | 原有Kokoro af_heart | 787 | 原有合成速度0.78 |
+
+用户确认4岁第1关的中文复刻效果后，选择整站统一采用这一中文声音；英语恢复并保留此前确认的Heart。先前的Serena/Cherry/Maia/Jennifer四音色分工方案不再作为当前生产规范。
+
+787段英语文件及两份英语JSON清单逐字节保留，没有重新生成，也没有改成IndexTTS或Jennifer。原有三遍示范、物品联动、跟读间隔、听辨和额外0.85倍慢放仍然可用；额外慢放只影响英语。
+
+## 中文参考与一致性
+
+参考来自用户指定的芊悦Cherry官方合成试听，使用开头约13秒、在自然停顿处截取。参考SHA256：`51661dd8646d4f94544bc2713a1f8c9fa8bbee4bf06326d0971af7c38b2467a6`。固定seed=2026、GPT BF16、参考编码器CPU FP32，同一份参考用于全部中文。模型代码固定提交`d9e41aac89fd00b3d71497fddb287b7f24613712`。
+
+《春晓》“觉”显式标注JUE2，拼音四声“八、拔、把、爸”分别标注BA1、BA2、BA3、BA4。原始显示文本与contentHash不改变，另存实际合成输入。最终文件存在与可播放不能替代对发音、自然度和节奏的听审。
+
+## 制作与发布
+
+全部中文按文本、输入标注、参考、语言和参数去重后有942份母版。复用已经确认的Cherry试课母版，其余离线生成；不需要API Key。输出单声道24kHz、64kbps MP3并统一响度。模型、参考WAV、母版、日志和备份留在test目录，不进入发布包。
+
+生成入口为test/cherry-heart-release/pipeline.py。generate_audio.py和generate_academy_audio.py均转向这一中文链路；请求生成英语时明确保留原文件。全量完成后检查并统一切换，旧中文和旧试课音频备份在制作目录，活动站点不再混用单关覆盖。
+
+正常学习进度保持原存储键、课程ID与内容版本。旧的Cherry试玩链接继续可用，仍使用独立试玩进度，但声音遵循本次整站统一配置。
+
+## 来源
+
+- [IndexTTS官方代码](https://github.com/index-tts/index-tts)
+- [Cherry参考来源](https://help.aliyun.com/zh/model-studio/qwen-tts-voice-list)
+- [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M)
+- 实际配音身份、生成参数和文件校验值以assets目录的四份音频清单及voice-policy.json为准。

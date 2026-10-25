@@ -1,0 +1,1 @@
+window.COURSE_VOICE_OVERRIDES = {};
