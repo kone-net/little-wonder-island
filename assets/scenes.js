@@ -71,7 +71,7 @@ function shadowScene(step,phase,choice){
  return d;
 }
 function render(lesson,phase='opening',step=0,options={}){
- if(lesson?.visual&&window.AgeScenes)return AgeScenes.render(lesson,phase,step,options);
+ if(lesson?.visual){if(window.AgeScenes)return AgeScenes.render(lesson,phase,step,options);return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 510" role="img" aria-label="分龄动画暂未加载，请刷新" data-scene-unavailable="true"><rect width="900" height="510" fill="#e8efdf"/><text x="450" y="245" text-anchor="middle" font-size="27" fill="#31543d">分龄动画暂未加载，请刷新后重试。</text></svg>`;}
  const mode=lesson?.mode||'party',hero=!lesson;let details='';
  if(mode==='share')details=share(step,phase);
  if(mode==='party')details=partyScene(step,phase);

@@ -3,3 +3,21 @@
 .u-flight{position:fixed!important;z-index:90;pointer-events:none!important;margin:0!important;transform-origin:center;box-shadow:0 15px 30px #29483d30}
 .u-fraction{display:grid;grid-template-columns:repeat(var(--parts),1fr);gap:3px;background:#fffdf0;border:3px solid #8ba56d;max-width:700px;height:90px;border-radius:16px;overflow:hidden;margin:12px 0}.u-fraction button{background:#fffdf3;border-right:1px dashed #9cae83;min-height:60px}.u-fraction .covered,.u-map-grid .covered{background:#99bb7b}.u-map-grid{display:grid;grid-template-columns:repeat(8,1fr);max-width:640px;gap:3px;margin:20px auto}.u-map-grid button{aspect-ratio:1;background:#fffdf3;border:1px solid #bbcca5;border-radius:4px;min-height:30px}.u-chain{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;min-height:90px;margin:20px 0;padding:18px;border:2px dashed #a9bd90;border-radius:20px}.u-chain button{background:#fff5d9;max-width:180px;padding:15px;border-radius:15px;font-size:15px;line-height:1.8}.u-chain>span{font-size:25px;color:#6c8f51}@media(max-width:650px){.u-chain button{max-width:120px;font-size:12px;padding:12px}.u-fraction{height:70px}}
 @media(max-width:650px){.unified-classroom .p-trail{align-items:stretch;margin:4px 0 14px}.unified-classroom .p-trail li{justify-content:center;flex:1;min-width:0}.unified-classroom .p-trail li:after{display:none}.unified-classroom .p-trail button{flex-direction:column;white-space:normal;text-align:center;line-height:1.4;font-size:10px;min-height:57px;gap:4px;width:100%;padding:4px 1px}}
+/* Conceal the entire answer subtree, including pictures with their own visibility rules. */
+.unified-classroom .u-en-cards.u-covered .p-vocab-card:not(.correct) .p-object,.unified-classroom .u-en-cards.u-covered .p-vocab-card:not(.correct) .p-object *,.unified-classroom .u-en-cards.u-covered .p-vocab-card:not(.correct) .u-en-label{visibility:hidden!important}
+.unified-classroom .u-en-cards.u-covered .p-vocab-card:not(.correct):after{visibility:visible!important;z-index:2}
+
+.u-film-choice{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:12px}.u-film-choice [aria-pressed="true"]{background:#42664f;color:#fff;border-radius:24px}
+.unified-classroom .p-object .token{width:clamp(64px,9vw,104px);height:clamp(64px,9vw,104px);border-width:3px;flex-shrink:0}
+.unified-classroom .u-pairs .p-object .token,.unified-classroom .u-bingo .p-object .token{width:64px;height:64px}
+.unified-classroom .p-object .rectangle-picture{width:110px;height:65px}
+.unified-classroom .u-pairs{position:relative;gap:70px;isolation:isolate}
+.u-pair-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.u-pair-lines path{fill:none;stroke-width:4;stroke-linecap:round}
+.unified-classroom .u-pairs>div{position:relative;z-index:1}
+.unified-classroom .u-pairs .u-sound{display:flex;flex-direction:column;gap:7px;border:3px solid #c7d4b8;background:#fffdf5;color:#375c43;min-height:90px;white-space:normal;transition:background .18s,border-color .18s,box-shadow .18s}
+.u-sound small{font-size:12px;line-height:1.5}
+.unified-classroom .u-pairs .u-listening{background:#42664f;color:#fff;border-color:#294e37;box-shadow:0 0 0 5px #74956438}
+.unified-classroom .u-pairs .u-matched{border:3px solid var(--pair-color);background:#edf4df;color:#31503a}
+@media(max-width:650px){.unified-classroom .u-pairs{gap:38px}.unified-classroom .u-pairs .u-sound{padding:10px 6px;min-height:95px}.u-sound small{font-size:10px}.u-pair-lines path{stroke-width:3}}
+@media(max-width:650px){.unified-classroom .p-object .rectangle-picture{width:80px;height:48px}.unified-classroom .u-pairs .p-object .token{width:54px;height:54px}}
