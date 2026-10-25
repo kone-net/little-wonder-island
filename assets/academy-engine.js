@@ -6,7 +6,7 @@ function assess(t,s){if(s.done)return {ok:true,text:s.feedback};
  case 'choice':return {ok:(t.answers||[]).includes(s.choice),text:s.choice==null?'先作一个选择。':(t.explanations?.[s.choice]||((t.answers||[]).includes(s.choice)?t.success:t.hint))};
  case 'number':{const targets=t.fields.map(f=>f.target);let ok=s.values.every((v,i)=>v===targets[i]);if(t.rule==='linear')ok=s.values[1]===2*s.values[0]+1&&s.tried.length>=2;return {ok,text:ok?t.success:'再看每一项的数量、单位和题目条件。'+t.hint};}
  case 'sort':{const wrong=t.cards.filter((c,i)=>s.assign[i]!==c.to);return {ok:!wrong.length,text:wrong.length?'还有 '+wrong.length+' 项需要检查。'+t.hint:t.success};}
- case 'sequence':return {ok:s.order.every((n,i)=>n===i),text:s.order.every((n,i)=>n===i)?t.success:t.hint};
+ case 'sequence':return {ok:s.order.length===t.cards.length&&s.order.every((n,i)=>n===i),text:s.order.length===t.cards.length&&s.order.every((n,i)=>n===i)?t.success:t.hint};
  case 'experiment':return {ok:s.observed.length>=(t.minimum||2)&&(t.answers||[]).includes(s.choice),text:s.observed.length<(t.minimum||2)?'先记录至少两种条件，再比较。':(t.explanations?.[s.choice]||((t.answers||[]).includes(s.choice)?t.success:t.hint))};
  case 'studio':return {ok:!!(s.reported||s.text.trim()||s.strokes.length),reported:true,text:s.reported||s.text.trim()||s.strokes.length?'已保存你的作品或动手记录；可以用下面的观察点和家人交流。':'可以画、写，也可以完成口述或真实动作后点“我已口述／动手”。'};
  case 'circuit':return {ok:!!(s.wires?.every(Boolean)&&s.switchClosed&&s.powerStates.includes(true)&&s.powerStates.includes(false)),text:s.wires?.every(Boolean)&&s.switchClosed?t.success:'回路还没闭合，检查导线缺口与开关。'};
