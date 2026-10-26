@@ -10,7 +10,7 @@ function showCover(){slot.replaceChildren();const cover=document.createElement('
 function start(){
  const src=IslandVideo.embedURL(song.videoId,{muted});showCover();
  if(!src){const link=document.createElement('a');link.className='btn primary';link.href=IslandVideo.watchURL(song.id,location,{muted});link.target='_blank';link.rel='noopener';link.textContent='▶ 打开在线播放器';slot.firstChild.append(link);play.hidden=true;status.textContent='这份文件在电脑本地打开，请用在线播放器观看视频。';return;}
- const frame=document.createElement('iframe');frame.title=song.title+' 官方视频';frame.referrerPolicy='strict-origin-when-cross-origin';frame.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';frame.allowFullscreen=true;frame.src=src;slot.replaceChildren(frame);status.textContent='如果没有自动开始，请点一下视频中的播放按钮。';
+ const frame=document.createElement('iframe');frame.title=song.title+' 官方视频';frame.referrerPolicy='strict-origin-when-cross-origin';frame.width='560';frame.height='315';frame.setAttribute('frameborder','0');frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';frame.allowFullscreen=true;frame.src=src;slot.replaceChildren(frame);status.textContent='请点视频中央的播放按钮开始观看。';
 }
 play.addEventListener('click',start);
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&slot.querySelector('iframe')){showCover();status.textContent='视频已停止。回来后可点“播放 / 重新播放”。';}});

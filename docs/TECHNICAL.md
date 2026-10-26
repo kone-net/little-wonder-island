@@ -1,8 +1,8 @@
 # 小小奇遇岛技术设计文档
 
-版本：V2.8 / age-video-v1；文档修订：2026-10-26；状态：当前运行基线。
+版本：V2.8 / age-video-v1；文档修订：2026-10-26；播放器补丁：official-embed-v1；状态：当前运行基线。
 
-产品与逐关内容以 [PRD](PRD.md) 为准。本文说明如何实现、维护、验证和发布；仓库约定见 [AGENTS.md](../AGENTS.md)。基线应用提交为 `1ee4018d8765ab168b7e42a64e2e16f938e1a8f0`。本次仅整理文档和维护约定，不改课堂运行行为。
+产品与逐关内容以 [PRD](PRD.md) 为准。本文说明如何实现、维护、验证和发布；仓库约定见 [AGENTS.md](../AGENTS.md)。基线应用提交为 `1ee4018d8765ab168b7e42a64e2e16f938e1a8f0`。后续官方嵌入补丁按用户对照结果调整播放器；课程与音频基线保持不变。
 
 ## 1. 架构与运行边界
 
@@ -341,9 +341,11 @@ PRD为方便家长使用一基“第几列、第几行”；源数据和部分�
 
 ### 8.3 外部视频
 
-`CLASSROOM_VIDEO_MAP` 的200条映射指向65个不同视频，部分按学习主题复用。`IslandVideo.embedURL` 只接受11位合法ID和HTTP(S)页面，使用youtube-nocookie.com；参数有autoplay、rel=0、playsinline、mute、origin。iframe提供正确referrerpolicy与allow能力；URL中的origin不能代替实际Referer。
+用户在已登录Chrome反馈：其提供的官方原样普通域名iframe可播，隐私域名和旧课堂参数不可播。独立未登录自动化环境三种均被验证拦截，不能冒充该用户实播结果。此次以用户确认可用的方式做兼容调整，仍保留本集直达/复制及原创切换。
 
-课程选择保存在pref.film，新用户默认song；保存过original的用户不强制重选。只在点播放后创建iframe。切换/暂停移除iframe，之后需重新播放，当前不保存YouTube内部秒数。
+`CLASSROOM_VIDEO_MAP` 的200条映射指向65个不同视频，部分按学习主题复用。`IslandVideo.embedURL` 只接受11位合法ID和HTTP(S)页面，当前默认使用 `https://www.youtube.com/embed/ID`。默认手动播放，不附加autoplay、rel、playsinline、mute或origin；调用方明确传入autoplay/muted时才追加对应参数。用户提供的 `hoFhVdYsmPg` 保留其si参数，不能把该si用到其他视频。iframe按官方分享代码提供width/height、allow权限、allowfullscreen与 `strict-origin-when-cross-origin`，CSS继续负责响应式尺寸。真实Referer来自包含页，不伪造Cookie或请求头。
+
+课程选择保存在pref.film，新用户默认song；保存过original的用户不强制重选。只在点“打开本集播放器”后创建iframe，再由用户点视频中央▶起播。切换/暂停移除iframe，之后需重新播放，当前不保存YouTube内部秒数。
 
 直达入口是精确watch?v=ID，复制失败显示只读文本框供手动复制。点击直达/复制只记externalVideo并给“看完了，继续”；不能声称站点验证了观看完成。Chrome账号与内嵌环境可能不同，站点不能保证消除登录/人机验证。元数据核验不代表版权转让、完整审看或跨地区可播，前端不下载或转存这些外部视频。
 
