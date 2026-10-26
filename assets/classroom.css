@@ -23,3 +23,21 @@
 .unified-classroom .u-pairs .u-matched{border:3px solid var(--pair-color);background:#edf4df;color:#31503a}
 @media(max-width:650px){.unified-classroom .u-pairs{gap:38px}.unified-classroom .u-pairs .u-sound{padding:10px 6px;min-height:95px}.u-sound small{font-size:10px}.u-pair-lines path{stroke-width:3}}
 @media(max-width:650px){.unified-classroom .p-object .rectangle-picture{width:80px;height:48px}.unified-classroom .u-pairs .p-object .token{width:54px;height:54px}}
+
+/* Compact classroom chrome: retain large touch targets and natural page scrolling. */
+.unified-classroom .p-header{height:64px;max-width:1160px;padding:0 24px;gap:16px}
+.unified-classroom #uMain{padding-top:0}
+.unified-classroom .p-trail{margin:0 auto 12px;min-height:44px;max-width:760px}
+.unified-classroom .p-trail button{min-height:44px}
+@media(min-width:651px) and (max-width:1366px){
+.unified-classroom .p-scene-head{padding:12px 24px;min-height:68px}
+.unified-classroom .p-caption{min-height:76px;padding:12px 24px}
+.unified-classroom .p-dock{min-height:64px;padding:10px 20px}
+.unified-classroom .p-stage{min-height:clamp(300px,calc(100svh - 340px),540px)}
+.unified-classroom .u-task{min-height:clamp(300px,calc(100svh - 340px),540px)}
+}
+@media(max-width:650px){.unified-classroom .p-header{height:60px;padding:0 14px;gap:8px}.unified-classroom .p-trail{margin:0 4px 8px}.unified-classroom .p-parent{min-height:44px}.unified-classroom .p-brand small{font-size:7px}}
+
+.u-sound-gate{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#243e34b8;padding:20px;backdrop-filter:blur(5px)}.u-sound-gate>div{width:min(440px,100%);box-sizing:border-box;padding:32px;border-radius:28px;background:#fffdf3;text-align:center;box-shadow:0 20px 70px #16352844}.u-sound-gate>div>span{font-size:46px;color:#426a50}.u-sound-gate h2{font-size:25px;margin:12px 0}.u-sound-gate p{font-size:16px;margin:12px 0 24px}.u-sound-gate .p-button{min-height:60px;font-size:21px;width:100%}
+
+.unified-classroom .u-task:has([data-experience="poem-paint"]){padding:8px 18px;min-height:0}.unified-classroom .u-task:has([data-experience="poem-paint"]) .p-concept,.unified-classroom .u-task:has([data-experience="poem-paint"]) .u-task-content>h2,.unified-classroom .u-task:has([data-experience="poem-paint"]) .u-feedback{display:none}.unified-classroom [data-experience="poem-paint"] .x-complete>p{display:none}

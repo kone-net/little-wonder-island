@@ -1,6 +1,6 @@
 # 小小奇遇岛技术设计文档
 
-版本：V2.8 / age-video-v1；文档修订：2026-10-26；播放器补丁：official-embed-v1；交互/布局补丁：retry-video-v1；状态：当前运行基线。
+版本：V2.8 / age-video-v1；文档修订：2026-10-27；播放器补丁：official-embed-v1；交互/布局补丁：picture-story-v1；状态：当前运行基线。
 
 产品与逐关内容以 [PRD](PRD.md) 为准。本文说明如何实现、维护、验证和发布；仓库约定见 [AGENTS.md](../AGENTS.md)。基线应用提交为 `1ee4018d8765ab168b7e42a64e2e16f938e1a8f0`。后续官方嵌入补丁按用户对照结果调整播放器；课程与音频基线保持不变。
 
@@ -331,7 +331,7 @@ PRD为方便家长使用一基“第几列、第几行”；源数据和部分�
 
 音频制作参数：中文IndexTTS-2.5 Cherry参考复刻，BF16、固定种子与已记录参考哈希；英语Kokoro af_heart、速度0.78。生产MP3为单声道24kHz、64kbps。新增中文旁白经响度规范化；旧声音不重新编码覆盖。参考声和模型留test，生产只发布音频与允许公开的来源元数据。
 
-当前生产共2145个MP3：前版1816 + 原创200 + 新英语92 + 低龄提示37；升级英语另复用12条，不增加文件数。数量是本基线资产清单，修改后必须重新统计，不能长期照抄。
+当前生产共2157个MP3：前版1816 + 原创200 + 新英语92 + 低龄提示37 + 看图表达10 + 古诗修订2；升级英语另复用12条，不增加文件数。数量是本基线资产清单，修改后必须重新统计，不能长期照抄。
 
 ### 8.2 原创有声片段
 
@@ -459,3 +459,19 @@ GitHub Pages直接托管公开仓库 `kone-net/little-wonder-island` 根目录�
 ## 16. 维护制度
 
 任何规则、文案、音色、资源、进度结构或路由变化，应按稳定课程ID更新PRD对应五环节和本文对应设计。先保证教材内容、画面、声音和判定一致，再扩大关卡数量。内容快照用于核对，不应在未审阅时覆盖主文档手工修订；历史专题资料保留但不再冒充当前完整设计。
+
+## picture-story-v1：具体看图表达与紧凑布局
+
+- 新增 assets/classroom-picture-story.js/css、classroom-picture-audio.js 及10段中文音频，仅P04-02生效；课堂、首页、游戏目录使用相同新标题和目标。主任务绕过通用studio编辑器，底层module.kind保留兼容。
+- 两步单选状态存flow.design.picture：step、answers、selected、feedback、participation；错选不推进，选对推进，自愿表达/先听均确认参与。
+- flow.pictureLessonVersion=1仅迁移一次，将旧design/activity归档到flow.previousPictureLesson，清理动手完成位；保留finished、英语和其他课程，绝对节点仍11个。
+- meta优先查CLASSROOM_PICTURE_AUDIO；同ID原创FILM-P04-02映射至新有声小熊浇花。旧音频文件保留，英文Heart音频不变。
+- 全部role模式标题为Look and say，配第一个主目标图物、中文含义、自然提示，复用自愿录音，无选择题进度。
+- 顶栏64/60px，导航至少44px；iPad通过svh与clamp给主画面自然最小高度，压缩外围，不用固定高度裁切任务。iframe仍height:auto与aspect-ratio:16/9。
+- 古诗P04-04两段旁白使用原确认音色重制，避免书名号和重复句号作为合成输入；新资源位于assets/classroom-poem-audio，旧文件保留。文本和元数据同步，不将自动可解码检查等同人工听感确认。
+
+### 古诗绘画工具与声音解锁补丁
+
+ClassroomExperience.objectShape同时生成工具SVG和作品SVG；poem-paint使用月亮/星星/树/小屋，避免文字与输出错配。color操作持久化d.color并修改d.objects[d.selected].color；选中轮廓及勾可见，完成后允许有限画布编辑但不重写历史完成记录。古诗活动只需一个图案确认参与，不再强制讲述确认。P04-04进入task播放ACADEMY-poem-night一次，poemRead重播，不增加绝对节点。画布通过svh/clamp调整；长可选内容保留页面滚动。
+
+retrySound在root内插入fixed居中u-sound-gate并聚焦60px高主按钮；play成功移除整个遮罩。soundStart在同步点击路径清除主动静音后run；run在第一个await前调用voice.play。NotAllowedError失败不推进，过期token不再弹出旧遮罩。测试模拟浏览器拒绝一次、用户手势放行，真实iPad仍需实机试听。

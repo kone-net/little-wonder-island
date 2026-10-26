@@ -316,18 +316,18 @@
   },
   "P04-02": {
     "id": "course-video-P04-02",
-    "videoId": "BfqV7muTtMU",
-    "title": "Bingo Read Aloud By Isla Fisher ⭐️ | Bluey Book Reads Series 3 💙 | Bluey",
-    "publisher": "Bluey - Official Channel",
-    "source": "https://www.youtube.com/watch?v=BfqV7muTtMU",
-    "duration": "5:30",
+    "videoId": "pZ7H3XuEFkQ",
+    "title": "Where Is The Cat? 🐱 | Peekaboo! | Practice Prepositions! | Super Simple Songs",
+    "publisher": "Super Simple Songs - Kids Songs",
+    "source": "https://www.youtube.com/watch?v=pZ7H3XuEFkQ",
+    "duration": "2:17",
     "matchRole": "主题拓展",
-    "cue": "本关主题拓展：完整叙述。观察短片中的例子，再回到课堂。",
+    "cue": "看看短片里的小猫藏在哪里；看完可以用中文指图说一说。",
     "previewNote": "可以只看一小段，跟着画面指一指或模仿。",
-    "checkedAt": "2026-10-26",
+    "checkedAt": "2026-10-27",
     "verification": "2026-10-26 YouTube oEmbed 标题与发布者已核验；未将元数据成功等同于实际播放成功",
-    "catalogKey": "bingo",
-    "publisherURL": "https://www.youtube.com/@BlueyOfficialChannel"
+    "catalogKey": "cat",
+    "publisherURL": "https://www.youtube.com/@SuperSimpleSongs"
   },
   "P04-03": {
     "id": "course-video-P04-03",
