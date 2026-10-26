@@ -1,7 +1,12 @@
 # 二百关课堂技术设计
 
+## V2.8 当前规范（2026-10-26）
+
+详见 [分龄与视频声音修复](AGE-VIDEO-VOICE-V28.md)、[200关视频配课](200关视频配课表.md)、[英语梯度复核](200关英语梯度复核.md)。200关均有实际视频条目与配音原创小片段；3岁采用逐步短提示，5岁及以上避免照搬3岁主目标。下方 V2.7 及更早条目保留为历史说明；涉及无声图解或缺片的描述由本节取代。
+
+
 版本：V2.7 分龄交互 / 中文Cherry / 英语Heart · 2026-10-26。
-## V2.7 分龄玩法与独立短片（2026-10-26，当前基准）
+## V2.7 历史设计（已由V2.8更新）
 
 不以换色、换标题、随机版式或英语顺序排列宣称新玩法。56节创作课按目标选择实际工具；数理课采用十捆交换、十框、阵列、元角兑换、比例量杯、百分格、天平、变量记录等。开放任务只记录参与，不自动评判质量。3—6岁可用口述，输入收进大人可选记录。7岁起逐步加入听义、搭句，11—12岁加入听音补位。
 
@@ -59,3 +64,13 @@ classroom-experience-data.js 按目标配置主任务及英语结构，取消序
 保留存储键、课程ID、已完成记录与模型跟读记录。flow.experienceVersion=2留存previousEnglishGames快照，再初始化新配置对应的游戏尝试，避免旧索引被误用为新结果；课程和阶段完成标记、示范记录保持不变；节点数量仍保持三项英语游戏。作品存在flow.design，旧作品字段保留。新操作受课堂阶段、暂停、对话框与完成状态保护。配音和录音策略不变。
 
 新增检查 audit-experiences.js、experience-actions.js；原规则和配音审计继续运行。不能单独运行旧build-classroom.js覆盖本次配置，需同时保留目标配置与验收。
+
+## V2.8 实现细节
+
+classroom-video-map.js 是200关的显式配片表，替代关键词回退。classroom-video-help.js 提供本集 watch 链接、剪贴板与只读文本回退。classroom-voiced-film.js 把每关 FILM 音频和同文字幕绑定；classroom-film-audio.js 提供200条资源元数据，MP3在独立 classroom-film-audio 目录。run(film) 等待真实音频结束或显示加载失败入口，不使用三段固定静默计时。
+
+classroom-toddler.js 负责3岁独立、逐步的交互状态，保存在 flow.toddler；ClassroomToddler.voice 选择当前短指令，classroom-toddler-audio.js 保存37条中文指令与鼓励、重试旁白。任务完成记参与，不调用旧版复杂棋类或分镜题进行虚假评分。
+
+classroom-language-plan.js 覆盖主要目标、图片与游戏组合。classroom-language-audio.js 包含104条目标引用，其中92条新MP3、12条复用原音频；原音频文件不变。保留旧模型节点数量，新增skip字段归一化前进与续关位置。flow.languageVersion=3 将旧数字键游戏尝试归档到 previousLanguageGames，保留课程完成状态与 model-* 记录。
+
+测试依据：test/classroom/age-video-verification.json、all200-media-navigation.json、audio-file-verification.json、media-lifecycle-verification.json。音频文件测量与真实浏览器播放验证分别报告；不把元数据HTTP成功当作YouTube视频实播验收。
