@@ -5,3 +5,10 @@
 
 .v-memory .v-miss{border-color:#c4a05b;background:#fff2d5}
 .u-tablet .v-game .v-tools{float:right;display:block;margin:0 0 4px 10px}.u-tablet .v-tools .v-button{min-height:44px;padding:7px 12px;font-size:14px}.u-tablet .v-game>p:first-of-type{min-height:44px;margin:0 0 8px;display:flex;align-items:center;text-align:left;font-size:15px}.u-tablet .v-puzzle{clear:both;grid-template-columns:repeat(2,90px);grid-template-rows:repeat(var(--rows),70px);margin:8px auto}.u-tablet .v-puzzle .v-button,.u-tablet .v-piece-bank .v-button{width:90px;height:70px}.u-tablet .v-feedback{font-size:14px;min-height:0;margin:5px 0;line-height:1.5}.u-tablet .v-feedback:empty{display:none}.u-tablet .p-lesson:has(.v-game) .p-leaves,.u-tablet .p-lesson:has(.v-game) .p-en-instruction>span:not(.u-meaning){display:none}
+
+/* Prominent speaking affordance shared by every lesson. */
+.p-speaking .p-speaking-controls{align-items:center;justify-content:center}
+.p-speaking .p-button[data-speaking="record"],.p-speaking .p-button[data-speaking="stop"]{width:104px;height:104px;min-height:104px;border-radius:50%;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:#35644c;color:#fff;border:4px solid #e1b85f;box-shadow:0 0 0 5px #f9edc9,0 5px 0 #264c3b;font-size:15px;line-height:1.2;flex-shrink:0}
+.p-speaking [data-speaking="record"] svg{width:42px;height:42px}.p-speaking .p-button[data-speaking="stop"]{background:#a7493f}.p-stop-icon{font-size:35px}.p-speaking .p-button[data-speaking="record"]:focus-visible,.p-speaking .p-button[data-speaking="stop"]:focus-visible{outline:4px solid #d89c24;outline-offset:8px}
+.p-speaking:has([data-speaking="record"]) .p-mic-symbol{display:none}
+.v-piece-bank [data-e="puzzlePiece"]{touch-action:none;user-select:none;cursor:grab}.v-dragging{opacity:.25}.v-drag-ghost{position:fixed!important;z-index:9999;pointer-events:none!important;margin:0!important;opacity:.95;box-shadow:0 8px 20px #2345;transform:none!important}.v-puzzle .v-drop-hover{outline:4px solid #c5a04a;background:#fff0c8}.v-puzzle .v-placed{border-color:#648b62}
