@@ -2561,7 +2561,7 @@ window.COURSES = {
         },
         {
           "id": "LA3-07-ES2",
-          "text": "Let us stop.",
+          "text": "Stop, please.",
           "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],
@@ -5994,7 +5994,7 @@ window.COURSES = {
         },
         {
           "id": "L06-ES2",
-          "text": "Let us stop.",
+          "text": "Stop, please.",
           "action": "句子读三遍；指着具体物品，留时间跟读或做动作。"
         }
       ],

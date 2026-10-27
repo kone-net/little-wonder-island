@@ -4300,7 +4300,7 @@
 |本关儿童任务|听到 walk／stop 后切换动作|
 |准备材料|空出的小块活动空间,玩具道路|
 |主玩法|听指令 · 动作切换|
-|英语主目标|Let us walk. / Let us stop.|
+|英语主目标|Let us walk. / Stop, please.|
 
 ##### 环节1：听故事
 
@@ -4420,32 +4420,32 @@
 |顺序|英文实际目标|中文含义|当前图物/情境|
 |---:|---|---|---|
 |1|Let us walk.|我们一起走一走|🚶|
-|2|Let us stop.|我们一起停下来|✋|
+|2|Stop, please.|请停下来|✋|
 
 - 示范：按下面实际启用顺序逐项目播放，每轮两遍，中间留跟读间隔，聚焦卡突出；中文释义同步可见。
 - 示范内容（`L06-ES1`；约2.0秒；[音频](../assets/audio/L06-ES1-94ddc6603238.mp3)）：
 
 > Let us walk.
 
-- 示范内容（`L06-ES2`；约2.0秒；[音频](../assets/audio/en-articulation-v1/let-us-stop-1188719799ff.mp3)）：
+- 示范内容（`L06-ES2`；约2.2秒；[音频](../assets/audio/LA3-07-E03-d8a8708c3fc6.mp3)）：
 
-> Let us stop.
+> Stop, please.
 
 - 每项目示范结束：提示音→“轮到你说啦”→自愿录音/回放/鼓励，或“今天先听，继续”；不强制读对。
 
 **游戏1：翻牌记忆**
 
 - 先听玩法：“Remember the cards. Where is it?”。
-- 每次明确当前目标：“Listen and find: Let us walk.”（我们一起走一走）；“Listen and find: Let us stop.”（我们一起停下来）。
+- 每次明确当前目标：“Listen and find: Let us walk.”（我们一起走一走）；“Listen and find: Stop, please.”（请停下来）。
 - 儿童操作与对应：先看卡2500ms，再完全遮住物体/英文/中文，凭记忆点对应位置。
 - 完成与反馈：上表目标逐个完成；错选重听当前项目，已完成关系保留。
 
 **游戏2：声音配对**
 
 - 先听玩法：“Listen. Match the sound.”。
-- 每次明确当前目标：“Listen and find: Let us walk.”（我们一起走一走）；“Listen and find: Let us stop.”（我们一起停下来）。
+- 每次明确当前目标：“Listen and find: Let us walk.”（我们一起走一走）；“Listen and find: Stop, please.”（请停下来）。
 - 儿童操作与对应：先点左侧一个声音，选中加深；再点右侧对应图，配好保留同色两端及连线。
-- 正确连接：声音1 ↔ Let us walk. / 我们一起走一走；声音2 ↔ Let us stop. / 我们一起停下来。全部配好显示“配好啦，继续”，保留连线供回看。
+- 正确连接：声音1 ↔ Let us walk. / 我们一起走一走；声音2 ↔ Stop, please. / 请停下来。全部配好显示“配好啦，继续”，保留连线供回看。
 - 完成与反馈：上表目标逐个完成；错选重听当前项目，已完成关系保留。
 
 **游戏3：看图说一说**
@@ -28255,3 +28255,7 @@
 ## english-stop-v1：单句英语发音修订
 
 “Let us stop.”（我们停下来。）保留原教学文本，继续使用Kokoro af_heart与0.78制作速度，使用明确音素重制这一句。P04-11的L06-ES2与旧课程兼容ID LA3-07-ES2共用新的清晰发音资源；示范两遍、自愿跟读、图物对应和中文含义不变，不通过裁掉句首来处理反馈。新资源已核对可解码、非静音、内容元数据与课堂绑定；实际听感由用户试听确认。
+
+## english-stop-v2：停止指令用语调整（替代上一修订）
+
+用户复听后仍觉得旧句开头不清楚，因此当前教学句改为“Stop, please.”，中文为“请停下来”。不再播放Let us stop.及上一版显式音素修订。L06-ES2与兼容ID LA3-07-ES2复用原有LA3-07-E03的独立Stop, please.音频；保持Kokoro af_heart、0.78，不更换音色，不新增或拼接音节。当前字幕、句子示范、听音游戏和配对目标使用新句，停止动作目标及原有两遍示范/自愿跟读逻辑不变。上文english-stop-v1为历史记录，已被本条取代。

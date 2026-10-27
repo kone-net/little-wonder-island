@@ -493,3 +493,7 @@ retrySound在root内插入fixed居中u-sound-gate并聚焦60px高主按钮；pla
 仅LA3-07-ES2、L06-ES2两个逻辑ID更新到同一个新MP3，text、contentHash、locale、voice、speed保持兼容；audio.js与audio-en.json同步更新src/duration/sha256及phonemes、revision。音素为 lˈɛt əs stˈɑp.，使用KPipeline.generate_from_tokens、af_heart、speed=0.78、CPU离线生成。没有新增前缀词，没有截掉l辅音或拼接其他话语。
 
 原两份MP3保留，英文其他记录不变。新文件位于assets/audio/en-articulation-v1，WAV母带与验证脚本仅放test/english-stop。四个引用audio.js的入口使用english-stop-v1缓存键。无需课程节点或本机学习状态迁移。原反馈尚未在用户设备完成主观复听，不将音素/解码检查写成听感保证。
+
+## english-stop-v2：替换含糊连读句
+
+上一轮用户复听仍不满意，停止使用显式音素版本。两个逻辑ID L06-ES2/LA3-07-ES2指向既有LA3-07-E03音频；同步audio.js、audio-en.json的text/contentHash/src/duration、sha256、reusedFrom/revision，lessons.js对应英语节点文本及ClassroomMeanings新增stop, please映射。课堂示范和游戏从相同记录读取目标，不允许只换声音留下旧字幕。音色与制作语速不变，无新MP3，旧文件保留为历史资源，不增加资产数量。节点ID、数量、顺序及学习状态无需迁移，四个入口同步升级audio/lessons/meanings缓存键至english-stop-v2。

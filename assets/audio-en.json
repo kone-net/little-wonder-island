@@ -5551,7 +5551,7 @@
     "sampleRate": 24000,
     "bitRate": 64000
   },
-  "LA3-07-ES2": {"id":"LA3-07-ES2","text":"Let us stop.","locale":"en-US","contentHash":"d723d200743b","src":"audio/en-articulation-v1/let-us-stop-1188719799ff.mp3","duration":2,"engine":"kokoro","voice":"af_heart","speed":0.78,"synthesisMode":"dedicated-english-explicit-phonemes","referenceSha256":null,"precision":null,"sampleRate":24000,"bitRate":64000,"phonemes":"lˈɛt əs stˈɑp.","sha256":"1188719799ff978c4379aa7a8b2c75e32f82d68e46647a67c248cd1a266258a3","revision":"english-stop-v1"},
+  "LA3-07-ES2": {"id":"LA3-07-ES2","text":"Stop, please.","locale":"en-US","contentHash":"d8a8708c3fc6","src":"audio/LA3-07-E03-d8a8708c3fc6.mp3","duration":2.2,"engine":"kokoro","voice":"af_heart","speed":0.78,"synthesisMode":"dedicated-english","referenceSha256":null,"precision":null,"sampleRate":24000,"bitRate":64000,"sha256":"3c739aba6e68844b939603c96c85dceab030da68507e4e5b824d16293f3c5de0","reusedFrom":"LA3-07-E03","revision":"english-stop-v2"},
   "LA3-08-EW1": {
     "id": "LA3-08-EW1",
     "text": "sun.",
@@ -6112,7 +6112,7 @@
     "sampleRate": 24000,
     "bitRate": 64000
   },
-  "L06-ES2": {"id":"L06-ES2","text":"Let us stop.","locale":"en-US","contentHash":"d723d200743b","src":"audio/en-articulation-v1/let-us-stop-1188719799ff.mp3","duration":2,"engine":"kokoro","voice":"af_heart","speed":0.78,"synthesisMode":"dedicated-english-explicit-phonemes","referenceSha256":null,"precision":null,"sampleRate":24000,"bitRate":64000,"phonemes":"lˈɛt əs stˈɑp.","sha256":"1188719799ff978c4379aa7a8b2c75e32f82d68e46647a67c248cd1a266258a3","revision":"english-stop-v1"},
+  "L06-ES2": {"id":"L06-ES2","text":"Stop, please.","locale":"en-US","contentHash":"d8a8708c3fc6","src":"audio/LA3-07-E03-d8a8708c3fc6.mp3","duration":2.2,"engine":"kokoro","voice":"af_heart","speed":0.78,"synthesisMode":"dedicated-english","referenceSha256":null,"precision":null,"sampleRate":24000,"bitRate":64000,"sha256":"3c739aba6e68844b939603c96c85dceab030da68507e4e5b824d16293f3c5de0","reusedFrom":"LA3-07-E03","revision":"english-stop-v2"},
   "L07-EW1": {
     "id": "L07-EW1",
     "text": "Red.",
