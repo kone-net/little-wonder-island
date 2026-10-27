@@ -1,8 +1,14 @@
 # 小小奇遇岛技术设计文档
 
-版本：V2.8 / age-video-v1；文档修订：2026-10-27；播放器补丁：official-embed-v1；交互/布局补丁：ipad-fit-v1；学习交互补丁：learning-variety-v1；状态：当前运行基线。
+版本：V2.8 / age-video-v1；文档修订：2026-10-28；播放器补丁：official-embed-v1；交互/布局补丁：ipad-fit-v1；学习交互补丁：learning-variety-v1；状态：当前运行基线。
 
 产品与逐关内容以 [PRD](PRD.md) 为准。本文说明如何实现、维护、验证和发布；仓库约定见 [AGENTS.md](../AGENTS.md)。基线应用提交为 `1ee4018d8765ab168b7e42a64e2e16f938e1a8f0`。后续官方嵌入补丁按用户对照结果调整播放器；课程与音频基线保持不变。
+
+## 增量：奇遇小屋（reward-play-v1）
+
+room.html独立承载小屋与四种活动；island-rewards.js以稳定课程ID映射礼物并在课堂finish后幂等授予，room-art.js提供原生SVG场景/道具，room.js负责房间状态、收藏和原生dialog活动。课堂使用独立island-rewards.css，不能引入小屋全局样式。BFS寻找上下左右连通的路，动物用CSS坐标过渡沿路移动；音乐以Web Audio振荡器合成四个音，点按触发AudioContext，关闭/隐藏页面停止全部声音及异步计时器。故事存结构化图片组合，不上传声音或图像。
+
+现有v3本机记录增加rewards.version=1、earned[courseId]、placements[{id,x,y}]和roomPlay={version:1,care,routes,music,stories}。房间最多5动物/8物品，位置百分比，音符16个，故事12种。常驻guest伙伴不占课程奖励。小屋save读取最新课程记录以保护其他标签里的新进度；IslandRewards.importData对家长导入的课程ID、坐标、音符、故事组合做范围校验并去重。完成/参与只表示路径证据，不代表知识掌握。课程节点、原音色、原状态键不变。验收与当前边界见[奖励小屋规格](REWARD-ROOM.md)。
 
 ## 1. 架构与运行边界
 
