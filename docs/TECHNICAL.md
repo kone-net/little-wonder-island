@@ -1,6 +1,6 @@
 # 小小奇遇岛技术设计文档
 
-版本：V2.8 / age-video-v1；文档修订：2026-10-27；播放器补丁：official-embed-v1；交互/布局补丁：ipad-fit-v1；状态：当前运行基线。
+版本：V2.8 / age-video-v1；文档修订：2026-10-27；播放器补丁：official-embed-v1；交互/布局补丁：ipad-fit-v1；学习交互补丁：learning-variety-v1；状态：当前运行基线。
 
 产品与逐关内容以 [PRD](PRD.md) 为准。本文说明如何实现、维护、验证和发布；仓库约定见 [AGENTS.md](../AGENTS.md)。基线应用提交为 `1ee4018d8765ab168b7e42a64e2e16f938e1a8f0`。后续官方嵌入补丁按用户对照结果调整播放器；课程与音频基线保持不变。
 
@@ -331,7 +331,7 @@ PRD为方便家长使用一基“第几列、第几行”；源数据和部分�
 
 音频制作参数：中文IndexTTS-2.5 Cherry参考复刻，BF16、固定种子与已记录参考哈希；英语Kokoro af_heart、速度0.78。生产MP3为单声道24kHz、64kbps。新增中文旁白经响度规范化；旧声音不重新编码覆盖。参考声和模型留test，生产只发布音频与允许公开的来源元数据。
 
-当前生产共2158个MP3：前版1816 + 原创200 + 新英语92 + 低龄提示37 + 看图表达10 + 古诗修订2 + 单句英语修订1；升级英语另复用12条，不增加文件数。数量是本基线资产清单，修改后必须重新统计，不能长期照抄。
+当前生产共2192个MP3：前版1816 + 原创200 + 新英语92 + 低龄提示37 + 看图表达10 + 古诗修订2 + 单句英语修订1 + 识字30 + 新英语玩法提示4；升级英语另复用12条，不增加文件数。数量是本基线资产清单，修改后必须重新统计，不能长期照抄。
 
 ### 8.2 原创有声片段
 
@@ -497,3 +497,19 @@ retrySound在root内插入fixed居中u-sound-gate并聚焦60px高主按钮；pla
 ## english-stop-v2：替换含糊连读句
 
 上一轮用户复听仍不满意，停止使用显式音素版本。两个逻辑ID L06-ES2/LA3-07-ES2指向既有LA3-07-E03音频；同步audio.js、audio-en.json的text/contentHash/src/duration、sha256、reusedFrom/revision，lessons.js对应英语节点文本及ClassroomMeanings新增stop, please映射。课堂示范和游戏从相同记录读取目标，不允许只换声音留下旧字幕。音色与制作语速不变，无新MP3，旧文件保留为历史资源，不增加资产数量。节点ID、数量、顺序及学习状态无需迁移，四个入口同步升级audio/lessons/meanings缓存键至english-stop-v2。
+
+## learning-variety-v1：规则轮换及认字内嵌单元
+
+新增classroom-variety.js，在classroom-language-plan之后覆盖200关englishGames。全部仍3个节点，3岁仍跳过后两节点；四种新规则复用ClassroomEnglish.render/action入口与data-e委托。memory-pairs用matchCards.open及done索引处理真实翻两张配对，可先完成任一目标；sound-sequence记录各目标taps，播放两个目标的顺序；picture-puzzle记录selected/placed，2或4片正确位置合成；error-repair先spotWord再fixWord。enWin接受实际匹配索引，错误牌约1100ms后在同token/同节点下关闭。
+
+flow.varietyVersion=1首次归档数字键游戏到previousVarietyGames并清理其当前状态；保留model-*示范参与、finished及其他课程。所有200关节点数对基线逐一核验不变，不清空本机学习记录。
+
+classroom-literacy-data.js定义26字和23关关联；classroom-literacy.js渲染与处理图字认知，flow.literacy持久化active/index/phase/seen/selected/feedback/done/skipped。taskSuccess在主挑战最后一轮完成后进入；3岁继续和P04-02继续有相应入口。词卡model阶段播放两遍，转find；正确再下一字，错误重播；可直接结束，不把seen当掌握。confirmRetry删除本关literacy，其他作品与记录不受影响。所有主阶段/节点兼容，未新增第六阶段。
+
+新增30段中文（26字+4提示）沿用IndexTTS-2.5 Cherry复刻，4段游戏提示沿用Kokoro af_heart 0.78。meta优先查CLASSROOM_LITERACY_AUDIO、CLASSROOM_VARIETY_AUDIO；母带、模型与脚本仅放test/learning-variety。暂停/换阶段用原token取消机制，不触发旧回调；新的识字replay只播放当前字，主重听重建当前子阶段。识字和新游戏在平板隐藏重复底部说明，错误反馈在各自单元内保留，主要按钮至少44px。
+
+测试包括200关有效轮换/节点数、四类真实规则的错选和完成、识字两遍音频/错选/恢复/可跳过、3岁继续入口、34段音频解码与哈希、200个目录卡和手机/平板无横向溢出。
+
+新增游戏完成后同时提供手动继续，防止重听取消自动前进后停住。认字完成时仅在操作栏提供继续，避免两个重复按钮；错误翻牌以淡黄色标记后盖回。
+
+新游戏的平板布局以1024×668检查操作栏可见：将重听与说明并排，拼图片90×70px，保留44px以上触控目标；手机继续自然换行。
