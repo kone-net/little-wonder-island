@@ -1,0 +1,93 @@
+/* Tablet classroom: reserve space for the whole picture and the primary action. */
+.u-tablet.unified-classroom .p-header{height:56px;padding:0 20px;gap:14px}
+.u-tablet.unified-classroom #uMain{margin:0 16px;padding:0 0 8px;max-width:none}
+.u-tablet.unified-classroom .p-trail{min-height:44px;margin:0 auto 8px;max-width:900px}
+.u-tablet.unified-classroom .p-trail button,.u-tablet.unified-classroom .p-parent{min-height:44px}
+.u-tablet.unified-classroom .p-scene-head{padding:8px 20px;min-height:60px;gap:12px}
+.u-tablet.unified-classroom .p-scene-head h1{font-size:21px;line-height:1.25}
+.u-tablet.unified-classroom .p-scene-head small{font-size:11px;margin-bottom:2px}
+.u-tablet.unified-classroom .p-chip{font-size:12px;padding:8px 14px}
+.u-tablet.unified-classroom .u-film-choice{padding:0;gap:6px;margin-left:auto;flex-wrap:nowrap}
+.u-tablet.unified-classroom .u-film-choice button{min-height:44px;font-size:13px;padding:8px 12px;white-space:nowrap}
+.u-tablet.unified-classroom .p-caption{padding:8px 20px;min-height:56px;gap:12px}
+.u-tablet.unified-classroom .p-caption h2{font-size:18px;line-height:1.45}
+.u-tablet.unified-classroom .p-caption p{font-size:13px;line-height:1.5;margin-top:2px}
+.u-tablet.unified-classroom .p-guide{width:38px;height:38px;flex:0 0 38px;font-size:23px}
+.u-tablet.unified-classroom .p-dock{padding:7px 16px;min-height:58px;gap:6px}
+.u-tablet.unified-classroom .p-dock .p-tool{min-height:44px;font-size:13px}
+.u-tablet.unified-classroom .p-dock .primary{min-height:44px;font-size:16px;padding:8px 18px}
+.u-tablet.unified-classroom .p-footnote{display:none}
+.u-tablet.unified-classroom .p-lesson[data-kind="film"]>.p-caption{display:none}
+.u-tablet.unified-classroom .u-video-help{padding:3px 14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex-shrink:0;background:#fffdf4}
+.u-tablet.unified-classroom .u-video-help>.x-btn{padding:7px 10px;min-height:44px;font-size:12px;display:inline-flex;align-items:center;margin:0;box-sizing:border-box}
+.u-tablet.unified-classroom .u-video-help details{font-size:12px;flex:1;min-width:150px;margin:0}
+.u-tablet.unified-classroom .u-video-help summary{min-height:44px;display:flex;align-items:center;cursor:pointer}
+.u-tablet.unified-classroom .u-video-help details[open]{flex-basis:100%}
+.u-tablet.unified-classroom .u-video-help details p{line-height:1.6;padding:4px 0 10px}
+.u-tablet.unified-classroom .u-fit-visual>#uBody{height:var(--u-stage-room);min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:visible}
+.u-tablet.unified-classroom .u-fit-visual iframe.u-video{flex:0 0 auto;width:var(--u-video-width);max-width:100%;height:auto;min-height:0;aspect-ratio:16/9;margin:0 auto;display:block}
+.u-tablet.unified-classroom .u-fit-visual .u-video-help{align-self:stretch}
+.u-tablet.unified-classroom .u-fit-visual .p-video-cover{width:100%;min-height:0;height:var(--u-video-room);box-sizing:border-box;padding:18px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px}
+.u-tablet.unified-classroom .u-fit-visual .p-video-cover>span{font-size:38px}
+.u-tablet.unified-classroom .u-fit-visual .p-video-cover h2{font-size:22px;margin:0;line-height:1.4}
+.u-tablet.unified-classroom .u-fit-visual .p-video-cover p{margin:0;line-height:1.5;font-size:15px}
+.u-tablet.unified-classroom .u-fit-visual .p-art{width:100%;height:100%;min-height:0;max-height:none;aspect-ratio:auto}
+.u-tablet.unified-classroom .u-fit-visual .p-art>svg{height:100%;width:100%;object-fit:contain}
+.u-tablet.unified-classroom .u-fit-visual .u-method{height:100%;width:100%;min-height:0;box-sizing:border-box;padding:12px 24px;gap:8px}
+.u-tablet.unified-classroom .u-fit-visual .u-method h2{font-size:25px;margin:0}
+.u-tablet.unified-classroom .u-fit-visual .u-method p{font-size:17px;line-height:1.65;margin:0}
+.u-tablet.unified-classroom .u-fit-visual .u-method .u-science-symbol{font-size:42px}
+.u-tablet.unified-classroom .u-fit-visual .u-method svg{height:clamp(65px,15svh,140px);flex:0 1 140px}
+.u-tablet.unified-classroom .u-fit-visual .u-voiced-film{width:100%;height:100%;min-height:0;display:flex;flex-direction:column}
+.u-tablet.unified-classroom .u-fit-visual .u-illustrated-film{width:100%;flex:1;min-height:0;box-sizing:border-box;display:flex;flex-direction:column;padding:42px 18px 8px}
+.u-tablet.unified-classroom .u-fit-visual .u-illustrated-film h2{font-size:22px;line-height:1.35;margin:0 0 8px;flex-shrink:0}
+.u-tablet.unified-classroom .u-fit-visual .u-illustrated-film>svg{flex:1;min-height:0;max-height:none;width:100%;object-fit:contain}
+.u-tablet.unified-classroom .u-fit-visual .f-scene{flex:1;min-height:0;width:100%;margin:0 auto}
+.u-tablet.unified-classroom .u-fit-visual .f-scene-events{padding:8px 65px;gap:12px}
+.u-tablet.unified-classroom .u-fit-visual .f-scene-events>span{font-size:clamp(28px,5svh,48px);padding:14px 20px}
+.u-tablet.unified-classroom .u-fit-visual .f-scene-events small{margin-top:5px;font-size:13px}
+.u-tablet.unified-classroom .u-fit-visual .u-film-subtitle{flex-shrink:0;font-size:17px;line-height:1.6;margin:8px auto 14px;padding:0 20px;box-sizing:border-box}
+.u-tablet.unified-classroom .u-fit-visual .t-intro{min-height:0;height:100%;width:100%;box-sizing:border-box;padding:15px 20px}
+.u-tablet.unified-classroom .u-fit-visual .t-intro-pictures{gap:16px}
+.u-tablet.unified-classroom .u-fit-visual .t-intro-pictures span{font-size:clamp(50px,10svh,90px);padding:14px}
+.u-tablet.unified-classroom .u-fit-visual .t-intro p{font-size:19px;line-height:1.6;margin:14px auto 0}
+.u-tablet.unified-classroom .u-fit-visual .picture-intro,.u-tablet.unified-classroom .u-fit-visual .picture-film{width:100%;height:100%;min-height:0;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;padding:12px 20px}
+.u-tablet.unified-classroom .u-fit-visual .picture-intro h2,.u-tablet.unified-classroom .u-fit-visual .picture-film h2{font-size:24px;margin:4px 0}
+.u-tablet.unified-classroom .u-fit-visual .picture-intro>svg,.u-tablet.unified-classroom .u-fit-visual .picture-film>svg{flex:1;min-height:0;width:100%;height:auto;max-height:none;margin:5px auto}
+.u-tablet.unified-classroom .u-fit-visual .picture-intro p{font-size:17px;line-height:1.5;margin:6px 0}
+.u-tablet.unified-classroom .u-task{padding:66px 18px 14px;min-height:0}
+.u-tablet.unified-classroom .u-task-content>h2{font-size:20px;margin:5px 0 12px}
+.u-tablet.unified-classroom .u-feedback{margin-top:12px;padding:9px 14px}
+.u-tablet.unified-classroom .p-english{padding:18px 22px;min-height:0}
+.u-tablet.unified-classroom .p-en-instruction{margin:0 auto 12px}
+.u-tablet.unified-classroom .p-en-instruction strong{font-size:25px}
+.u-tablet.unified-classroom .p-vocab-card{min-height:145px;padding:12px;gap:6px;border-radius:24px}
+.u-tablet.unified-classroom .p-vocab .p-object{min-height:70px;font-size:52px}
+.u-tablet.unified-classroom .p-vocab-card svg{width:90px;height:90px}
+.u-tablet.unified-classroom .p-speaking{margin:12px auto 0;padding:10px 14px}
+.u-tablet.unified-classroom .p-speaking-controls{margin-top:8px}
+.u-tablet.unified-classroom .p-speaking .p-button{min-height:44px}
+.u-tablet.unified-classroom .p-leaves{margin-top:8px}
+.u-tablet.unified-classroom .p-lesson[data-kind="model"]>.p-caption,.u-tablet.unified-classroom .p-lesson:has(.u-role-picture)>.p-caption{display:none}
+.u-tablet.unified-classroom .p-speaking{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.u-tablet.unified-classroom .p-speaking[hidden]{display:none}
+.u-tablet.unified-classroom .p-speaking-head{flex:1;min-width:200px}
+.u-tablet.unified-classroom .p-speaking-controls{margin:0;flex-shrink:0}
+.u-tablet.unified-classroom .u-role-context{max-height:160px}
+.u-tablet.unified-classroom .u-role-context>.picture-scene{max-height:160px}
+.u-tablet.unified-classroom .u-role h2{font-size:22px;margin:8px 0}
+.u-tablet.unified-classroom .u-task:has([data-experience="poem-paint"]){padding:8px 18px;min-height:0}
+.u-tablet.unified-classroom [data-experience="poem-paint"]{padding:6px 0!important}
+.u-tablet.unified-classroom [data-experience="poem-paint"] .x-artboard{height:clamp(140px,calc(100svh - 570px),340px)}
+.u-tablet.unified-classroom .p-lesson:has(.picture-task)>.p-caption{display:none}
+.u-tablet.unified-classroom .picture-task{padding:12px 18px}
+.u-tablet.unified-classroom .picture-task h2{font-size:24px;margin:4px 0}
+.u-tablet.unified-classroom .picture-instruction{font-size:16px;margin:6px auto 10px;line-height:1.5}
+.u-tablet.unified-classroom .picture-choice{padding-bottom:8px}
+.u-tablet.unified-classroom .picture-choice strong{font-size:21px;margin-top:5px}
+.u-tablet.unified-classroom .picture-options .picture-scene{max-height:clamp(120px,calc(100svh - 420px),250px)}
+.u-tablet.unified-classroom .picture-model>.picture-scene{max-height:clamp(120px,calc(100svh - 490px),230px)}
+.u-tablet.unified-classroom .picture-sentence{font-size:21px;margin:8px 0;gap:8px}
+.u-tablet.unified-classroom .picture-feedback{font-size:16px;line-height:1.5;margin:6px 0;min-height:0}
+.u-tablet.unified-classroom .picture-participation .p-button{min-height:44px;padding:8px 18px}
+@media(max-width:900px){.u-tablet.unified-classroom .p-scene-head{flex-wrap:wrap}.u-tablet.unified-classroom .p-scene-head h1{flex:1}.u-tablet.unified-classroom .p-lesson[data-kind="film"] .p-chip{display:none}.u-tablet.unified-classroom .u-film-choice{gap:2px}.u-tablet.unified-classroom .u-film-choice button{font-size:12px;padding:8px}}

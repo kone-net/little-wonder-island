@@ -1,6 +1,6 @@
 # 小小奇遇岛技术设计文档
 
-版本：V2.8 / age-video-v1；文档修订：2026-10-27；播放器补丁：official-embed-v1；交互/布局补丁：picture-story-v1；状态：当前运行基线。
+版本：V2.8 / age-video-v1；文档修订：2026-10-27；播放器补丁：official-embed-v1；交互/布局补丁：ipad-fit-v1；状态：当前运行基线。
 
 产品与逐关内容以 [PRD](PRD.md) 为准。本文说明如何实现、维护、验证和发布；仓库约定见 [AGENTS.md](../AGENTS.md)。基线应用提交为 `1ee4018d8765ab168b7e42a64e2e16f938e1a8f0`。后续官方嵌入补丁按用户对照结果调整播放器；课程与音频基线保持不变。
 
@@ -475,3 +475,15 @@ GitHub Pages直接托管公开仓库 `kone-net/little-wonder-island` 根目录�
 ClassroomExperience.objectShape同时生成工具SVG和作品SVG；poem-paint使用月亮/星星/树/小屋，避免文字与输出错配。color操作持久化d.color并修改d.objects[d.selected].color；选中轮廓及勾可见，完成后允许有限画布编辑但不重写历史完成记录。古诗活动只需一个图案确认参与，不再强制讲述确认。P04-04进入task播放ACADEMY-poem-night一次，poemRead重播，不增加绝对节点。画布通过svh/clamp调整；长可选内容保留页面滚动。
 
 retrySound在root内插入fixed居中u-sound-gate并聚焦60px高主按钮；play成功移除整个遮罩。soundStart在同步点击路径清除主动静音后run；run在第一个await前调用voice.play。NotAllowedError失败不推进，过期token不再弹出旧遮罩。测试模拟浏览器拒绝一次、用户手势放行，真实iPad仍需实机试听。
+
+## ipad-fit-v1：可见视口自适应设计
+
+- 新增 assets/classroom-viewport.js 和 assets/classroom-viewport.css，由classroom.html最后加载；原课堂状态机、课程数据、音频及播放器URL均不改动。
+- 通过window.visualViewport.height读取浏览器工具栏/键盘变化后的高度；缩放不为1时回退innerHeight。window.resize、orientationchange、pageshow和visualViewport.resize触发更新，requestAnimationFrame合并事件。
+- MutationObserver关注课堂子节点与文本变化；ResizeObserver只观察顶部、导航、课头、说明、操作栏和视频帮助的实际尺寸。观察目标仅在DOM替换后重建，CSS变量数值相同不重复写入，避免观察器反馈循环。
+- u-tablet启用紧凑样式，data-kind标明当前节点类型。故事、短片、活动故事和结尾使用u-fit-visual。
+- 计算：stageRoom=floor(可见高度−课卡文档顶部−课头高度−说明高度−操作栏高度−12px安全余量)；videoRoom=stageRoom−帮助行高度；视频宽=min(课卡宽,videoRoom×16/9)。通过CSS变量设置局部容器与iframe宽度，iframe继续height:auto、aspect-ratio:16/9。
+- stageRoom小于220px或外部视频剩余高度小于200px时回退自然流布局，避免裁切和过小播放器；复杂动手任务不固定整体高度，不使用overflow:hidden强塞一屏。
+- 旋转与窗口变化只改局部CSS变量，不替换iframe、不重置src、不改变播放参数、不调用媒体重播、不写学习状态。节点身份变化时只在平板模式滚动到顶部，同节点操作不干预用户滚动。
+- 英语和古诗/看图任务以局部CSS压缩重复内容；主交互目标不小于44px，错误提示和可选录音规则保留。手机和大桌面窗口继续原布局。
+- 验证脚本与报告位于工作区test/ipad-fit，含37项视口检查、旋转时iframe对象身份和节点索引保持、古诗/英语/看图首屏按钮检查。测试拦截YouTube网络仅验证框架几何，不将其写成实际认证播放验证。
