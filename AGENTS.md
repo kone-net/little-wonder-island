@@ -89,3 +89,5 @@
 - home-farm-v1：屋内/农场分别摆放，placement.space及spots保存双场景，旧位置默认farm；同一伙伴仅一个场景，常驻伙伴也能搬家。拖动必须覆盖room-item:active的transform、冻结散步可见位置，并按client内容区和边框换算，禁止拖后重建造成跳点。维护导入需保留space/spots/roomPlay.space。
 
 - food-rewards-v1：大气泡3.5秒移除/拖动立刻隐藏；小节group0..4首次完成随机2—4份点心，grants以courseId:group幂等。农场喂食与care.snack共用消耗，空库存不给成功动画，提供学习入口；不批量补发历史食物。导出导入保留food.grants/used，不使用旧余额覆盖已消耗。
+
+- open-world-v1：动物计数排除家具；四空间home/farm/meadow/beach保持单一归属并保留spots。道具统一底部拖放，松手命中动物才扣食物，取消/空地不扣。room-world.js管理拖放与故事播放器，room-landscapes.js原创背景。故事90段完整Cherry中文句，墙面显示最新3篇，相册12篇；离开/后台停止音频。不要回退系统TTS或无声图卡。导入同时维护四空间和sand。

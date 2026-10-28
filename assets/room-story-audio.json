@@ -1,0 +1,547 @@
+{
+  "version": "open-world-v1",
+  "engine": "IndexTTS-2.5",
+  "voice": "approved-Cherry-reference",
+  "clips": {
+    "rabbit-0-0": {
+      "text": "小兔在花园里分享点心。",
+      "src": "assets/audio/room-stories/rabbit-0-0.mp3",
+      "duration": 4.226042,
+      "sha256": "69593506bb0387e09282739d3d432eeca565c0108c33a960efb977bd126d2bac"
+    },
+    "rabbit-0-1": {
+      "text": "小兔在花园里开音乐会。",
+      "src": "assets/audio/room-stories/rabbit-0-1.mp3",
+      "duration": 4.109958,
+      "sha256": "0e6caa2dd41150c95d1d86d2aef0d07efaf480af408b9ecf7a14f96da71f85c0"
+    },
+    "rabbit-0-2": {
+      "text": "小兔在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/rabbit-0-2.mp3",
+      "duration": 4.469875,
+      "sha256": "b775e362156fba860ddc81562262b9a0c2117176d65bf9cfa2bdfc31d8f916af"
+    },
+    "rabbit-1-0": {
+      "text": "小兔在海边分享点心。",
+      "src": "assets/audio/room-stories/rabbit-1-0.mp3",
+      "duration": 4.109958,
+      "sha256": "151de7804eb0dfa62080401015aa9bfaa46e916a6717906c735f426f542b7f3a"
+    },
+    "rabbit-1-1": {
+      "text": "小兔在海边开音乐会。",
+      "src": "assets/audio/room-stories/rabbit-1-1.mp3",
+      "duration": 3.553958,
+      "sha256": "60867e6f439a8342751caa6cf08ecb923ecada62da3da3afea9a4aaefd4bf9d9"
+    },
+    "rabbit-1-2": {
+      "text": "小兔在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/rabbit-1-2.mp3",
+      "duration": 4.7485,
+      "sha256": "c3148119a3e1783ef56c0d1d3790017cfd50cf5a96422d5229429067e88c4f02"
+    },
+    "rabbit-2-0": {
+      "text": "小兔在星空下分享点心。",
+      "src": "assets/audio/room-stories/rabbit-2-0.mp3",
+      "duration": 4.273958,
+      "sha256": "813eac959f9c1f59c741cfd0bcd8d0a6e65717c10bba8f1fc806df35b25559e1"
+    },
+    "rabbit-2-1": {
+      "text": "小兔在星空下开音乐会。",
+      "src": "assets/audio/room-stories/rabbit-2-1.mp3",
+      "duration": 4.028667,
+      "sha256": "8f91443787c64fc776cc1c915b09192e14bfb5ad2cc3a1adf40195654db674ba"
+    },
+    "rabbit-2-2": {
+      "text": "小兔在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/rabbit-2-2.mp3",
+      "duration": 4.633958,
+      "sha256": "7ccbca00e55ad3b2ab80137824d16ccc669d1dfcafdf79320346999971ad2913"
+    },
+    "fox-0-0": {
+      "text": "小狐狸在花园里分享点心。",
+      "src": "assets/audio/room-stories/fox-0-0.mp3",
+      "duration": 4.551125,
+      "sha256": "1184c50dc6b0830bed7fcbeaf9ac1826e302111e09589e2a2b8b073509cd2d8c"
+    },
+    "fox-0-1": {
+      "text": "小狐狸在花园里开音乐会。",
+      "src": "assets/audio/room-stories/fox-0-1.mp3",
+      "duration": 4.273958,
+      "sha256": "6410585aa245a6ebd8a6977fd78e3025471eb60711a2364a4ae05e6237ec4585"
+    },
+    "fox-0-2": {
+      "text": "小狐狸在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/fox-0-2.mp3",
+      "duration": 4.7485,
+      "sha256": "ed0ba8658f1c6631a23b069151f3f6e4af9171d64b4e1e837dc1227533192d79"
+    },
+    "fox-1-0": {
+      "text": "小狐狸在海边分享点心。",
+      "src": "assets/audio/room-stories/fox-1-0.mp3",
+      "duration": 4.191208,
+      "sha256": "07666121e99d141d9d37c20d090c0c6b465bed83ea8e4f52d129492e79b7e596"
+    },
+    "fox-1-1": {
+      "text": "小狐狸在海边开音乐会。",
+      "src": "assets/audio/room-stories/fox-1-1.mp3",
+      "duration": 4.028667,
+      "sha256": "3256a57cd5f4f719c1d4d715b4c7250e472a23735aff9500db59dee54af56700"
+    },
+    "fox-1-2": {
+      "text": "小狐狸在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/fox-1-2.mp3",
+      "duration": 4.667208,
+      "sha256": "a06baecb11c8b1cd272be0523fc959f3115b67d14b2bd40b868f48c49c25e833"
+    },
+    "fox-2-0": {
+      "text": "小狐狸在星空下分享点心。",
+      "src": "assets/audio/room-stories/fox-2-0.mp3",
+      "duration": 4.633958,
+      "sha256": "f6a1483c3c2cb38cd010f2c29d8a140c4061286c5889efcd4e2233f46b8064d8"
+    },
+    "fox-2-1": {
+      "text": "小狐狸在星空下开音乐会。",
+      "src": "assets/audio/room-stories/fox-2-1.mp3",
+      "duration": 4.504667,
+      "sha256": "2ad4210cbb10f8420251019ff6c6f913e3124a0048cd9972aa101083246ca6e9"
+    },
+    "fox-2-2": {
+      "text": "小狐狸在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/fox-2-2.mp3",
+      "duration": 5.305958,
+      "sha256": "a0632eca14475b473edbb5eb376e031927d26e8875a9d8aa34c4af7576e32a08"
+    },
+    "bear-0-0": {
+      "text": "小熊在花园里分享点心。",
+      "src": "assets/audio/room-stories/bear-0-0.mp3",
+      "duration": 4.307333,
+      "sha256": "09ac7c60ad5391a6b91d327ef3b5df8ec4c16173ec936ee9ee8348783eb45244"
+    },
+    "bear-0-1": {
+      "text": "小熊在花园里开音乐会。",
+      "src": "assets/audio/room-stories/bear-0-1.mp3",
+      "duration": 4.307333,
+      "sha256": "fa4b53a3de15f9fa2f50c0257d30527412c8de013576c4af20128be9ed4885b7"
+    },
+    "bear-0-2": {
+      "text": "小熊在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/bear-0-2.mp3",
+      "duration": 4.342167,
+      "sha256": "bfa6f770c4fc2085eb9417d6266b9e07ad6b80a79debe30679f775649e77c915"
+    },
+    "bear-1-0": {
+      "text": "小熊在海边分享点心。",
+      "src": "assets/audio/room-stories/bear-1-0.mp3",
+      "duration": 4.0635,
+      "sha256": "ae7170906814161de3c88c57f38eaa409694e9f289d74dc3f85e4451218066b3"
+    },
+    "bear-1-1": {
+      "text": "小熊在海边开音乐会。",
+      "src": "assets/audio/room-stories/bear-1-1.mp3",
+      "duration": 4.191208,
+      "sha256": "08964b5c6807b7de4e538b11d0251216c11877b81cfec6e4d6a5cd49e64791fd"
+    },
+    "bear-1-2": {
+      "text": "小熊在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/bear-1-2.mp3",
+      "duration": 4.342167,
+      "sha256": "15f01d7bff338400f29a4fce11a89c6145c3e9ed39dfe2ad29f7274e644e296f"
+    },
+    "bear-2-0": {
+      "text": "小熊在星空下分享点心。",
+      "src": "assets/audio/room-stories/bear-2-0.mp3",
+      "duration": 4.342167,
+      "sha256": "a08aec095433ed0c075d14a4dfb4331359f5f971a002301cc16ef20682163f3e"
+    },
+    "bear-2-1": {
+      "text": "小熊在星空下开音乐会。",
+      "src": "assets/audio/room-stories/bear-2-1.mp3",
+      "duration": 4.342167,
+      "sha256": "e1ba25f6ae9c68ec54cc28cb608480178c797abb966933027bbf9ca3ae65b6c8"
+    },
+    "bear-2-2": {
+      "text": "小熊在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/bear-2-2.mp3",
+      "duration": 4.993958,
+      "sha256": "d34647a20f09cf14375c46b7a0a49fff4bad34a54af46f063aa887c5f680a88a"
+    },
+    "cat-0-0": {
+      "text": "小猫在花园里分享点心。",
+      "src": "assets/audio/room-stories/cat-0-0.mp3",
+      "duration": 4.191208,
+      "sha256": "e5e633824dbd652f0e76c699927629106233d5a5922aa5de7e676f03ab8293fc"
+    },
+    "cat-0-1": {
+      "text": "小猫在花园里开音乐会。",
+      "src": "assets/audio/room-stories/cat-0-1.mp3",
+      "duration": 4.028667,
+      "sha256": "a106598434c02e208192927889d4abed428292eb64d91f24cc641f78f7c9771e"
+    },
+    "cat-0-2": {
+      "text": "小猫在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/cat-0-2.mp3",
+      "duration": 4.226042,
+      "sha256": "d29d18c61b7dba6d9be3d9ae64cd7fc3120d9772f001918a97f1d05f5272d003"
+    },
+    "cat-1-0": {
+      "text": "小猫在海边分享点心。",
+      "src": "assets/audio/room-stories/cat-1-0.mp3",
+      "duration": 3.750042,
+      "sha256": "d0fedf788ef6330e88d19e6a7ed2972f17a2e5145a7de4cb5b72f8c279cbe1ad"
+    },
+    "cat-1-1": {
+      "text": "小猫在海边开音乐会。",
+      "src": "assets/audio/room-stories/cat-1-1.mp3",
+      "duration": 3.993833,
+      "sha256": "f3a58e75cdbb1b40c3e526eb99cd7d126ab117b8f5e54e4eee79cb2801d65937"
+    },
+    "cat-1-2": {
+      "text": "小猫在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/cat-1-2.mp3",
+      "duration": 4.585958,
+      "sha256": "554eb438dbce69d01859d83bc294c9ce75b343fdb5579ad05a911ca9354e3ae8"
+    },
+    "cat-2-0": {
+      "text": "小猫在星空下分享点心。",
+      "src": "assets/audio/room-stories/cat-2-0.mp3",
+      "duration": 4.667208,
+      "sha256": "d44b3237448bb7c361f69aa9dd261a0ed270e7a9daf9fa216998d4a63c1b3e30"
+    },
+    "cat-2-1": {
+      "text": "小猫在星空下开音乐会。",
+      "src": "assets/audio/room-stories/cat-2-1.mp3",
+      "duration": 4.191208,
+      "sha256": "e2091358b389fa01ba839d4ff629ebd5b10e81165f433e929bc953ee30735864"
+    },
+    "cat-2-2": {
+      "text": "小猫在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/cat-2-2.mp3",
+      "duration": 4.864583,
+      "sha256": "8e36e3380b9964ce7f573ea5223950025c91a3bb0dd359441cd81518c970b88a"
+    },
+    "panda-0-0": {
+      "text": "大熊猫在花园里分享点心。",
+      "src": "assets/audio/room-stories/panda-0-0.mp3",
+      "duration": 4.585958,
+      "sha256": "5b7575df03d4ec94900fe57c32c3629339ac28ea83f01fcb3f5541147cf793b3"
+    },
+    "panda-0-1": {
+      "text": "大熊猫在花园里开音乐会。",
+      "src": "assets/audio/room-stories/panda-0-1.mp3",
+      "duration": 4.273958,
+      "sha256": "20f05cf45d72ea61df6cc4c99e79e39fd6718130edbf15ed1e9238fa18906f69"
+    },
+    "panda-0-2": {
+      "text": "大熊猫在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/panda-0-2.mp3",
+      "duration": 4.667208,
+      "sha256": "b68b7adc0c162dd6b888bd7d7599f0af55d10525c7a093759c9cb5db07525aa7"
+    },
+    "panda-1-0": {
+      "text": "大熊猫在海边分享点心。",
+      "src": "assets/audio/room-stories/panda-1-0.mp3",
+      "duration": 4.109958,
+      "sha256": "5ec185427b0c29ab88ee42a7c41c830f6cda56b4ca73bcde519a88ca362e27cd"
+    },
+    "panda-1-1": {
+      "text": "大熊猫在海边开音乐会。",
+      "src": "assets/audio/room-stories/panda-1-1.mp3",
+      "duration": 3.703583,
+      "sha256": "07afb744ad043e4396cfcb38388ef9aa181875fbffbe1205783851de0049ae8a"
+    },
+    "panda-1-2": {
+      "text": "大熊猫在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/panda-1-2.mp3",
+      "duration": 4.469875,
+      "sha256": "c711cf0a234d31965d2ba5ae9ce4859842fd0fb7b4ad010f35f1207d3d67f989"
+    },
+    "panda-2-0": {
+      "text": "大熊猫在星空下分享点心。",
+      "src": "assets/audio/room-stories/panda-2-0.mp3",
+      "duration": 4.388583,
+      "sha256": "e8ccd84113ae5ae66a4ea9114554a8e04f85e650e41bcfc625a017000ae5460b"
+    },
+    "panda-2-1": {
+      "text": "大熊猫在星空下开音乐会。",
+      "src": "assets/audio/room-stories/panda-2-1.mp3",
+      "duration": 4.585958,
+      "sha256": "67ddfd472e94decb8b2855ce3eb8e030ac4bb6fb99b326617447b7831d389688"
+    },
+    "panda-2-2": {
+      "text": "大熊猫在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/panda-2-2.mp3",
+      "duration": 4.993958,
+      "sha256": "a67525f8883281ab4510636abd879e6e1cb6ed1fa81373b1cae77749f52bbdef"
+    },
+    "deer-0-0": {
+      "text": "小鹿在花园里分享点心。",
+      "src": "assets/audio/room-stories/deer-0-0.mp3",
+      "duration": 3.993833,
+      "sha256": "9284485e4336288a68c148c4383bd3ab76c4a388f697afbd76ac48a0dd1241d6"
+    },
+    "deer-0-1": {
+      "text": "小鹿在花园里开音乐会。",
+      "src": "assets/audio/room-stories/deer-0-1.mp3",
+      "duration": 4.307333,
+      "sha256": "684f298ff0fd0b5ad854deb4682f0df33adba4682d560b0823638f19fc1490c9"
+    },
+    "deer-0-2": {
+      "text": "小鹿在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/deer-0-2.mp3",
+      "duration": 4.945958,
+      "sha256": "bceaf0dc9cbf2df1f439d6b81d21ea8f650e9b5ab833a2f6a5b2ec798ed92f1a"
+    },
+    "deer-1-0": {
+      "text": "小鹿在海边分享点心。",
+      "src": "assets/audio/room-stories/deer-1-0.mp3",
+      "duration": 4.0635,
+      "sha256": "a1ab6793fee64552cf9f16136d9794b86f74974e6429104efe44f5c3b11d7ef1"
+    },
+    "deer-1-1": {
+      "text": "小鹿在海边开音乐会。",
+      "src": "assets/audio/room-stories/deer-1-1.mp3",
+      "duration": 3.913958,
+      "sha256": "af7072e4ae506f088bbb298ecf007a2984c4d8fc5c65fe783149f6745e447199"
+    },
+    "deer-1-2": {
+      "text": "小鹿在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/deer-1-2.mp3",
+      "duration": 4.273958,
+      "sha256": "3a08a17e1a434a2153887014a8759240114333cc763187ad3824cbe594b98f91"
+    },
+    "deer-2-0": {
+      "text": "小鹿在星空下分享点心。",
+      "src": "assets/audio/room-stories/deer-2-0.mp3",
+      "duration": 4.388583,
+      "sha256": "9c0b2857aec3e3738e7cfc6c197ab15a83ec991804b2ae25b405042b97d906be"
+    },
+    "deer-2-1": {
+      "text": "小鹿在星空下开音乐会。",
+      "src": "assets/audio/room-stories/deer-2-1.mp3",
+      "duration": 4.109958,
+      "sha256": "6d90c2c5801bd3971bb1e1932b9697d597f2d75c064c56a25f63b109c150a0c0"
+    },
+    "deer-2-2": {
+      "text": "小鹿在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/deer-2-2.mp3",
+      "duration": 4.504667,
+      "sha256": "1949f889603ec52d08d173c0c91fb23ef818a06bdef1cf793dfb0771c3125268"
+    },
+    "dog-0-0": {
+      "text": "小狗在花园里分享点心。",
+      "src": "assets/audio/room-stories/dog-0-0.mp3",
+      "duration": 4.307333,
+      "sha256": "e4b046f940139e0ddce91d3b75145957528ceeb05ebc6a07df837fab746bcdcd"
+    },
+    "dog-0-1": {
+      "text": "小狗在花园里开音乐会。",
+      "src": "assets/audio/room-stories/dog-0-1.mp3",
+      "duration": 4.144792,
+      "sha256": "669d36cd99579625783eed6ec471edc2c52c6600702ec9ee807beaebd182311b"
+    },
+    "dog-0-2": {
+      "text": "小狗在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/dog-0-2.mp3",
+      "duration": 4.504667,
+      "sha256": "36819cd9c0b8fa2840e9b742131617daa07de89ddfbe12bfbf357b6ada9279b5"
+    },
+    "dog-1-0": {
+      "text": "小狗在海边分享点心。",
+      "src": "assets/audio/room-stories/dog-1-0.mp3",
+      "duration": 4.109958,
+      "sha256": "1c0f682d0da087cfd43c07c778c229533c37ee58ceaf96513031bcf82277b41c"
+    },
+    "dog-1-1": {
+      "text": "小狗在海边开音乐会。",
+      "src": "assets/audio/room-stories/dog-1-1.mp3",
+      "duration": 3.784875,
+      "sha256": "2fab8e1f95f9bfc16e98bd43fc2d067c04d03211b5462fcd6dc2a3083fa912f1"
+    },
+    "dog-1-2": {
+      "text": "小狗在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/dog-1-2.mp3",
+      "duration": 4.273958,
+      "sha256": "9dd68ec59c492d931afeef3365a52fe9f2031bfdd963ef46b4ff24ca9cdafce0"
+    },
+    "dog-2-0": {
+      "text": "小狗在星空下分享点心。",
+      "src": "assets/audio/room-stories/dog-2-0.mp3",
+      "duration": 4.585958,
+      "sha256": "212e4c11433dfb516fd46ad8c8e69ea939518a7ee77bbc8ec2a12fce095964c4"
+    },
+    "dog-2-1": {
+      "text": "小狗在星空下开音乐会。",
+      "src": "assets/audio/room-stories/dog-2-1.mp3",
+      "duration": 4.191208,
+      "sha256": "58bb75a5c4239d0abe37a5c4ae07d1658ecf0ff7e6ecdc6027914c42c4b9d0bf"
+    },
+    "dog-2-2": {
+      "text": "小狗在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/dog-2-2.mp3",
+      "duration": 4.667208,
+      "sha256": "8c9d47873c9a63083d4048d1198b02fbe017d8812c9c46d475683a2624b557a0"
+    },
+    "squirrel-0-0": {
+      "text": "小松鼠在花园里分享点心。",
+      "src": "assets/audio/room-stories/squirrel-0-0.mp3",
+      "duration": 4.469875,
+      "sha256": "64cbb80706a5f455711194334cde48d26c434facd711dc1a5c9d0e93a1888206"
+    },
+    "squirrel-0-1": {
+      "text": "小松鼠在花园里开音乐会。",
+      "src": "assets/audio/room-stories/squirrel-0-1.mp3",
+      "duration": 4.469875,
+      "sha256": "581d0004177db08117ed692ace86e9558fc965a9e55cc550d97b7c5eaadbf3a1"
+    },
+    "squirrel-0-2": {
+      "text": "小松鼠在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/squirrel-0-2.mp3",
+      "duration": 5.027125,
+      "sha256": "cbdb56bbf5e6d9ca265a848ab1c18e32623e75538ca1d64cb8c8d4ae6de8fb5b"
+    },
+    "squirrel-1-0": {
+      "text": "小松鼠在海边分享点心。",
+      "src": "assets/audio/room-stories/squirrel-1-0.mp3",
+      "duration": 4.226042,
+      "sha256": "095f17287274085737c8356f7eb836adcab43b364e35e65eb2f5f9e6c3765209"
+    },
+    "squirrel-1-1": {
+      "text": "小松鼠在海边开音乐会。",
+      "src": "assets/audio/room-stories/squirrel-1-1.mp3",
+      "duration": 4.109958,
+      "sha256": "8a933dbc26cc6c3451e09150e2eebea3a63d1289f83e4ab12d037c1ee87544ee"
+    },
+    "squirrel-1-2": {
+      "text": "小松鼠在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/squirrel-1-2.mp3",
+      "duration": 4.551125,
+      "sha256": "58d4af60269de19b050e46134bf75f0d5d263307af9852323a9730eeb7251173"
+    },
+    "squirrel-2-0": {
+      "text": "小松鼠在星空下分享点心。",
+      "src": "assets/audio/room-stories/squirrel-2-0.mp3",
+      "duration": 4.7485,
+      "sha256": "c96c2deca117d98acaf3b93bebc5805d85445171ba567cd696dc2df9e990f9f0"
+    },
+    "squirrel-2-1": {
+      "text": "小松鼠在星空下开音乐会。",
+      "src": "assets/audio/room-stories/squirrel-2-1.mp3",
+      "duration": 4.423417,
+      "sha256": "46fe5714d705b8557ade844b5e8626634620d0489b375d601d82abd373e59ddd"
+    },
+    "squirrel-2-2": {
+      "text": "小松鼠在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/squirrel-2-2.mp3",
+      "duration": 5.027125,
+      "sha256": "ad1761aed53618cf72559a5618db8b328d44bebc2fba668bbad80c67d633a1ca"
+    },
+    "bird-0-0": {
+      "text": "小鸟在花园里分享点心。",
+      "src": "assets/audio/room-stories/bird-0-0.mp3",
+      "duration": 4.783333,
+      "sha256": "80159c041f812f7ce78bfed0c46809b7b00b2f455dff761a69a3fb9ab5a66062"
+    },
+    "bird-0-1": {
+      "text": "小鸟在花园里开音乐会。",
+      "src": "assets/audio/room-stories/bird-0-1.mp3",
+      "duration": 4.0635,
+      "sha256": "14bc0d9a3919448c8e035a84b2416f7227c756f01ff4f0c6aae0170010c7d5da"
+    },
+    "bird-0-2": {
+      "text": "小鸟在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/bird-0-2.mp3",
+      "duration": 4.504667,
+      "sha256": "f7ba7f07b6986ca91881bedb09091abd8685bf93ec4e9f29812be3d662513af3"
+    },
+    "bird-1-0": {
+      "text": "小鸟在海边分享点心。",
+      "src": "assets/audio/room-stories/bird-1-0.mp3",
+      "duration": 4.028667,
+      "sha256": "40c9da86c0bc48a69171ff88eaa3a55c39bb9fd510debf261e239e9e7aff6652"
+    },
+    "bird-1-1": {
+      "text": "小鸟在海边开音乐会。",
+      "src": "assets/audio/room-stories/bird-1-1.mp3",
+      "duration": 3.913958,
+      "sha256": "8d17bff0ebec7c6b0b0ee84fd015d37b339a484ad0dbba7f98377546edf8d5be"
+    },
+    "bird-1-2": {
+      "text": "小鸟在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/bird-1-2.mp3",
+      "duration": 4.273958,
+      "sha256": "0b5a9be369abeab2eb5b68dfe10f9cbba56aaed07d9ab516483b475249fea2c0"
+    },
+    "bird-2-0": {
+      "text": "小鸟在星空下分享点心。",
+      "src": "assets/audio/room-stories/bird-2-0.mp3",
+      "duration": 4.342167,
+      "sha256": "9f966c9d0f625961e66871d0e9ab5d45ec018af018a244e61547308c3f6330bb"
+    },
+    "bird-2-1": {
+      "text": "小鸟在星空下开音乐会。",
+      "src": "assets/audio/room-stories/bird-2-1.mp3",
+      "duration": 4.273958,
+      "sha256": "bdec1eeac788cb9436ff9be5fc2ae318676d69eca33b563a5a83328dbec88632"
+    },
+    "bird-2-2": {
+      "text": "小鸟在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/bird-2-2.mp3",
+      "duration": 4.82975,
+      "sha256": "42fed41f0a4f7c850b5768041c6368f1d7ad13566a6cc8de78f10cb7466c3e90"
+    },
+    "elephant-0-0": {
+      "text": "小象在花园里分享点心。",
+      "src": "assets/audio/room-stories/elephant-0-0.mp3",
+      "duration": 4.388583,
+      "sha256": "68fb0500d799ff840e22bd6f6cbe27c00f6bbde274398de8f806873697d5d699"
+    },
+    "elephant-0-1": {
+      "text": "小象在花园里开音乐会。",
+      "src": "assets/audio/room-stories/elephant-0-1.mp3",
+      "duration": 4.342167,
+      "sha256": "5ec394c91525838bf1b550f0f5d1476d967b443e5554f5aea0105aa16250d32c"
+    },
+    "elephant-0-2": {
+      "text": "小象在花园里寻找小宝藏。",
+      "src": "assets/audio/room-stories/elephant-0-2.mp3",
+      "duration": 4.551125,
+      "sha256": "eb64d0fa4ff3dd7faeb52689ba45f98a8889ab28895ca4444f529d8999710e98"
+    },
+    "elephant-1-0": {
+      "text": "小象在海边分享点心。",
+      "src": "assets/audio/room-stories/elephant-1-0.mp3",
+      "duration": 3.866125,
+      "sha256": "e520165d4bf74956e6aaf9dffbafaf784658e947989b959c3149b3eb5ef7bf8e"
+    },
+    "elephant-1-1": {
+      "text": "小象在海边开音乐会。",
+      "src": "assets/audio/room-stories/elephant-1-1.mp3",
+      "duration": 3.784875,
+      "sha256": "aaa94e1a883118862c273e83dda4d4d66fe87a038dcefd52c0cba7984435e803"
+    },
+    "elephant-1-2": {
+      "text": "小象在海边寻找小宝藏。",
+      "src": "assets/audio/room-stories/elephant-1-2.mp3",
+      "duration": 4.423417,
+      "sha256": "2d46b5ddc6da77f5133d6df8477c9705c5b87c0e793bb72673c7b11ce723b272"
+    },
+    "elephant-2-0": {
+      "text": "小象在星空下分享点心。",
+      "src": "assets/audio/room-stories/elephant-2-0.mp3",
+      "duration": 4.864583,
+      "sha256": "137677a2c717b8d1b1815bc0c03c09d218d0f0056ed292422fe107d3c9d1f387"
+    },
+    "elephant-2-1": {
+      "text": "小象在星空下开音乐会。",
+      "src": "assets/audio/room-stories/elephant-2-1.mp3",
+      "duration": 4.423417,
+      "sha256": "0b2cd4f845431d52a14986c533eba50ae6535fafcd867af254417ec5a86e1228"
+    },
+    "elephant-2-2": {
+      "text": "小象在星空下寻找小宝藏。",
+      "src": "assets/audio/room-stories/elephant-2-2.mp3",
+      "duration": 4.551125,
+      "sha256": "2067e9202d74c600c92bc0b6ed817c67447302c72d8fc09b6ddf78f8d8b24937"
+    }
+  }
+}
