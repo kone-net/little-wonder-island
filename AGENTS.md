@@ -87,3 +87,5 @@
 - farm-life-v1：开放农场、三位常驻伙伴位置存在roomPlay.residents；默认直接拖动动物，保留抓取偏移与落点，拖后20秒内不自主挪动。12只获奖动物+8物件，常驻动物不发课程奖。喂食模式单击喂点心，拖动不得触发喂食或收回；减少动态设置、隐藏页面/活动中暂停散步。
 
 - home-farm-v1：屋内/农场分别摆放，placement.space及spots保存双场景，旧位置默认farm；同一伙伴仅一个场景，常驻伙伴也能搬家。拖动必须覆盖room-item:active的transform、冻结散步可见位置，并按client内容区和边框换算，禁止拖后重建造成跳点。维护导入需保留space/spots/roomPlay.space。
+
+- food-rewards-v1：大气泡3.5秒移除/拖动立刻隐藏；小节group0..4首次完成随机2—4份点心，grants以courseId:group幂等。农场喂食与care.snack共用消耗，空库存不给成功动画，提供学习入口；不批量补发历史食物。导出导入保留food.grants/used，不使用旧余额覆盖已消耗。
