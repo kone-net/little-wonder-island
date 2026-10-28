@@ -91,3 +91,5 @@
 - food-rewards-v1：大气泡3.5秒移除/拖动立刻隐藏；小节group0..4首次完成随机2—4份点心，grants以courseId:group幂等。农场喂食与care.snack共用消耗，空库存不给成功动画，提供学习入口；不批量补发历史食物。导出导入保留food.grants/used，不使用旧余额覆盖已消耗。
 
 - open-world-v1：动物计数排除家具；四空间home/farm/meadow/beach保持单一归属并保留spots。道具统一底部拖放，松手命中动物才扣食物，取消/空地不扣。room-world.js管理拖放与故事播放器，room-landscapes.js原创背景。故事90段完整Cherry中文句，墙面显示最新3篇，相册12篇；离开/后台停止音频。不要回退系统TTS或无声图卡。导入同时维护四空间和sand。
+
+- reward-modal-v1：RewardCelebration用原生dialog遮罩展示食品/礼物，next先保存奖励再等待收下才run；末节食品与礼物合并。rewardCelebrationSeen仅控制展示，不负责库存；回看不发奖，activate关闭旧弹窗。减少动态设置、静音、手机边界都需保留。
