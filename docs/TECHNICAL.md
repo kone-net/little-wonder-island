@@ -1,6 +1,6 @@
 # 小小奇遇岛技术设计文档
 
-版本：V2.8 / age-video-v1；文档修订：2026-10-28；播放器补丁：official-embed-v1；交互/布局补丁：ipad-fit-v1；学习交互补丁：learning-variety-v1；状态：当前运行基线。
+版本：expansion100-v1（2026-10-29）；原版课堂：V2.8 / age-video-v1；文档修订：2026-10-28；播放器补丁：official-embed-v1；交互/布局补丁：ipad-fit-v1；学习交互补丁：learning-variety-v1；状态：当前运行基线。
 
 产品与逐关内容以 [PRD](PRD.md) 为准。本文说明如何实现、维护、验证和发布；仓库约定见 [AGENTS.md](../AGENTS.md)。基线应用提交为 `1ee4018d8765ab168b7e42a64e2e16f938e1a8f0`。后续官方嵌入补丁按用户对照结果调整播放器；课程与音频基线保持不变。
 
@@ -586,3 +586,43 @@ rewards.food={version:1,grants:{课程ID:group:{count,at}},used}；余额为发�
 小节首次发放食品后先保存进度和库存，再展示弹窗；下一节点的媒体/交互等待确认后启动。最后环节的食品与关卡礼物合并展示，只弹一次。结尾礼物按state.rewardCelebrationSeen记录已确认；未确认刷新可以再次看到展示但不重复发放，已确认刷新不自动再弹。结尾“再看看礼物”仅展示，不调用授奖。Escape等同收下；原生dialog限制焦点和背景点击。点击“带去我的小屋”先确认、保存再进入动物之家。
 
 RewardCelebration为独立assets/reward-celebration.js，样式在island-rewards.css。next等待Promise确认后依据token检查仍在本课程/节点才继续；activate时关闭旧弹窗。库存授予仍由IslandRewards控制，展示层不得发奖。横竖屏与手机保留按钮可见，减少动态设置关闭动画。已验证小节暂停等待、关卡礼物/食品合并、刷新幂等、手动回看、Escape及窄屏边界。
+
+## 百关扩展技术设计（expansion100-v1）
+
+### 内容、路由与兼容
+
+1000个稳定ID：原P03-01～P12-20不改；新增每龄21～100，百关ID示例P03-100。所有匹配ID的校验必须支持两位或三位序号，但只能接受01～100。首页、动物之家加载academy-expansion.js，追加800条并按age/sequence排序；原classroom与games页面要在所有旧计划覆盖脚本之后加载，避免旧覆盖器把新增资料当旧引擎运行。
+
+classroom.html#新增ID调用activate时先location.replace到expedition.html#ID。原200关继续用原节点引擎；扩展页独立五阶段，互不替换原课程音频、节点编号或作品结构。首页默认续学用扩展后的全列表，旧第20关完成后可接第21关，第99接100，最后一关返回首页。
+
+发布文件：academy-expansion.js（800完整规格＋目录注册）、expansion-data.json（相同内容便于审阅）、expansion-rules.js（纯规则）、expansion-audio.js（140音频清单）、expedition.js（状态与交互）、expedition.css、expedition.html、140条新增MP3。纯静态运行，无服务/模型/密钥依赖。JS约2.3MB未压缩，资源可由静态托管压缩；MP3按需加载，不预取所有千关音频。
+
+### 状态与迁移
+
+仍用little-wonder-island-academy-v3。courses[id].expansion={version:1,stage:0..4,teach:0..2,completed:[],game:规则状态,english:英语状态}。root record.stage映射[0,2,3,4,5]用于旧导出/列表兼容；activity.done反映当前动手尝试；finished保留历史完成。保存合并最新courses并调用IslandRewards.preserve，避免覆盖小屋奖励。家长导入校验版本、阶段范围及体积，保留expansion。完成历史与当前重玩独立；阶段重置清当前game/english/teach，不清食物、收藏、其他阶段。
+
+game包含choice、assign、selected、open/matched、order、commands、position/path、observed、strokes/stamps、stones、attempts、feedback、done。画笔最多保存150段，每段最多150点；stamp列表需维护有界；图片图案为原创字形素材/系统emoji，非生成图片。棋盘只判断局部连线/轮流，不是完整AI对战。资料观察卡不表示真实实验数据。
+
+### 18类动手判定
+
+count/calc/measure按选项值匹配；shape按图形名称匹配；word/meaning/investigate的answer是选项下标，不能和数值结果混淆；fraction用target下标，图格按den等分、num涂色。pattern按完整unit推下一项。match/sort按每张卡to类别全部完成。memory用稳定seed洗牌，每次翻两张比key，不同延迟约1.1秒盖住。route仅曼哈顿相邻且无障碍，终点完成；program运行指令并检查每步边界/障碍，失败指出步骤。board按k连续横竖斜或3岁单次轮流；rhythm对比0/1顺序；sequence对比卡片原序；draw以参与按钮结束，不评审美。
+
+正确反馈与错误反馈在原位显示，错题不清其他操作。触摸拖卡用Pointer Events，保留点选卡→点位置备选；画板把client坐标换算到800×400逻辑画布，对称画笔绕x=400镜像。选项次序按关卡轮换，重复值去重。独立规则可由测试穷举正确/错误路径，不能只检查数据数量。
+
+### 音频、媒体和英语
+
+中文140条：17方法＋3形状目标＋120条3—6岁具体内容；来源为已确认Cherry参考的IndexTTS-2.5本地制作，保留哈希与duration。7—12岁有声方法配具体屏幕任务，并未为每个屏幕句子生成录音。不能声称800段全新故事。制作脚本/模型/参考/母带留test目录，发布仅MP3。英文复用同龄原课已批准af_heart/0.78音频，完整成组复习；各句含原id、text、meaning、src、pictureHTML或emoji。数量用不同实物个数，大/小用不同尺寸，对应关系不能只靠同一通用图标。
+
+新页每个目标repeats=2，间隔550ms；自愿PicnicSpeaking最多6秒、内存回放、无ASR/上传。六标签对应四规则家族；pairs选中加深与完成变绿，没有独立连线SVG。listen/delivery/spot共用点击判断，勿称为三个不同机制。英语配对临时选择只在当前页面内；刷新后可重做，完成与听过目标保存。
+
+教学启动尝试play；拒绝时中央显式“开始有声课堂”。异步错误必须检查token，不能在跳到短片后插入旧的开始音频按钮。stop/跳阶段/后台/离开停止audio、计时器、录音、iframe。外部视频仅官方https://www.youtube.com/embed/ID、strict-origin-when-cross-origin，无自动登录或绕过验证。地图使用原片库作拓展；原页可直达。播放器加载成功不代表完整观看，不能据网络返回码声称已审看。
+
+### 奖励、可访问性和验收
+
+课程/食物ID校验扩展到100。food grants以id:group0..4首次随机2—4份，幂等；重玩不刷食物。本关礼物仍使用原固定礼物映射循环，未新增800种动物。只有game.done后结尾能finished/award；直接跳结尾须转回动手提示。奖励先保存，再显示遮罩dialog等待收下；不把弹窗展示状态当库存。
+
+顶部紧凑、点击按钮至少44px；iPad横屏按可见高度约束视频，字幕和继续入口正常流排版；长句、复杂任务与小屏允许自然滚动，不裁掉内容。系统减少动态偏好沿用。不同设备无法跨浏览器同步localStorage；家长可导出/导入，不能声称云同步。
+
+本次验收：800新增纯规则逐关可解、错误拒绝、年龄与视频/英语资源覆盖；18机制真实浏览器代表关点击；原课堂入口、首页1000数量、重置与刷新恢复、第100关路线；140音频文本/哈希/ffmpeg解码；稳定原200ID与课程资料保留。未逐关人工试听全部语音或逐帧审看外部片，未来内容修订继续维护PRD逐关条目和源快照。
+
+制作源与测试位于工作区release/v2/test/expansion100（不发布）。修改通过build.js生成两个内容文件；文档由docs.py根据plan.json和最终audio-manifest生成。不要运行早期一次性integrate.js，以免覆盖旧课堂。发布前比对源目录与Git checkout，限定精确修改文件，非强推，确认Pages构建对应提交。
