@@ -628,3 +628,9 @@ count/calc/measure按选项值匹配；shape按图形名称匹配；word/meaning
 制作源与测试位于工作区release/v2/test/expansion100（不发布）。修改通过build.js生成两个内容文件；文档由docs.py根据plan.json和最终audio-manifest生成。不要运行早期一次性integrate.js，以免覆盖旧课堂。发布前比对源目录与Git checkout，限定精确修改文件，非强推，确认Pages构建对应提交。
 
 扩展页朗读与合成提示音遵循首页muted设置；静音时不发声、不弹自动播放授权按钮，奖励也遵循同一设置。外部YouTube由其播放器音量控制。
+
+## guided-intro-v1：教学开场
+
+lesson-intro-audio.js注册20条独立MP3，先于classroom.js/expedition.js加载。旧课堂meta优先解析该注册表；不增删nodes，只在原run里串行await开场再播放原概念，token失效则退出。P05-06教学方法与动手引导改为intro-symmetry，不再播放生硬旧概念段。扩展页speakGuide先读intro-kind或symmetry，再读具体字词/科学/生活内容，过滤原method避免重复。均沿用静音、iOS手势门槛、停止/暂停机制。原前20关页头总数同步100。逐课映射与20段实际台词见PRD末节；覆盖映射不等于1000段独立录音。
+
+同批补丁：classroom-scenes.js在规律教学SVG内用data-pattern-unit包装两组完整图形；expedition规则图按unit.length分框。英语language-icons限制字号与nowrap、图框position/overflow，选图类共用上方词卡作为答案，不重复呈现第二套；正确换目标后播放两遍。扩展页复用p-header/p-trail/p-lesson/p-caption/p-dock样式与结构，dockPrimary把当前继续按钮放底栏，renderTask同步搬移，不更改完成判定。
