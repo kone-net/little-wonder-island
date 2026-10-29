@@ -634,3 +634,7 @@ count/calc/measure按选项值匹配；shape按图形名称匹配；word/meaning
 lesson-intro-audio.js注册20条独立MP3，先于classroom.js/expedition.js加载。旧课堂meta优先解析该注册表；不增删nodes，只在原run里串行await开场再播放原概念，token失效则退出。P05-06教学方法与动手引导改为intro-symmetry，不再播放生硬旧概念段。扩展页speakGuide先读intro-kind或symmetry，再读具体字词/科学/生活内容，过滤原method避免重复。均沿用静音、iOS手势门槛、停止/暂停机制。原前20关页头总数同步100。逐课映射与20段实际台词见PRD末节；覆盖映射不等于1000段独立录音。
 
 同批补丁：classroom-scenes.js在规律教学SVG内用data-pattern-unit包装两组完整图形；expedition规则图按unit.length分框。英语language-icons限制字号与nowrap、图框position/overflow，选图类共用上方词卡作为答案，不重复呈现第二套；正确换目标后播放两遍。扩展页复用p-header/p-trail/p-lesson/p-caption/p-dock样式与结构，dockPrimary把当前继续按钮放底栏，renderTask同步搬移，不更改完成判定。
+
+## video-shell-v1
+
+扩展页videoBody复用p-video-cover和ClassroomVideoHelp.render，并将帮助区data-u事件桥接为data-e。复制支持Clipboard与可选中文本框回退。s.videoVisited仅表示打开过本集/复制，不代表实际看完；重置短片清该标记，重看保留参与并回封面。不会把其他环节结果清掉。播放器仍官方URL、手动播放和严格来源策略。新增课没有独立原创影片时不显示假的切换入口；保留原课堂原有功能。AGENTS记录本轮用户反馈作为后续验收约束。
