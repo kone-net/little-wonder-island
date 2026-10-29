@@ -642,3 +642,7 @@ lesson-intro-audio.js注册20条独立MP3，先于classroom.js/expedition.js加�
 ## footer-compact-v1
 
 classroom.html与expedition.html在head末尾共同加载classroom-footer.css。样式作用于unified-classroom/expedition内的u-video-help、p-caption、p-dock，覆盖两套历史padding差异；不改display隐藏约定、不固定长文本高度，按钮最小44px。无需状态迁移。
+
+## player-fit-v1（2026-10-30）
+
+扩展播放器用expedition-viewport.js监听挂载、窗口/visualViewport尺寸及顶部/帮助/操作栏变化，按剩余高度计算16:9宽高并居中；仅改CSS变量，不替换iframe，旋转不重启视频。短窗口保留180px最小视频高度与自然滚动。新旧课堂播放时收起重复讲解条，未播放时提示标题与辅助文字可同行显示，帮助上下2px、操作栏上下3px，保留44px点击区域与全部操作。

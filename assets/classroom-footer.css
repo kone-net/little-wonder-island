@@ -15,3 +15,15 @@
 :is(body.unified-classroom,body.expedition) .p-dock :is(.primary,[data-e=complete]){padding:8px 18px;min-height:44px;font-size:17px;line-height:1.4;border-radius:18px;margin-top:0;margin-bottom:0}
 :is(body.unified-classroom,body.expedition) .p-dock :is(.p-status,#expStatus){font-size:12px;line-height:1.4}
 @media(max-width:600px){:is(body.unified-classroom,body.expedition) .u-video-help{padding:5px 14px;gap:7px}:is(body.unified-classroom,body.expedition) .p-lesson>.p-caption{padding:8px 14px;gap:10px}:is(body.unified-classroom,body.expedition) .p-caption h2{font-size:17px}:is(body.unified-classroom,body.expedition) .p-lesson>.p-dock{padding:6px 14px;gap:8px}:is(body.unified-classroom,body.expedition) .u-video-help>.x-btn{font-size:12px}}
+
+/* Second compaction: retain 44px controls, remove repeated narration during playback. */
+:is(body.unified-classroom,body.expedition) .u-video-help{padding-top:2px;padding-bottom:2px;gap:8px}
+:is(body.unified-classroom,body.expedition) .p-lesson>.p-caption{padding-top:6px;padding-bottom:6px;gap:10px}
+:is(body.unified-classroom,body.expedition) .p-caption .p-guide{width:32px;height:32px;min-width:32px;font-size:21px}
+:is(body.unified-classroom,body.expedition) .p-caption>div{display:flex;align-items:baseline;gap:4px 12px;flex-wrap:wrap}
+:is(body.unified-classroom,body.expedition) .p-caption h2{font-size:17px;line-height:1.4}
+:is(body.unified-classroom,body.expedition) .p-caption p{margin:0;font-size:12px}
+:is(body.unified-classroom,body.expedition) .p-lesson:has(iframe)>.p-caption{display:none}
+:is(body.unified-classroom,body.expedition) .p-lesson>.p-dock{padding-top:3px;padding-bottom:3px;min-height:50px;gap:8px}
+body.expedition.exp-video #videoMount:has(iframe){display:flex;align-items:center;justify-content:center;background:#000;height:var(--player-height,auto)}
+body.expedition.exp-video #videoMount>iframe{width:var(--player-width,100%)!important;height:var(--player-height,auto)!important;aspect-ratio:16/9;flex:none;max-width:100%;display:block;border:0}
