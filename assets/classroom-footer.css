@@ -1,0 +1,17 @@
+/* Shared compact help, narration and action bands. Keep touch targets >=44px. */
+:is(body.unified-classroom,body.expedition) .u-video-help{padding:6px 20px;gap:10px;align-items:center;flex-wrap:wrap;min-height:0}
+:is(body.unified-classroom,body.expedition) .u-video-help>.x-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 12px;margin:0;font-size:14px;line-height:1.4;border-radius:17px;box-sizing:border-box}
+:is(body.unified-classroom,body.expedition) .u-video-help details{margin:0;font-size:12px;min-width:160px}
+:is(body.unified-classroom,body.expedition) .u-video-help summary{display:flex;align-items:center;min-height:44px;cursor:pointer}
+:is(body.unified-classroom,body.expedition) .u-video-help details[open]{flex-basis:100%}
+:is(body.unified-classroom,body.expedition) .u-video-help details p{padding:4px 0 6px;line-height:1.6}
+:is(body.unified-classroom,body.expedition) .p-lesson>.p-caption{padding:10px 22px;min-height:0;gap:12px;align-items:center}
+:is(body.unified-classroom,body.expedition) .p-caption .p-guide{width:40px;height:40px;min-width:40px;font-size:24px;flex:none}
+:is(body.unified-classroom,body.expedition) .p-caption h2{font-size:19px;line-height:1.4;margin:0}
+:is(body.unified-classroom,body.expedition) .p-caption p{font-size:13px;line-height:1.5;margin:3px 0 0}
+:is(body.unified-classroom,body.expedition) .p-lesson>.p-dock{padding:6px 20px;min-height:56px;gap:10px;align-items:center}
+:is(body.unified-classroom,body.expedition) .p-dock button{min-height:44px}
+:is(body.unified-classroom,body.expedition) .p-dock :is(.p-tool,[data-e=listen],[data-e=reset],[data-e=menu]){padding:6px 4px;font-size:13px;line-height:1.4}
+:is(body.unified-classroom,body.expedition) .p-dock :is(.primary,[data-e=complete]){padding:8px 18px;min-height:44px;font-size:17px;line-height:1.4;border-radius:18px;margin-top:0;margin-bottom:0}
+:is(body.unified-classroom,body.expedition) .p-dock :is(.p-status,#expStatus){font-size:12px;line-height:1.4}
+@media(max-width:600px){:is(body.unified-classroom,body.expedition) .u-video-help{padding:5px 14px;gap:7px}:is(body.unified-classroom,body.expedition) .p-lesson>.p-caption{padding:8px 14px;gap:10px}:is(body.unified-classroom,body.expedition) .p-caption h2{font-size:17px}:is(body.unified-classroom,body.expedition) .p-lesson>.p-dock{padding:6px 14px;gap:8px}:is(body.unified-classroom,body.expedition) .u-video-help>.x-btn{font-size:12px}}

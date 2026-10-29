@@ -638,3 +638,7 @@ lesson-intro-audio.js注册20条独立MP3，先于classroom.js/expedition.js加�
 ## video-shell-v1
 
 扩展页videoBody复用p-video-cover和ClassroomVideoHelp.render，并将帮助区data-u事件桥接为data-e。复制支持Clipboard与可选中文本框回退。s.videoVisited仅表示打开过本集/复制，不代表实际看完；重置短片清该标记，重看保留参与并回封面。不会把其他环节结果清掉。播放器仍官方URL、手动播放和严格来源策略。新增课没有独立原创影片时不显示假的切换入口；保留原课堂原有功能。AGENTS记录本轮用户反馈作为后续验收约束。
+
+## footer-compact-v1
+
+classroom.html与expedition.html在head末尾共同加载classroom-footer.css。样式作用于unified-classroom/expedition内的u-video-help、p-caption、p-dock，覆盖两套历史padding差异；不改display隐藏约定、不固定长文本高度，按钮最小44px。无需状态迁移。
