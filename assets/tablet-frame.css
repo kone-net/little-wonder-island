@@ -1,0 +1,30 @@
+
+/* Stable one-screen shell. Long tasks scroll within their own content panel. */
+:is(body.unified-classroom,body.expedition){touch-action:manipulation}
+:is(body.unified-classroom,body.expedition) :is(input,textarea,select){font-size:16px!important}
+body.tablet-frame{height:var(--classroom-height,100dvh);min-height:0;overflow:hidden;overscroll-behavior-y:none;display:flex;flex-direction:column}
+body.tablet-frame>.p-header{flex:none;height:56px;min-height:56px}
+body.tablet-frame #uMain{flex:1;min-height:0;display:flex;flex-direction:column;margin:0 12px;padding:0 0 6px;overflow:hidden}
+body.tablet-frame #uMain>nav{flex:none}
+body.tablet-frame .p-lesson{flex:1;min-height:0;display:flex;flex-direction:column;margin-bottom:0;overflow:hidden}
+body.tablet-frame .p-scene-head,body.tablet-frame .p-caption,body.tablet-frame .p-dock{flex:none}
+body.tablet-frame .p-lesson>.p-stage{flex:1;min-height:0!important;height:auto!important;overflow:auto;overscroll-behavior:contain}
+body.tablet-frame .p-lesson.u-fit-visual>.p-stage{overflow:hidden}
+body.tablet-frame .p-art,body.tablet-frame .p-art>svg{height:100%!important;max-height:100%;width:100%}
+body.tablet-frame .p-footnote{display:none}
+body.tablet-frame #expApp{height:100%;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+body.tablet-frame .e-header{flex:none;min-height:56px;padding:5px 18px}
+body.tablet-frame .e-main{flex:1;min-height:0;width:100%;display:flex;flex-direction:column;padding:0 12px 6px;overflow:hidden}
+body.tablet-frame .e-stages{flex:none;margin-bottom:8px}
+body.tablet-frame .e-lesson>.e-body{flex:1;min-height:0!important;overflow:auto;overscroll-behavior:contain}
+body.tablet-frame .e-lesson>.p-scene-head{padding:9px 18px}
+body.tablet-frame .e-lesson h1{font-size:21px;line-height:1.3}
+body.tablet-frame.exp-video .e-body{display:flex;flex-direction:column;padding:0!important}
+body.tablet-frame.exp-video .e-video-mount{flex:1;min-height:180px;display:flex;align-items:center;justify-content:center}
+body.tablet-frame.exp-video .e-video-cover{width:100%;height:100%!important;min-height:0!important;padding:12px 22px;gap:10px}
+body.tablet-frame.exp-video .e-video-cover h2{font-size:clamp(18px,2.5vw,28px)}
+body.tablet-frame.exp-video .u-video-help{flex:none}
+body.tablet-frame .e-story{padding:10px 16px;min-height:0}
+body.tablet-frame .e-story-icon{font-size:60px}
+body.tablet-frame .e-story h2{font-size:24px}
+body.tablet-frame .e-story p{font-size:20px}

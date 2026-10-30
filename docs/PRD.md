@@ -70385,3 +70385,7 @@ RewardCelebration为独立assets/reward-celebration.js，样式在island-rewards
 ## player-fit-v1（2026-10-30）
 
 扩展播放器用expedition-viewport.js监听挂载、窗口/visualViewport尺寸及顶部/帮助/操作栏变化，按剩余高度计算16:9宽高并居中；仅改CSS变量，不替换iframe，旋转不重启视频。短窗口保留180px最小视频高度与自然滚动。新旧课堂播放时收起重复讲解条，未播放时提示标题与辅助文字可同行显示，帮助上下2px、操作栏上下3px，保留44px点击区域与全部操作。
+
+## tablet-frame-v1（2026-10-30）
+
+平板宽700—1400px、可见高度至少500px采用固定可见视口课堂外框，品牌/进度/操作区固定在框内，主内容使用剩余空间。普通图画和视频适配显示；复杂任务/长帮助在内容区内滚动，不裁内容，也不把整个页面上下拖动。touch-action:manipulation减少双击误放大，输入框字号至少16px避免iOS聚焦放大；保留系统双指缩放，不设置user-scalable=no。旋转不替换iframe、不重置状态。短屏和手机保留自然布局。
