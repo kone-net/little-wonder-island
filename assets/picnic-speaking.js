@@ -22,6 +22,6 @@ function stopRecord(){if(phase!=='recording'||recorder?.state!=='recording')retu
 document.addEventListener('click',e=>{const el=e.target.closest('[data-speaking]');if(!el||el.disabled||!mount?.contains(el))return;const a=el.dataset.speaking;if(a==='record')record();else if(a==='stop')stopRecord();else if(a==='skip')done(url?'recorded':'listened');else if(a==='play'){playback?.pause();playOwn(generation);}});
 function clear(){generation++;release();phase='idle';mount=null;finish=null;}
 function pause(){if(['pending','recording','processing','playback'].includes(phase)){generation++;release();ready('刚才已暂停录音，想说的时候再点一次。');}}
-window.PicnicSpeaking={show(el,onDone){clear();mount=el;finish=onDone;ready();cue();},clear,pause,cue,getState:()=>({phase,microphoneActive:!!stream?.getTracks().some(t=>t.readyState==='live'),hasRecording:!!url})};
+window.PicnicSpeaking={show(el,onDone){clear();mount=el;mount.classList.add('p-speaking');finish=onDone;ready();cue();},clear,pause,cue,getState:()=>({phase,microphoneActive:!!stream?.getTracks().some(t=>t.readyState==='live'),hasRecording:!!url})};
 window.addEventListener('pagehide',clear);
 })();

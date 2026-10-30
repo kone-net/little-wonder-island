@@ -1,0 +1,20 @@
+
+/* Reserve a stable, small speaking turn, rather than appending a second big card. */
+:is(#uSpeaking,#eSpeaking).p-speaking,#eSpeaking{box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-height:104px;max-width:660px;margin:10px auto 0;padding:10px 14px;background:#fffdf5;border:1px solid #d5dfc8;border-radius:20px;text-align:left}
+#uSpeaking.p-speaking[hidden]{display:grid!important;visibility:hidden;pointer-events:none}
+:is(#uSpeaking,#eSpeaking) .p-speaking-head{min-width:0;display:block}
+:is(#uSpeaking,#eSpeaking) .p-mic-symbol{display:none}
+:is(#uSpeaking,#eSpeaking) .p-speaking-head strong{font-size:17px;line-height:1.4}
+:is(#uSpeaking,#eSpeaking) .p-speaking-head p{font-size:12px;line-height:1.5;margin:3px 0 0}
+:is(#uSpeaking,#eSpeaking) .p-speaking-controls{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin:0;flex-wrap:nowrap}
+:is(#uSpeaking,#eSpeaking) .p-button{margin:0;min-height:44px;font-size:13px;padding:8px 12px;white-space:normal}
+:is(#uSpeaking,#eSpeaking) .p-button:is([data-speaking=record],[data-speaking=stop]){width:80px;height:80px;min-height:80px;padding:8px;border-width:3px;border-radius:50%;font-size:12px;gap:3px;box-shadow:0 0 0 3px #f9edc9,0 3px 0 #264c3b}
+:is(#uSpeaking,#eSpeaking) [data-speaking=record] svg{width:31px;height:31px}
+:is(#uSpeaking,#eSpeaking) .p-stop-icon{font-size:28px}
+:is(#uSpeaking,#eSpeaking) [data-speaking=skip]{max-width:155px}
+@media(max-width:600px){:is(#uSpeaking,#eSpeaking).p-speaking,#eSpeaking{grid-template-columns:1fr;gap:8px;padding:10px 12px;min-height:144px}:is(#uSpeaking,#eSpeaking) .p-speaking-controls{justify-content:center}:is(#uSpeaking,#eSpeaking) .p-speaking-head p{line-height:1.4}#uSpeaking.p-speaking[hidden]{min-height:144px}}
+body.tablet-frame .p-english{padding-top:18px;padding-bottom:12px;min-height:0}
+body.tablet-frame .p-english .p-en-instruction{margin-bottom:12px}
+body.tablet-frame .p-english .p-vocab-card{min-height:160px;padding-top:12px;padding-bottom:12px}
+body.tablet-frame .p-english .p-vocab-card .p-object{max-height:86px}
+body.tablet-frame .p-english .p-vocab-card svg{max-height:86px}
